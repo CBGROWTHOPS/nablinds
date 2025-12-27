@@ -32,7 +32,7 @@ export default function Header() {
             to="/"
             className="lg:hidden absolute left-1/2 -translate-x-1/2 text-warm-dark font-bold text-lg tracking-wide touch-manipulation"
           >
-            NABLINDS
+            NA BLINDS
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">
