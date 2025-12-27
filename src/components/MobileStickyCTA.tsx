@@ -37,7 +37,7 @@ export default function MobileStickyCTA() {
 
     const handleScroll = () => {
       const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      setIsVisible(scrollPercentage > 15);
+      setIsVisible(scrollPercentage > 7);
     };
 
     window.addEventListener('scroll', handleScroll);
