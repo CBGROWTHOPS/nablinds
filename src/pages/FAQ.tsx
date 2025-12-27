@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
@@ -63,6 +63,28 @@ export default function FAQ() {
     },
   ];
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div>
       <section className="py-20 px-6 bg-soft-sand">
@@ -97,11 +119,13 @@ export default function FAQ() {
                     }`}
                   />
                 </button>
-                {openIndex === index && (
-                  <div className="px-8 pb-6">
-                    <p className="text-warm-gray leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
+                <div
+                  className={`px-8 pb-6 transition-all duration-300 ${
+                    openIndex === index ? 'block' : 'hidden'
+                  }`}
+                >
+                  <p className="text-warm-gray leading-relaxed">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>

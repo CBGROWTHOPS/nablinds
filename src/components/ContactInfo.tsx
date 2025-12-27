@@ -27,7 +27,7 @@ const ContactInfo = memo(() => {
         </a>
 
         <a
-          href="mailto:info@nablinds.com"
+          href="mailto:info@nablinds.co"
           className="flex items-start gap-3 sm:gap-4 p-5 sm:p-6 bg-soft-sand rounded-xl hover:bg-white active:bg-white transition-colors group touch-manipulation"
         >
           <div className="w-12 h-12 sm:w-14 sm:h-14 bg-ocean bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-ocean group-hover:bg-opacity-100 transition-colors">
@@ -35,7 +35,7 @@ const ContactInfo = memo(() => {
           </div>
           <div>
             <p className="font-semibold text-warm-dark mb-1 text-sm sm:text-base">Email</p>
-            <p className="text-ocean font-semibold text-base sm:text-lg break-all">info@nablinds.com</p>
+            <p className="text-ocean font-semibold text-base sm:text-lg break-all">info@nablinds.co</p>
             <p className="text-xs sm:text-sm text-warm-gray mt-1">We respond within 24 hours</p>
           </div>
         </a>

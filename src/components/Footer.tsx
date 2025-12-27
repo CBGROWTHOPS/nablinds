@@ -108,7 +108,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 text-warm-gray text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Serving Miami-Dade, Broward & Palm Beach Counties</span>
+                <div>
+                  <div>10034 Spanish Isles Blvd</div>
+                  <div>Boca Raton, FL 33498</div>
+                  <div className="mt-2 text-xs opacity-80">Serving Miami-Dade, Broward & Palm Beach Counties</div>
+                </div>
               </li>
               <li className="flex items-center gap-4 pt-2">
                 <a

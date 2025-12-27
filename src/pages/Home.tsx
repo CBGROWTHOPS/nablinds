@@ -43,6 +43,29 @@ export default function Home() {
       answer: 'We review your needs, show product samples, take precise measurements, and provide a clear estimate. No pressure or obligation to purchase.',
     },
   ];
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const challenges = [
     'Unbearable heat and glare from large windows',
     'Zero privacy in condos and high-rises',
@@ -377,7 +400,7 @@ export default function Home() {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} installed in ${project.location}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -518,13 +541,11 @@ export default function Home() {
                   />
                 </button>
                 <div
-                  className={`transition-all duration-300 ease-in-out ${
-                    openFaqIndex === index
-                      ? 'max-h-96 opacity-100'
-                      : 'max-h-0 opacity-0'
-                  } overflow-hidden`}
+                  className={`px-8 pb-6 transition-all duration-300 ${
+                    openFaqIndex === index ? 'block' : 'hidden'
+                  }`}
                 >
-                  <p className="px-8 pb-6 text-warm-gray leading-relaxed">
+                  <p className="text-warm-gray leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
