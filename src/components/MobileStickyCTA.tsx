@@ -1,0 +1,78 @@
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Phone } from 'lucide-react';
+import { scrollToConsultationForm } from '../utils/scrollToForm';
+
+const shouldHideStickyBar = (pathname: string): boolean => {
+  const excludedPages = [
+    '/contact',
+    '/contact-2',
+    '/thank-you',
+    '/thank-you-facebook',
+  ];
+
+  if (excludedPages.includes(pathname)) {
+    return true;
+  }
+
+  if (pathname.startsWith('/internal-docs') || pathname.startsWith('/docs')) {
+    return true;
+  }
+
+  return false;
+};
+
+export default function MobileStickyCTA() {
+  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isOnContactPage = location.pathname === '/contact' || location.pathname === '/contact-2';
+  const shouldHide = shouldHideStickyBar(location.pathname);
+
+  useEffect(() => {
+    if (shouldHide) {
+      setIsVisible(false);
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      setIsVisible(scrollPercentage > 15);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname, shouldHide]);
+
+  if (!isVisible || shouldHide) {
+    return null;
+  }
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-lg">
+      <div className="flex gap-2 p-3">
+        <a
+          href="tel:954-629-1373"
+          className="flex items-center justify-center gap-2 flex-1 bg-white text-ocean border-2 border-ocean px-4 py-3 rounded-lg font-semibold text-sm hover:bg-ocean hover:text-white active:bg-ocean active:text-white transition-all touch-manipulation"
+        >
+          <Phone className="w-4 h-4 flex-shrink-0" />
+          <span>Call</span>
+        </a>
+        <button
+          onClick={() => {
+            if (isOnContactPage) {
+              scrollToConsultationForm();
+            } else {
+              navigate('/contact-2#consultation-form');
+            }
+          }}
+          className="flex-[2] bg-ocean text-white px-4 py-3 rounded-lg font-semibold text-sm hover:bg-ocean/90 active:bg-ocean/90 transition-all touch-manipulation"
+        >
+          Request Free Consultation
+        </button>
+      </div>
+    </div>
+  );
+}

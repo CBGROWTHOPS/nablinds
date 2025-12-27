@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nablinds.co/sitemap.xml
