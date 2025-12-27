@@ -1,4 +1,13 @@
+import { useSEO } from '../utils/seo';
+
 export default function Terms() {
+  useSEO({
+    title: 'Terms of Service | NA Blinds',
+    description: 'Terms of Service for NA Blinds window treatment services. Review our policies, warranties, and service terms.',
+    canonicalUrl: 'https://www.nablinds.co/terms',
+    noindex: true
+  });
+
   return (
     <div className="min-h-screen bg-white">
       <section className="py-20 px-6">

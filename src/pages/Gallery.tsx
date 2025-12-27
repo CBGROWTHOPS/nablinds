@@ -1,6 +1,12 @@
 import CTASection from '../components/CTASection';
+import { useSEO } from '../utils/seo';
 
 export default function Gallery() {
+  useSEO({
+    title: 'Gallery - Real Window Treatment Projects | NA Blinds South Florida',
+    description: 'View real installations from homes across South Florida. Shades, blinds, and custom drapes in Miami, Fort Lauderdale, Boca Raton, and throughout Broward and Palm Beach counties.',
+    canonicalUrl: 'https://www.nablinds.co/gallery'
+  });
   const projects = [
     {
       title: 'Light-Filtering Roller Shades',

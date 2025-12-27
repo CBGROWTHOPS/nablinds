@@ -1,7 +1,13 @@
 import { Star, Quote } from 'lucide-react';
 import CTASection from '../components/CTASection';
+import { useSEO } from '../utils/seo';
 
 export default function Testimonials() {
+  useSEO({
+    title: 'Customer Reviews & Testimonials | NA Blinds South Florida',
+    description: 'Read reviews from satisfied South Florida homeowners. 4.8 star rating with 120+ reviews. BBB A+ rated. See why customers choose NA Blinds for window treatments.',
+    canonicalUrl: 'https://www.nablinds.co/testimonials'
+  });
   const testimonials = [
     {
       name: 'Sarah M.',
@@ -63,7 +69,7 @@ export default function Testimonials() {
     { number: '500+', label: 'Homes Transformed' },
     { number: '10+', label: 'Years Experience' },
     { number: 'A+', label: 'BBB Rating' },
-    { number: '5.0', label: 'Average Rating' },
+    { number: '4.8', label: 'Average Rating' },
   ];
 
   return (

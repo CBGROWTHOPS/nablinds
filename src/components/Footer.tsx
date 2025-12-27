@@ -108,11 +108,13 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 text-warm-gray text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <div>10034 Spanish Isles Blvd</div>
-                  <div>Boca Raton, FL 33498</div>
+                <address className="not-italic" itemScope itemType="https://schema.org/PostalAddress">
+                  <div itemProp="streetAddress">10034 Spanish Isles Blvd</div>
+                  <div>
+                    <span itemProp="addressLocality">Boca Raton</span>, <span itemProp="addressRegion">FL</span> <span itemProp="postalCode">33498</span>
+                  </div>
                   <div className="mt-2 text-xs opacity-80">Serving Miami-Dade, Broward & Palm Beach Counties</div>
-                </div>
+                </address>
               </li>
               <li className="flex items-center gap-4 pt-2">
                 <a

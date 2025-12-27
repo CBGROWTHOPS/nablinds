@@ -1,4 +1,13 @@
+import { useSEO } from '../utils/seo';
+
 export default function Privacy() {
+  useSEO({
+    title: 'Privacy Policy | NA Blinds',
+    description: 'Privacy policy for NA Blinds. Learn how we collect, use, and protect your personal information.',
+    canonicalUrl: 'https://www.nablinds.co/privacy',
+    noindex: true
+  });
+
   return (
     <div className="min-h-screen bg-white">
       <section className="py-20 px-6">

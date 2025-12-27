@@ -1,7 +1,13 @@
 import { Award, Shield, Users, Heart, CheckCircle } from 'lucide-react';
 import CTASection from '../components/CTASection';
+import { useSEO } from '../utils/seo';
 
 export default function About() {
+  useSEO({
+    title: 'About NA Blinds | 10+ Years Serving South Florida | BBB A+ Rated',
+    description: 'Family-owned window treatment company serving South Florida since 2014. BBB A+ rating, licensed & insured. Over 500 homes transformed across Miami-Dade, Broward, and Palm Beach counties.',
+    canonicalUrl: 'https://www.nablinds.co/about'
+  });
   const values = [
     {
       icon: Shield,
