@@ -1,14 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Sun, Moon, Wind, Palette, Droplets, Shield } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 
 export default function Services() {
+  const location = useLocation();
+
   useSEO({
     title: 'Window Shades & Blinds Installation South Florida | NA Blinds',
     description: 'Explore solar shades, blackout shades, zebra shades, drapes, and motorized window treatments professionally installed across South Florida.',
     canonicalUrl: 'https://www.nablinds.co/services'
   });
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location]);
   const services = [
     {
       id: 'solar-light-filtering',
