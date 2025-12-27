@@ -19,13 +19,20 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
           <Link to="/" className="flex items-center touch-manipulation">
             <img
               src="/nablinds_logo_transparent_black.png"
               alt="NA Blinds"
               className="h-10 sm:h-12 w-auto"
             />
+          </Link>
+
+          <Link
+            to="/"
+            className="lg:hidden absolute left-1/2 -translate-x-1/2 text-warm-dark font-bold text-lg tracking-wide touch-manipulation"
+          >
+            NABLINDS
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">

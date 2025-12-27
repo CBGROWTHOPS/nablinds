@@ -192,6 +192,14 @@ export default function Home() {
 
         <div className="relative w-full px-4 sm:px-6 text-white">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-4 md:mb-6">
+              <div className="text-base sm:text-lg md:text-xl font-bold mb-1">
+                UP TO 25% OFF | FREE MEASURE
+              </div>
+              <div className="text-xs sm:text-sm md:text-base opacity-90">
+                Sale extended through 1/20/26
+              </div>
+            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 md:mb-6 leading-tight">
               Custom Window Treatments for {userLocation} Homes & Condos
             </h1>
