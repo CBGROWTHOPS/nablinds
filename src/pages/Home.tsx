@@ -180,7 +180,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center py-12 md:py-0">
+      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center py-8 md:py-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -192,7 +192,7 @@ export default function Home() {
 
         <div className="relative w-full px-4 sm:px-6 text-white">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mt-8 md:mt-12 mb-5 md:mb-7">
+            <div className="mb-5 md:mb-7">
               <div className="text-base sm:text-lg md:text-xl font-extrabold tracking-wide mb-1.5 drop-shadow-lg">
                 UP TO 25% OFF | FREE MEASURE
               </div>
