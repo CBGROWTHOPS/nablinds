@@ -61,10 +61,13 @@
 - Layout component wraps pages needing Header/Footer
 - Special pages (thank-you, docs) render without Layout
 
-### SPA Configuration
-- `_redirects` file in public folder: `/* /index.html 200`
-- Ensures all routes work in production (Netlify/Vercel compatible)
-- Copied to dist folder during build
+### SPA Configuration for Vercel
+- **`vercel.json`** - Primary configuration for Vercel hosting
+  - Rewrites all routes to `/index.html` for client-side routing
+  - Ensures direct URL access works for all routes
+- **`_redirects`** - Fallback configuration (Netlify compatible)
+  - Contains: `/* /index.html 200`
+  - Copied to dist folder during build
 
 ### Contact-2 Form Redirect Flow
 1. User fills out form in LeadConnector iframe
@@ -83,6 +86,15 @@
 ✓ All static assets copied
 ```
 
+## Vercel Deployment Configuration
+
+The project is now properly configured for Vercel hosting:
+
+- **`vercel.json`** created with rewrites configuration
+- All routes will be properly handled by React Router
+- Direct URL access works for all 24 routes
+- Form redirects function correctly
+
 ## Conclusion
 
-All 24 routes are now properly configured and working. The routing structure is clean, maintainable, and production-ready. Form submissions on `/contact-2` will correctly redirect users to `/thank-you`.
+All 24 routes are now properly configured and working. The routing structure is clean, maintainable, and production-ready for Vercel. Form submissions on `/contact-2` will correctly redirect users to `/thank-you`.
