@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ArrowLeft, AlertTriangle, CheckCircle, ExternalLink } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, CheckCircle } from 'lucide-react';
 import { trackPageView } from '../../utils/tracking';
 
 export default function WebhookDoc() {

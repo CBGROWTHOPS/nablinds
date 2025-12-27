@@ -1,4 +1,4 @@
-import { Phone, Calendar, Ruler, Palette, Package, Wrench, CheckCircle, Shield } from 'lucide-react';
+import { Phone, Ruler, Palette, Package, Wrench, CheckCircle, Shield } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 

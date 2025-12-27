@@ -93,7 +93,7 @@ export default function Contact2() {
                 </div>
                 <div className="w-full overflow-hidden">
                   <iframe
-                    src={`https://api.leadconnectorhq.com/widget/form/v8LMVxlC3k5fMrhbqP2F?redirectUrl=${encodeURIComponent(window.location.origin + '/thank-you')}`}
+                    src="https://api.leadconnectorhq.com/widget/form/v8LMVxlC3k5fMrhbqP2F"
                     style={{ width: '100%', height: '602px', border: 'none' }}
                     id="inline-v8LMVxlC3k5fMrhbqP2F"
                     loading="eager"
