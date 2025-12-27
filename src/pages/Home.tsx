@@ -192,11 +192,11 @@ export default function Home() {
 
         <div className="relative w-full px-4 sm:px-6 text-white">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-4 md:mb-6">
-              <div className="text-base sm:text-lg md:text-xl font-bold mb-1">
+            <div className="mt-8 md:mt-12 mb-5 md:mb-7">
+              <div className="text-base sm:text-lg md:text-xl font-extrabold tracking-wide mb-1.5 drop-shadow-lg">
                 UP TO 25% OFF | FREE MEASURE
               </div>
-              <div className="text-xs sm:text-sm md:text-base opacity-90">
+              <div className="text-sm sm:text-base md:text-lg font-medium drop-shadow-md">
                 Sale extended through 1/20/26
               </div>
             </div>
