@@ -27,6 +27,18 @@ import SEODoc from './pages/docs/SEODoc';
 import GeolocationDoc from './pages/docs/GeolocationDoc';
 import DatabaseDoc from './pages/docs/DatabaseDoc';
 
+function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Header />
+      <main className="flex-grow pb-20 md:pb-0">
+        {children}
+      </main>
+      <Footer />
+    </>
+  );
+}
+
 function App() {
   return (
     <Router>
@@ -45,28 +57,18 @@ function App() {
           <Route path="/docs/seo" element={<SEODoc />} />
           <Route path="/docs/geolocation" element={<GeolocationDoc />} />
           <Route path="/docs/database" element={<DatabaseDoc />} />
-          <Route path="*" element={
-            <>
-              <Header />
-              <main className="flex-grow pb-20 md:pb-0">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/process" element={<Process />} />
-                  <Route path="/service-areas" element={<ServiceAreas />} />
-                  <Route path="/gallery" element={<Gallery />} />
-                  <Route path="/testimonials" element={<Testimonials />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/contact-2" element={<Contact2 />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                </Routes>
-              </main>
-              <Footer />
-            </>
-          } />
+          <Route path="/" element={<Layout><Home /></Layout>} />
+          <Route path="/services" element={<Layout><Services /></Layout>} />
+          <Route path="/process" element={<Layout><Process /></Layout>} />
+          <Route path="/service-areas" element={<Layout><ServiceAreas /></Layout>} />
+          <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
+          <Route path="/testimonials" element={<Layout><Testimonials /></Layout>} />
+          <Route path="/faq" element={<Layout><FAQ /></Layout>} />
+          <Route path="/about" element={<Layout><About /></Layout>} />
+          <Route path="/contact" element={<Layout><Contact /></Layout>} />
+          <Route path="/contact-2" element={<Layout><Contact2 /></Layout>} />
+          <Route path="/terms" element={<Layout><Terms /></Layout>} />
+          <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
         </Routes>
       </div>
     </Router>
