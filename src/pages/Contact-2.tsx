@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 import { useSEO } from '../utils/seo';
 import ContactInfo from '../components/ContactInfo';
 
 export default function Contact2() {
+  const navigate = useNavigate();
+
   useSEO({
     title: 'Contact NA Blinds | Free Window Treatment Consultation South Florida',
     description: 'Request a free consultation for custom window treatments. Serving Miami-Dade, Broward, and Palm Beach counties. Call 954-629-1373.',
@@ -22,6 +25,27 @@ export default function Contact2() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin === 'https://api.leadconnectorhq.com') {
+        if (event.data && (
+          event.data.type === 'hsFormCallback' ||
+          event.data.eventName === 'onFormSubmitted' ||
+          event.data === 'form-submitted' ||
+          (typeof event.data === 'string' && event.data.includes('submit'))
+        )) {
+          navigate('/thank-you');
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  }, [navigate]);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -69,7 +93,7 @@ export default function Contact2() {
                 </div>
                 <div className="w-full overflow-hidden">
                   <iframe
-                    src="https://api.leadconnectorhq.com/widget/form/v8LMVxlC3k5fMrhbqP2F"
+                    src={`https://api.leadconnectorhq.com/widget/form/v8LMVxlC3k5fMrhbqP2F?redirectUrl=${encodeURIComponent(window.location.origin + '/thank-you')}`}
                     style={{ width: '100%', height: '602px', border: 'none' }}
                     id="inline-v8LMVxlC3k5fMrhbqP2F"
                     loading="eager"
