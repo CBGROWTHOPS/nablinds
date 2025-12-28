@@ -78,17 +78,30 @@ export default function Services() {
       image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9c109dca1362.png',
     },
     {
-      id: 'roman-custom-drapes',
-      name: 'Roman Shades & Custom Drapes',
-      description: 'Soft textures and tailored finishes for a refined, designer look.',
+      id: 'roman-shades',
+      name: 'Custom Roman Shades',
+      description: 'Elegant fabric folds with tailored finishes for a refined, designer look. Choose from smooth, relaxed, or hobbled fold styles.',
       bestFor: 'Master bedrooms, dining rooms, and formal living spaces.',
       features: [
         'Premium fabric selection',
-        'Custom hardware included',
-        'Smooth or folded styles',
-        'Professional installation',
+        'Multiple fold styles available',
+        'Lined and unlined options',
+        'Custom-measured for perfect fit',
       ],
       image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6e238219f214749c9423.png',
+    },
+    {
+      id: 'custom-drapes',
+      name: 'Custom Drapes',
+      description: 'Soft, flowing fabrics with premium hardware for sophisticated window dressing. Designed for style and function.',
+      bestFor: 'Master bedrooms, formal living rooms, and luxury spaces.',
+      features: [
+        'Thousands of fabrics and patterns',
+        'Premium drapery hardware',
+        'Blackout, thermal, or decorative linings',
+        'Professional installation included',
+      ],
+      image: '/drapery_panels__006.jpg',
     },
     {
       id: 'motorized-smart',
@@ -140,12 +153,20 @@ export default function Services() {
 
   return (
     <div>
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-warm-dark mb-6">
+      <section className="relative min-h-[400px] md:min-h-[500px] flex items-center py-8 md:py-20 px-6">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/roller_shade__011.jpg')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center text-white">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 drop-shadow-lg">
             Custom Window Treatments for South Florida Homes
           </h1>
-          <p className="text-xl text-warm-gray leading-relaxed">
+          <p className="text-xl leading-relaxed drop-shadow-md">
             Professional installation of blinds, shades, and drapes. Serving homeowners across Miami-Dade, Broward, and Palm Beach counties.
           </p>
         </div>
@@ -166,8 +187,17 @@ export default function Services() {
                   <h2 className="text-3xl md:text-4xl font-semibold text-warm-dark mb-4">
                     {service.name}
                   </h2>
-                  <p className="text-lg text-warm-gray mb-4 leading-relaxed">
+                  <p className="text-lg text-warm-gray mb-3 leading-relaxed">
                     {service.description}
+                  </p>
+                  <p className="text-sm text-ocean font-medium mb-4">
+                    {service.id === 'solar-light-filtering' && 'Custom-measured for a precise fit — no gaps.'}
+                    {service.id === 'blackout' && 'Ideal for condos and large South Florida windows.'}
+                    {service.id === 'zebra-dual-layer' && 'Installed cleanly in one visit in most homes.'}
+                    {service.id === 'vertical-blinds' && 'Perfect for condos and sliding door installations.'}
+                    {service.id === 'roman-shades' && 'Custom-measured for perfect, gap-free coverage.'}
+                    {service.id === 'custom-drapes' && 'Professional installation ensures flawless hanging and operation.'}
+                    {service.id === 'motorized-smart' && 'Designed for South Florida homes and high-rise condos.'}
                   </p>
                   <div className="mb-6">
                     <p className="text-sm font-semibold text-ocean mb-1">Best For</p>

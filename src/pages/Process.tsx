@@ -23,13 +23,14 @@ export default function Process() {
     {
       icon: Ruler,
       number: '02',
-      title: 'In-Home Consultation',
-      description: 'We visit your home to assess windows, discuss options, and take precise measurements.',
+      title: 'Professional Measurement & Ordering',
+      description: 'We visit your home to assess windows, discuss options, and take precise measurements. Then we place your custom order.',
       details: [
         'Professional measurement of all windows',
         'Review product options and materials',
         'Provide transparent estimate on-site',
         'Discuss timeline and HOA requirements if applicable',
+        'Place custom order after approval',
       ],
     },
     {
@@ -68,12 +69,13 @@ export default function Process() {
     {
       icon: Wrench,
       number: '06',
-      title: 'Professional Installation',
-      description: 'Licensed installers handle everything with precision and care.',
+      title: 'Clean Expert Installation',
+      description: 'Licensed installers handle everything with precision and care. Most installations completed in one visit.',
       details: [
         'Scheduled at your convenience',
         'Clean, careful installation',
         'Protects walls, floors, and furniture',
+        'Designed to meet common building and condo requirements',
       ],
     },
     {
@@ -111,12 +113,20 @@ export default function Process() {
 
   return (
     <div>
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-warm-dark mb-6">
+      <section className="relative min-h-[400px] md:min-h-[500px] flex items-center py-8 md:py-20 px-6">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/roller_shade__013.jpg')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center text-white">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 drop-shadow-lg">
             Our Window Treatment Installation Process
           </h1>
-          <p className="text-xl text-warm-gray leading-relaxed">
+          <p className="text-xl leading-relaxed drop-shadow-md">
             From consultation to installation, we make the entire experience simple, predictable, and stress-free. Serving homeowners across South Florida.
           </p>
         </div>

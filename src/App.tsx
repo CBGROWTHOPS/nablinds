@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import MobileStickyCTA from './components/MobileStickyCTA';
+import ConsultationPopup from './components/ConsultationPopup';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Process from './pages/Process';
@@ -44,6 +45,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <MobileStickyCTA />
+      <ConsultationPopup />
       <div className="min-h-screen flex flex-col">
         <Routes>
           <Route path="/thank-you" element={<ThankYou />} />

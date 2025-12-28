@@ -136,8 +136,12 @@ export default function Home() {
       description: 'Smooth operation for large openings. Built for high-traffic areas.',
     },
     {
-      name: 'Roman Shades & Custom Drapes',
-      description: 'Soft textures and tailored finishes for a refined, designer look.',
+      name: 'Custom Roman Shades',
+      description: 'Elegant fabric folds with tailored finishes for a refined, designer look.',
+    },
+    {
+      name: 'Custom Drapes',
+      description: 'Soft, flowing fabrics with premium hardware for sophisticated window dressing.',
     },
     {
       name: 'Motorized & Smart Shades',
@@ -221,6 +225,9 @@ export default function Home() {
                 Call 954-629-1373
               </a>
             </div>
+            <p className="mt-4 text-sm md:text-base text-white opacity-90">
+              We handle everything from measurement to install
+            </p>
             <div className="mt-6 md:mt-10 text-center text-sm md:text-lg text-white opacity-90">
               ⭐⭐⭐⭐⭐ 4.8 average rating from 120+ South Florida customers
             </div>
@@ -306,7 +313,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-12">
             {process.map((step) => (
-              <div key={step.number}>
+              <div key={step.number} className="text-center md:text-left">
                 <div className="text-6xl font-bold text-ocean text-opacity-20 mb-4">
                   {step.number}
                 </div>
@@ -321,8 +328,11 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center space-y-2">
-            <p className="text-warm-gray"><strong>From consultation to installation: typically 7-10 days</strong></p>
+            <p className="text-warm-gray"><strong>Most projects completed within 7–10 days</strong></p>
             <p className="text-warm-gray">Same-week consultations available</p>
+            <p className="text-sm text-ocean font-medium mt-2">
+              Trusted by South Florida condo owners
+            </p>
           </div>
         </div>
       </section>
@@ -361,6 +371,9 @@ export default function Home() {
             </h2>
             <p className="text-lg text-warm-gray max-w-3xl mx-auto">
               Control light, reduce heat, increase privacy, and elevate your home's style.
+            </p>
+            <p className="text-sm text-ocean font-medium mt-3">
+              Experienced with condo and high-rise installations
             </p>
           </div>
 

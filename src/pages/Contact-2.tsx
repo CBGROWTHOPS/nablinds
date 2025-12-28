@@ -73,8 +73,11 @@ export default function Contact2() {
           <h1 className="text-5xl md:text-6xl font-semibold text-warm-dark mb-6">
             Get Started Today
           </h1>
-          <p className="text-xl text-warm-gray leading-relaxed">
+          <p className="text-xl text-warm-gray leading-relaxed mb-4">
             Schedule your free in-home consultation. Same-week appointments available.
+          </p>
+          <p className="text-base text-ocean font-medium">
+            You don't need to know what you want yet. We bring samples and guide you through the options.
           </p>
         </div>
       </section>
@@ -87,9 +90,12 @@ export default function Contact2() {
             <div className="overflow-hidden" id="consultation-form">
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="px-4 sm:px-6 pt-4 sm:pt-6 pb-3 sm:pb-4">
-                  <h2 className="text-lg sm:text-2xl font-semibold text-warm-dark whitespace-nowrap">
+                  <h2 className="text-lg sm:text-2xl font-semibold text-warm-dark whitespace-nowrap mb-2">
                     Request a Free Consultation
                   </h2>
+                  <p className="text-sm text-warm-gray">
+                    We bring samples and guide you through the options
+                  </p>
                 </div>
                 <div className="w-full overflow-hidden">
                   <iframe

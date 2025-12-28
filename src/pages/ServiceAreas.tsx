@@ -71,12 +71,20 @@ export default function ServiceAreas() {
 
   return (
     <div>
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-warm-dark mb-6">
+      <section className="relative min-h-[400px] md:min-h-[500px] flex items-center py-8 md:py-20 px-6">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/roller_shade__012.jpg')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center text-white">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 drop-shadow-lg">
             Window Treatment Services Across South Florida
           </h1>
-          <p className="text-xl text-warm-gray leading-relaxed">
+          <p className="text-xl leading-relaxed drop-shadow-md">
             Professional window treatment installation for homes, condos, and high-rises. Trusted by South Florida homeowners since 2013.
           </p>
         </div>

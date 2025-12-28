@@ -47,6 +47,9 @@ export default function CTASection({
             <span>Call 954-629-1373</span>
           </a>
         </div>
+        <p className="mt-4 text-sm sm:text-base text-warm-gray">
+          No obligation. No pressure. Professionally measured and installed.
+        </p>
       </div>
     </section>
   );

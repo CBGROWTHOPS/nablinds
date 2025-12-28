@@ -69,12 +69,20 @@ export default function About() {
 
   return (
     <div>
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-semibold text-warm-dark mb-6">
+      <section className="relative min-h-[400px] md:min-h-[500px] flex items-center py-8 md:py-20 px-6">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/roller_shade__010.jpg')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center text-white">
+          <h1 className="text-5xl md:text-6xl font-semibold mb-6 drop-shadow-lg">
             About NA Blinds
           </h1>
-          <p className="text-xl text-warm-gray leading-relaxed">
+          <p className="text-xl leading-relaxed drop-shadow-md">
             South Florida's trusted choice for custom window treatments since 2014.
           </p>
         </div>
