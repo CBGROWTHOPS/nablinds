@@ -89,7 +89,7 @@ export default function FAQ() {
     <div>
       <section className="py-20 px-6 bg-soft-sand">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-semibold text-warm-dark mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-warm-dark mb-6">
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-warm-gray leading-relaxed">
