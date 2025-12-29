@@ -144,6 +144,10 @@ export default function Home() {
       description: 'Soft, flowing fabrics with premium hardware for sophisticated window dressing.',
     },
     {
+      name: 'Shutters',
+      description: 'Solid, low-maintenance shutters offering lasting durability, privacy, and precise light control.',
+    },
+    {
       name: 'Motorized & Smart Shades',
       description: 'Control shades by remote, app, or voice. Automate for comfort and efficiency.',
     },
@@ -313,40 +317,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
-              Simple Process. Zero Hassle.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {process.map((step) => (
-              <div key={step.number} className="text-center md:text-left">
-                <div className="text-6xl font-bold text-ocean text-opacity-20 mb-4">
-                  {step.number}
-                </div>
-                <h3 className="text-2xl font-semibold text-warm-dark mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center space-y-2">
-            <p className="text-warm-gray"><strong>Most projects completed within 7–10 days</strong></p>
-            <p className="text-warm-gray">Same-week consultations available</p>
-            <p className="text-sm text-ocean font-medium mt-2">
-              Trusted by South Florida condo owners
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 px-6 bg-warm-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -381,6 +351,40 @@ export default function Home() {
             >
               View All Products
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-soft-sand">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+              Simple Process. Zero Hassle.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {process.map((step) => (
+              <div key={step.number} className="text-center md:text-left">
+                <div className="text-6xl font-bold text-ocean text-opacity-20 mb-4">
+                  {step.number}
+                </div>
+                <h3 className="text-2xl font-semibold text-warm-dark mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center space-y-2">
+            <p className="text-warm-gray"><strong>Most projects completed within 7–10 days</strong></p>
+            <p className="text-warm-gray">Same-week consultations available</p>
+            <p className="text-sm text-ocean font-medium mt-2">
+              Trusted by South Florida condo owners
+            </p>
           </div>
         </div>
       </section>
