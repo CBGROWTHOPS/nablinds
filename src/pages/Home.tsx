@@ -85,7 +85,7 @@ export default function Home() {
   const process = [
     {
       number: '01',
-      title: 'Free Consultation',
+      title: 'Free Estimate',
       description: 'No-pressure visit to review your needs, show options, and measure accurately.',
     },
     {
@@ -230,7 +230,7 @@ export default function Home() {
                 to="/contact-2#consultation-form"
                 className="bg-ocean text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all text-center text-sm sm:text-base"
               >
-                Request Free Consultation
+                Request Free Estimate
               </Link>
               <a
                 href="tel:954-629-1373"

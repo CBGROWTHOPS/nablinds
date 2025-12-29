@@ -93,7 +93,7 @@ export default function Contact2() {
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="px-4 sm:px-6 pt-4 sm:pt-6 pb-3 sm:pb-4">
                   <h2 className="text-lg sm:text-2xl font-semibold text-warm-dark whitespace-nowrap mb-2">
-                    Request a Free Consultation
+                    Request a Free Estimate
                   </h2>
                   <p className="text-sm text-warm-gray">
                     We bring samples and guide you through the options

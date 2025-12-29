@@ -37,7 +37,7 @@ export default function CTASection({
             className="bg-ocean text-white px-6 sm:px-8 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-opacity-90 active:bg-opacity-80 transition-all flex items-center justify-center gap-2 touch-manipulation shadow-sm"
           >
             <Calendar className="w-5 h-5 flex-shrink-0" />
-            <span>Request Free Consultation</span>
+            <span>Request Free Estimate</span>
           </Link>
           <a
             href="tel:954-629-1373"

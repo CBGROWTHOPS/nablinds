@@ -70,7 +70,7 @@ export default function MobileStickyCTA() {
           }}
           className="flex-[2] bg-ocean text-white px-4 py-3 rounded-lg font-semibold text-sm hover:bg-ocean/90 active:bg-ocean/90 transition-all touch-manipulation"
         >
-          Request Free Consultation
+          Request Free Estimate
         </button>
       </div>
     </div>

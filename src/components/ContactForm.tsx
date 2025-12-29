@@ -43,7 +43,7 @@ const ContactForm = memo(() => {
     <div>
       <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
         <h2 className="text-2xl font-semibold text-warm-dark mb-6">
-          Request a Free Consultation
+          Request a Free Estimate
         </h2>
         <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
           <div>
@@ -127,7 +127,7 @@ const ContactForm = memo(() => {
             className="w-full bg-ocean text-white px-8 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-opacity-90 active:bg-opacity-80 transition-all flex items-center justify-center gap-2 touch-manipulation shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Send className="w-5 h-5 flex-shrink-0" />
-            {isSubmitting ? 'Submitting...' : 'Request Consultation'}
+            {isSubmitting ? 'Submitting...' : 'Request Estimate'}
           </button>
 
           <div className="text-center text-sm md:text-base text-warm-gray pt-2">

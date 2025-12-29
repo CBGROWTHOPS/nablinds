@@ -227,7 +227,7 @@ export default function Services() {
                     to="/contact-2#consultation-form"
                     className="inline-block bg-ocean text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
                   >
-                    Request Consultation
+                    Request Estimate
                   </Link>
                 </div>
               </div>
