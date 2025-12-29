@@ -145,7 +145,7 @@ export default function Home() {
     },
     {
       name: 'Shutters',
-      description: 'Solid, low-maintenance shutters offering lasting durability, privacy, and precise light control.',
+      description: 'Durable, low-maintenance shutters that provide privacy, light control, and a timeless finished look.',
     },
     {
       name: 'Motorized & Smart Shades',
@@ -324,10 +324,7 @@ export default function Home() {
               Custom Solutions for Every Window
             </h2>
             <p className="text-lg text-warm-gray max-w-3xl mx-auto">
-              Control light, reduce heat, increase privacy, and elevate your home's style.
-            </p>
-            <p className="text-sm text-ocean font-medium mt-3">
-              Experienced with condo and high-rise installations
+              Control light, reduce heat, increase privacy, and elevate your home's style. Experienced with condo and high-rise installations.
             </p>
           </div>
 
