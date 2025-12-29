@@ -181,7 +181,7 @@ export default function Home() {
       image: 'https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9ce352ca1361.png',
     },
     {
-      title: 'Custom Drapery Panels',
+      title: 'Drapery Panels',
       location: 'Palm Beach, Master Bedroom',
       image: '/drapery_panels__015.jpg',
     },
