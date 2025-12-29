@@ -7,10 +7,11 @@ export default function ConsultationPopup() {
   const [hasShown, setHasShown] = useState(false);
   const location = useLocation();
 
-  const isThankYouPage = location.pathname === '/thank-you';
+  const excludedPages = ['/thank-you', '/contact', '/contact-2'].includes(location.pathname) ||
+                        location.pathname.startsWith('/docs');
 
   useEffect(() => {
-    if (isThankYouPage || hasShown) return;
+    if (excludedPages || hasShown) return;
 
     const timeTimeout = setTimeout(() => {
       if (!hasShown) {
@@ -22,13 +23,13 @@ export default function ConsultationPopup() {
     return () => {
       clearTimeout(timeTimeout);
     };
-  }, [hasShown, isThankYouPage]);
+  }, [hasShown, excludedPages]);
 
   const handleClose = () => {
     setIsVisible(false);
   };
 
-  if (!isVisible || isThankYouPage) return null;
+  if (!isVisible || excludedPages) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
