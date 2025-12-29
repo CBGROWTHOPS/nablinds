@@ -75,7 +75,7 @@ export default function ServiceAreas() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/roman_shade__003.jpg')`,
+            backgroundImage: `url('/nablinds_van.png')`,
           }}
         >
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
