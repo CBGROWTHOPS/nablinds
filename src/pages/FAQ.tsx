@@ -153,7 +153,7 @@ export default function FAQ() {
 
       <CTASection
         title="Ready to Get Started?"
-        subtitle="Schedule your free consultation and let's discuss your project. No obligation. No pressure. Professionally measured and installed."
+        subtitle="Schedule your free consultation and let's discuss your project."
       />
     </div>
   );

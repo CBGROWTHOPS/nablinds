@@ -223,7 +223,7 @@ export default function About() {
 
       <CTASection
         title="Ready to Work With Us?"
-        subtitle="Experience the NA Blinds difference. Schedule your free consultation today. No obligation. No pressure. Professionally measured and installed."
+        subtitle="Experience the NA Blinds difference. Schedule your free consultation today."
       />
     </div>
   );

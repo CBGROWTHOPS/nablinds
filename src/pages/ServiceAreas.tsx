@@ -211,7 +211,7 @@ export default function ServiceAreas() {
 
       <CTASection
         title="Ready to Schedule Your Consultation?"
-        subtitle="We serve homeowners throughout Miami-Dade, Broward, and Palm Beach counties. No obligation. No pressure. Professionally measured and installed."
+        subtitle="We serve homeowners throughout Miami-Dade, Broward, and Palm Beach counties."
       />
     </div>
   );
