@@ -379,12 +379,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-12 text-center space-y-2">
-            <p className="text-warm-gray"><strong>Most projects completed within 7–10 days</strong></p>
-            <p className="text-warm-gray">Same-week consultations available</p>
-            <p className="text-sm text-ocean font-medium mt-2">
-              Trusted by South Florida condo owners
-            </p>
+          <div className="mt-8 text-center">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-warm-gray">
+              <span><strong>Most projects completed within 7–10 days</strong></span>
+              <span className="hidden sm:inline text-warm-gray/40">•</span>
+              <span>Same-week consultations available</span>
+              <span className="hidden sm:inline text-warm-gray/40">•</span>
+              <span>Trusted by South Florida condo owners</span>
+            </div>
           </div>
         </div>
       </section>
