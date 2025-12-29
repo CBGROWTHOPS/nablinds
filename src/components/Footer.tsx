@@ -7,7 +7,8 @@ export default function Footer() {
     { name: 'Blackout Shades', path: '/services#blackout' },
     { name: 'Zebra & Dual-Layer Shades', path: '/services#zebra-dual-layer' },
     { name: 'Vertical Blinds', path: '/services#vertical-blinds' },
-    { name: 'Roman Shades & Custom Drapes', path: '/services#roman-custom-drapes' },
+    { name: 'Roman Shades', path: '/services#roman-shades' },
+    { name: 'Custom Drapes', path: '/services#custom-drapes' },
     { name: 'Motorized & Smart Shades', path: '/services#motorized-smart' },
   ];
 
