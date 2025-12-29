@@ -190,9 +190,9 @@ export default function Home() {
       image: '/drapery_panels__015.jpg',
     },
     {
-      title: 'Custom Drapes',
-      location: 'Fort Lauderdale, Living Room',
-      image: '/drapery_panels__012.jpg',
+      title: 'Custom Shutters',
+      location: 'Boca Raton, Living Room',
+      image: '/shutters__001.jpg',
     },
   ];
 
