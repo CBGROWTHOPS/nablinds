@@ -132,6 +132,10 @@ export default function Home() {
       description: 'Adjust between sheer and opaque instantly. Modern style with flexible control.',
     },
     {
+      name: 'Cellular (Honeycomb) Shades',
+      description: 'Energy-efficient shades designed to insulate against heat while providing privacy and a clean, modern look.',
+    },
+    {
       name: 'Vertical Blinds for Sliding Doors',
       description: 'Smooth operation for large openings. Built for high-traffic areas.',
     },
