@@ -12,31 +12,15 @@ export default function ConsultationPopup() {
   useEffect(() => {
     if (isThankYouPage || hasShown) return;
 
-    let scrollTimeout: NodeJS.Timeout;
-    let timeTimeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-
-      if (scrollPercentage >= 80 && !hasShown) {
-        setIsVisible(true);
-        setHasShown(true);
-      }
-    };
-
-    timeTimeout = setTimeout(() => {
+    const timeTimeout = setTimeout(() => {
       if (!hasShown) {
         setIsVisible(true);
         setHasShown(true);
       }
     }, 120000);
 
-    window.addEventListener('scroll', handleScroll);
-
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      if (timeTimeout) clearTimeout(timeTimeout);
+      clearTimeout(timeTimeout);
     };
   }, [hasShown, isThankYouPage]);
 
