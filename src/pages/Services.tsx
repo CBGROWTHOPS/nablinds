@@ -88,7 +88,7 @@ export default function Services() {
         'Lined and unlined options',
         'Custom-measured for perfect fit',
       ],
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6e238219f214749c9423.png',
+      image: '/roman_shade__001.jpg',
     },
     {
       id: 'custom-drapes',
