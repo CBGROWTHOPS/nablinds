@@ -73,11 +73,8 @@ export default function Contact2() {
           <h1 className="text-5xl md:text-6xl font-semibold text-warm-dark mb-6">
             Get Started Today
           </h1>
-          <p className="text-xl text-warm-gray leading-relaxed mb-4">
-            Schedule your free in-home consultation. Same-week appointments available.
-          </p>
-          <p className="text-base text-ocean font-medium">
-            You don't need to know what you want yet. We bring samples and guide you through the options.
+          <p className="text-xl text-warm-gray leading-relaxed">
+            Schedule your free in-home consultation. Same-week appointments available. You don't need to know what you want yet. We bring samples and guide you through the options.
           </p>
         </div>
       </section>
