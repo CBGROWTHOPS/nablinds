@@ -68,12 +68,17 @@ export default function Contact2() {
 
   return (
     <div>
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-semibold text-warm-dark mb-6">
+      <section className="relative py-32 px-6 bg-soft-sand overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/roller_shade__012.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-warm-dark/70" />
+        <div className="relative max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-semibold text-white mb-6 drop-shadow-2xl">
             Get Started Today
           </h1>
-          <p className="text-xl text-warm-gray leading-relaxed">
+          <p className="text-xl text-white leading-relaxed drop-shadow-xl">
             Schedule your free in-home consultation. Same-week appointments available. You don't need to know what you want yet. We bring samples and guide you through the options.
           </p>
         </div>
