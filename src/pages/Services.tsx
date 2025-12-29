@@ -264,7 +264,7 @@ export default function Services() {
 
       <CTASection
         title="Not Sure Which Product Is Right?"
-        subtitle="Schedule a free consultation. We'll help you choose the best solution for each room."
+        subtitle="Schedule a free consultation. We'll help you choose the best solution for each room. No obligation. No pressure. Professionally measured and installed."
       />
     </div>
   );

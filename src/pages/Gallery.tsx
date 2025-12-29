@@ -111,7 +111,7 @@ export default function Gallery() {
 
       <CTASection
         title="Ready to Transform Your Space?"
-        subtitle="Schedule your free consultation. We'll visit your home and create a custom solution."
+        subtitle="Schedule your free consultation. We'll visit your home and create a custom solution. No obligation. No pressure. Professionally measured and installed."
       />
     </div>
   );

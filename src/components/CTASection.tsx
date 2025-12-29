@@ -9,7 +9,7 @@ interface CTASectionProps {
 
 export default function CTASection({
   title = 'Ready to Transform Your Space?',
-  subtitle = 'Schedule your free in-home consultation today. Same-week appointments available.',
+  subtitle = 'Schedule your free in-home consultation today. Same-week appointments available. No obligation. No pressure. Professionally measured and installed.',
 }: CTASectionProps) {
   const location = useLocation();
   const isOnContactPage = location.pathname === '/contact' || location.pathname === '/contact-2';
@@ -47,9 +47,6 @@ export default function CTASection({
             <span>Call 954-629-1373</span>
           </a>
         </div>
-        <p className="mt-4 text-sm sm:text-base text-warm-gray">
-          No obligation. No pressure. Professionally measured and installed.
-        </p>
       </div>
     </section>
   );
