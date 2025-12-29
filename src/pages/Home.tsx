@@ -168,7 +168,7 @@ export default function Home() {
     {
       title: 'Room-Darkening Roman Shade',
       location: 'Boca Raton, Bedroom',
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6e238219f214749c9423.png',
+      image: '/roman_shade__006.jpg',
     },
     {
       title: 'Vertical Blinds',
@@ -179,6 +179,16 @@ export default function Home() {
       title: 'Solar Roller Shades',
       location: 'Brickell High-Rise, Office',
       image: 'https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9ce352ca1361.png',
+    },
+    {
+      title: 'Custom Drapery Panels',
+      location: 'Palm Beach, Master Bedroom',
+      image: '/drapery_panels__015.jpg',
+    },
+    {
+      title: 'Elegant Custom Drapes',
+      location: 'Fort Lauderdale, Living Room',
+      image: '/drapery_panels__012.jpg',
     },
   ];
 
@@ -341,32 +351,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
-              Why Homeowners Choose Us
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {benefits.map((benefit) => (
-              <div key={benefit.title} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-ocean bg-opacity-10 rounded-full mb-6">
-                  <benefit.icon className="w-8 h-8 text-ocean" />
-                </div>
-                <h3 className="text-xl font-semibold text-warm-dark mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
               Custom Solutions for Every Window
             </h2>
             <p className="text-lg text-warm-gray max-w-3xl mx-auto">
@@ -401,7 +385,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 px-6 bg-soft-sand">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
@@ -412,7 +396,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             {galleryProjects.map((project, index) => (
               <div
                 key={index}
@@ -447,7 +431,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-warm-white">
+      <section className="py-20 px-6 bg-warm-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+              Why Homeowners Choose Us
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {benefits.map((benefit) => (
+              <div key={benefit.title} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-ocean bg-opacity-10 rounded-full mb-6">
+                  <benefit.icon className="w-8 h-8 text-ocean" />
+                </div>
+                <h3 className="text-xl font-semibold text-warm-dark mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-soft-sand">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex justify-center gap-8 mb-8">

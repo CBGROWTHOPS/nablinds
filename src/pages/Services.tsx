@@ -183,6 +183,15 @@ export default function Services() {
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
                 }`}
               >
+                <div className={index % 2 === 1 ? 'md:order-1' : ''}>
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
                 <div className={index % 2 === 1 ? 'md:order-2' : ''}>
                   <h2 className="text-3xl md:text-4xl font-semibold text-warm-dark mb-4">
                     {service.name}
@@ -220,15 +229,6 @@ export default function Services() {
                   >
                     Request Consultation
                   </Link>
-                </div>
-                <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                  <div className="rounded-xl overflow-hidden shadow-md">
-                    <img
-                      src={service.image}
-                      alt={service.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
                 </div>
               </div>
             ))}

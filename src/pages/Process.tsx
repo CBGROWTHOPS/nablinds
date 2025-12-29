@@ -34,25 +34,25 @@ export default function Process() {
       ],
     },
     {
-      icon: FileText,
-      number: '03',
-      title: 'Transparent Quote',
-      description: 'Clear estimate based on window size, product choice, and installation scope. No hidden fees.',
-      details: [
-        'Itemized breakdown of materials and labor',
-        'Warranty information included',
-        'No obligation to proceed',
-      ],
-    },
-    {
       icon: Palette,
-      number: '04',
+      number: '03',
       title: 'Design Selection',
       description: 'Choose from thousands of fabrics, colors, and styles. We guide you through every option.',
       details: [
         'Material samples provided',
         'Expert recommendations for each room',
         'HOA-compliant options for condos',
+      ],
+    },
+    {
+      icon: FileText,
+      number: '04',
+      title: 'Transparent Quote',
+      description: 'Clear estimate based on window size, product choice, and installation scope. No hidden fees.',
+      details: [
+        'Itemized breakdown of materials and labor',
+        'Warranty information included',
+        'No obligation to proceed',
       ],
     },
     {
