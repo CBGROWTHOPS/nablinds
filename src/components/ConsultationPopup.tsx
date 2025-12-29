@@ -18,7 +18,7 @@ export default function ConsultationPopup() {
     const handleScroll = () => {
       const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
-      if (scrollPercentage >= 60 && !hasShown) {
+      if (scrollPercentage >= 80 && !hasShown) {
         setIsVisible(true);
         setHasShown(true);
       }
@@ -29,7 +29,7 @@ export default function ConsultationPopup() {
         setIsVisible(true);
         setHasShown(true);
       }
-    }, 100000);
+    }, 120000);
 
     window.addEventListener('scroll', handleScroll);
 
