@@ -7,6 +7,7 @@ const shouldHideStickyBar = (pathname: string): boolean => {
   const excludedPages = [
     '/contact',
     '/contact-2',
+    '/consultation',
     '/thank-you',
     '/thank-you-facebook',
   ];
