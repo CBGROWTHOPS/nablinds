@@ -1,0 +1,13 @@
+/* TEAM */
+Website: NA Blinds & Shutters
+Location: Fort Lauderdale, Florida
+Contact: info@nablinds.com
+
+/* SITE */
+Last update: 2025/12/30
+Standards: HTML5, CSS3, JavaScript
+Components: React, TypeScript, Vite
+Software: Visual Studio Code
+
+/* THANKS */
+To all our customers in Broward County for their continued trust and support.
