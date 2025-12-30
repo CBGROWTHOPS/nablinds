@@ -1,8 +1,28 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/((?!robots\\.txt|sitemap\\.xml|humans\\.txt|llm\\.txt|.*\\.(jpg|png|ico)).*)",
-      "destination": "/index.html"
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/humans.txt",
+      "dest": "/humans.txt"
+    },
+    {
+      "src": "/llm.txt",
+      "dest": "/llm.txt"
+    },
+    {
+      "src": "/(.*\\.(jpg|png|ico|css|js))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
