@@ -1,0 +1,77 @@
+interface ConsultationWebhookPayload {
+  first_name: string;
+  phone: string;
+  email: string;
+  service_type: string;
+  project_location: string;
+  installation_timeline: string;
+  property_type: string;
+  project_priority: string;
+  source: string;
+  form_name: string;
+  page_url: string;
+}
+
+function formatPhoneE164(phone: string): string {
+  const digitsOnly = phone.replace(/\D/g, '');
+
+  if (digitsOnly.length === 10) {
+    return `+1${digitsOnly}`;
+  }
+
+  if (digitsOnly.length === 11 && digitsOnly.startsWith('1')) {
+    return `+${digitsOnly}`;
+  }
+
+  return digitsOnly;
+}
+
+export async function submitConsultationToWebhook(data: {
+  firstName: string;
+  phone: string;
+  email: string;
+  serviceType: string;
+  projectLocation: string;
+  installationTimeline: string;
+  propertyType: string;
+  projectPriority: string;
+}): Promise<boolean> {
+  const formattedPhone = formatPhoneE164(data.phone);
+
+  const payload: ConsultationWebhookPayload = {
+    first_name: data.firstName,
+    phone: formattedPhone,
+    email: data.email || '',
+    service_type: data.serviceType,
+    project_location: data.projectLocation,
+    installation_timeline: data.installationTimeline,
+    property_type: data.propertyType,
+    project_priority: data.projectPriority,
+    source: 'Google Ads → Consultation Funnel',
+    form_name: 'Consultation Funnel',
+    page_url: window.location.href,
+  };
+
+  try {
+    const response = await fetch(
+      'https://services.leadconnectorhq.com/hooks/pKgTEQf1DpuyRDPhTsOA/webhook-trigger/aVm43sDIMgzlnSoyZT6N',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    if (!response.ok) {
+      console.error('Webhook submission failed:', response.status, response.statusText);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Webhook submission error:', error);
+    return false;
+  }
+}

@@ -17,6 +17,7 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import ThankYou from './pages/ThankYou';
 import Contact2 from './pages/Contact-2';
+import Consultation from './pages/Consultation';
 import DocsHub from './pages/docs/DocsHub';
 import ClarityDoc from './pages/docs/ClarityDoc';
 import AnalyticsDoc from './pages/docs/AnalyticsDoc';
@@ -48,6 +49,7 @@ function App() {
       <ConsultationPopup />
       <div className="min-h-screen flex flex-col">
         <Routes>
+          <Route path="/consultation" element={<Consultation />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/docs" element={<DocsHub />} />
           <Route path="/docs/clarity" element={<ClarityDoc />} />
