@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { submitConsultationToWebhook } from '../utils/consultationWebhook';
 
@@ -29,6 +29,10 @@ export default function Consultation() {
     phone: '',
     email: '',
   });
+
+  useEffect(() => {
+    document.title = 'Free Consultation | NA Blinds';
+  }, []);
 
   const handleOptionSelect = (field: keyof FormData, value: string) => {
     setFormData({ ...formData, [field]: value });
