@@ -23,6 +23,7 @@ import ClarityDoc from './pages/docs/ClarityDoc';
 import AnalyticsDoc from './pages/docs/AnalyticsDoc';
 import WebhookDoc from './pages/docs/WebhookDoc';
 import ContactFormDoc from './pages/docs/ContactFormDoc';
+import ConsultationFunnelDoc from './pages/docs/ConsultationFunnelDoc';
 import MobileStickyCTADoc from './pages/docs/MobileStickyCTADoc';
 import ThankYouDoc from './pages/docs/ThankYouDoc';
 import SEODoc from './pages/docs/SEODoc';
@@ -56,6 +57,7 @@ function App() {
           <Route path="/docs/analytics" element={<AnalyticsDoc />} />
           <Route path="/docs/webhook" element={<WebhookDoc />} />
           <Route path="/docs/contact-form" element={<ContactFormDoc />} />
+          <Route path="/docs/consultation-funnel" element={<ConsultationFunnelDoc />} />
           <Route path="/docs/mobile-sticky-cta" element={<MobileStickyCTADoc />} />
           <Route path="/docs/thank-you" element={<ThankYouDoc />} />
           <Route path="/docs/seo" element={<SEODoc />} />

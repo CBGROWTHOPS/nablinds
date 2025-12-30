@@ -10,7 +10,8 @@ import {
   Database,
   Home,
   Smartphone,
-  MapPin
+  MapPin,
+  ListChecks
 } from 'lucide-react';
 import { trackPageView } from '../../utils/tracking';
 
@@ -46,6 +47,13 @@ export default function DocsHub() {
       icon: Mail,
       link: '/docs/contact-form',
       color: 'bg-purple-500',
+    },
+    {
+      title: 'Consultation Funnel',
+      description: 'Multi-step lead qualification form optimized for paid traffic',
+      icon: ListChecks,
+      link: '/docs/consultation-funnel',
+      color: 'bg-violet-500',
     },
     {
       title: 'Mobile Sticky CTA Bar',
