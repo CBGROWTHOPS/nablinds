@@ -1,1 +1,7 @@
+/robots.txt /robots.txt 200
+/sitemap.xml /sitemap.xml 200
+/humans.txt /humans.txt 200
+/llm.txt /llm.txt 200
+/*.jpg /*.jpg 200
+/*.png /*.png 200
 /* /index.html 200

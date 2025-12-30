@@ -5,9 +5,31 @@ Contact: info@nablinds.com
 
 /* SITE */
 Last update: 2025/12/30
-Standards: HTML5, CSS3, JavaScript
-Components: React, TypeScript, Vite
-Software: Visual Studio Code
+Standards: HTML5, CSS3, JavaScript ES6+
+Language: TypeScript 5.5+
+Doctype: HTML5
+IDE: Visual Studio Code
+
+/* TECHNOLOGY STACK */
+Frontend Framework: React 18.3
+Build Tool: Vite 5.4
+Styling: Tailwind CSS 3.4
+Routing: React Router DOM 7.11
+Icons: Lucide React 0.344
+Type Safety: TypeScript with strict mode
+Linting: ESLint 9.9
+Backend: Supabase (PostgreSQL database, serverless functions)
+Hosting: Vercel
+Version Control: Git
+
+/* LIBRARIES & TOOLS */
+Package Manager: npm
+CSS Framework: Tailwind CSS with PostCSS & Autoprefixer
+State Management: React Hooks (useState, useEffect)
+Form Handling: Native form validation with geolocation
+Analytics: Google Analytics 4, Microsoft Clarity
+SEO: React Helmet Async for meta tags
 
 /* THANKS */
 To all our customers in Broward County for their continued trust and support.
+To the open-source community for creating amazing tools and frameworks.
