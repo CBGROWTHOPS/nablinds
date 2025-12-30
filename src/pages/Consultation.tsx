@@ -13,6 +13,7 @@ interface FormData {
   firstName: string;
   phone: string;
   email: string;
+  priorityFlag?: string;
 }
 
 export default function Consultation() {
@@ -35,7 +36,11 @@ export default function Consultation() {
   }, []);
 
   const handleOptionSelect = (field: keyof FormData, value: string) => {
-    setFormData({ ...formData, [field]: value });
+    const updatedData = { ...formData, [field]: value };
+    if (field === 'installationTimeline' && value === 'As soon as possible') {
+      updatedData.priorityFlag = 'high';
+    }
+    setFormData(updatedData);
     setTimeout(() => {
       if (currentStep < 6) {
         setCurrentStep((currentStep + 1) as Step);
@@ -66,6 +71,7 @@ export default function Consultation() {
       installationTimeline: formData.installationTimeline,
       propertyType: formData.propertyType,
       projectPriority: formData.projectPriority,
+      priorityFlag: formData.priorityFlag,
     });
 
     if (success) {
@@ -98,7 +104,7 @@ export default function Consultation() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 flex flex-col">
       <div className="bg-white border-b border-gray-200 py-4 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <Link to="/">
             <img
               src="/nablinds_logo_transparent_black.png"
@@ -145,7 +151,7 @@ export default function Consultation() {
             {currentStep === 1 && (
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-warm-dark mb-2">
-                  Blinds Installation in Fort Lauderdale
+                  Blinds Installation in South Florida
                 </h1>
                 <p className="text-gray-600 mb-6">
                   Answer a few quick questions to request a consultation.
@@ -158,7 +164,7 @@ export default function Consultation() {
                     'Blinds',
                     'Window Shades',
                     'Drapes',
-                    'Motorized Blinds',
+                    'Shutters',
                     'Not sure yet',
                   ].map((option) => (
                     <button
@@ -175,9 +181,12 @@ export default function Consultation() {
 
             {currentStep === 2 && (
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-6">
-                  Where is the project located?
+                <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-2">
+                  Where is your South Florida project located?
                 </h2>
+                <p className="text-gray-600 text-sm mb-6">
+                  We serve residential and commercial properties throughout South Florida
+                </p>
                 <input
                   type="text"
                   value={formData.projectLocation}
@@ -344,7 +353,7 @@ export default function Consultation() {
 
       <footer className="bg-white border-t border-gray-200 py-4 px-4 text-center text-sm text-gray-600">
         <p>
-          NA Blinds & Shutters · Fort Lauderdale, FL ·{' '}
+          NA Blinds · South Florida ·{' '}
           <Link to="/privacy" className="text-ocean hover:underline">
             Privacy Policy
           </Link>

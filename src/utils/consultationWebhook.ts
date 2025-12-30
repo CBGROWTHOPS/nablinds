@@ -7,6 +7,7 @@ interface ConsultationWebhookPayload {
   installation_timeline: string;
   property_type: string;
   project_priority: string;
+  priority_flag?: string;
   source: string;
   form_name: string;
   page_url: string;
@@ -35,6 +36,7 @@ export async function submitConsultationToWebhook(data: {
   installationTimeline: string;
   propertyType: string;
   projectPriority: string;
+  priorityFlag?: string;
 }): Promise<boolean> {
   const formattedPhone = formatPhoneE164(data.phone);
 
@@ -47,6 +49,7 @@ export async function submitConsultationToWebhook(data: {
     installation_timeline: data.installationTimeline,
     property_type: data.propertyType,
     project_priority: data.projectPriority,
+    ...(data.priorityFlag && { priority_flag: data.priorityFlag }),
     source: 'Google Ads → Consultation Funnel',
     form_name: 'Consultation Funnel',
     page_url: window.location.href,
