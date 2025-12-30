@@ -145,6 +145,9 @@ export default function Consultation() {
             <p className="text-center text-sm text-gray-600">
               Step {currentStep} of 6
             </p>
+            <p className="text-center text-xs text-gray-500 mt-2">
+              Takes about 30 seconds · A local installer will follow up
+            </p>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
