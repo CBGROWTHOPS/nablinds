@@ -149,7 +149,7 @@ export default function Consultation() {
               Takes about 30 seconds · A local installer will follow up
             </p>
             <p className="text-center text-xs text-gray-500 mt-1">
-              🇺🇸 Made & Manufactured in the USA
+              🇺🇸 Made in USA
             </p>
           </div>
 
