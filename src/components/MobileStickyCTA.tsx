@@ -9,6 +9,7 @@ const shouldHideStickyBar = (pathname: string): boolean => {
     '/contact-2',
     '/consultation',
     '/thank-you',
+    '/thank-you-consultation',
     '/thank-you-facebook',
   ];
 

@@ -75,7 +75,7 @@ export default function Consultation() {
     });
 
     if (success) {
-      navigate('/thank-you');
+      navigate('/thank-you-consultation');
     } else {
       alert('Something went wrong. Please try again or call us at 954-629-1373.');
       setIsSubmitting(false);

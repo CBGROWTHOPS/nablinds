@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import ThankYou from './pages/ThankYou';
+import ThankYouConsultation from './pages/ThankYouConsultation';
 import Contact2 from './pages/Contact-2';
 import Consultation from './pages/Consultation';
 import DocsHub from './pages/docs/DocsHub';
@@ -52,6 +53,7 @@ function App() {
         <Routes>
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/thank-you-consultation" element={<ThankYouConsultation />} />
           <Route path="/docs" element={<DocsHub />} />
           <Route path="/docs/clarity" element={<ClarityDoc />} />
           <Route path="/docs/analytics" element={<AnalyticsDoc />} />
