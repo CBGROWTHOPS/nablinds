@@ -259,7 +259,7 @@ export default function ConsultationFunnelDoc() {
                   <div className="w-6 h-6 bg-ocean text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">5</div>
                   <div>
                     <p className="font-semibold text-warm-dark">User redirected to Thank You page</p>
-                    <p className="text-sm text-gray-600">Route: <code className="bg-gray-100 px-2 py-1 rounded">/thank-you</code></p>
+                    <p className="text-sm text-gray-600">Route: <code className="bg-gray-100 px-2 py-1 rounded">/thank-you-consultation</code></p>
                   </div>
                 </div>
               </div>
@@ -408,7 +408,7 @@ export default function ConsultationFunnelDoc() {
                 <li>Verify auto-advance works on multiple choice steps</li>
                 <li>Check progress bar updates correctly</li>
                 <li>Submit form with test phone number</li>
-                <li>Verify redirect to <code className="bg-gray-100 px-2 py-1 rounded">/thank-you</code></li>
+                <li>Verify redirect to <code className="bg-gray-100 px-2 py-1 rounded">/thank-you-consultation</code></li>
                 <li>Check GoHighLevel CRM for lead with all details</li>
               </ol>
             </div>

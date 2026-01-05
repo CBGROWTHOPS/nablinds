@@ -30,9 +30,43 @@ export default function ThankYouDoc() {
 
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
+          <h2 className="text-2xl font-bold text-warm-dark mb-4">Overview</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            There are <strong>two separate thank you pages</strong> for different conversion paths:
+          </p>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4 space-y-3">
+            <div>
+              <code className="bg-white px-2 py-1 rounded border border-gray-300 text-sm">/thank-you</code>
+              <p className="text-gray-700 text-sm mt-1">Contact form submissions (from /contact and /contact-2)</p>
+            </div>
+            <div>
+              <code className="bg-white px-2 py-1 rounded border border-gray-300 text-sm">/thank-you-consultation</code>
+              <p className="text-gray-700 text-sm mt-1">Consultation funnel submissions (from /consultation)</p>
+            </div>
+          </div>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Both pages are identical in design and content. The separation allows for:
+          </p>
+          <ul className="space-y-2 text-gray-700 mb-6">
+            <li className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+              <span>Independent tracking and analytics for each conversion path</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+              <span>Separate conversion pixel firing for paid traffic attribution</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+              <span>A/B testing different messaging in the future</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
           <h2 className="text-2xl font-bold text-warm-dark mb-4">Purpose</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            The Thank You page serves multiple critical functions:
+            Both Thank You pages serve these critical functions:
           </p>
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
@@ -142,34 +176,49 @@ export default function ThankYouDoc() {
 
           <div className="space-y-4">
             <div>
-              <h3 className="text-lg font-semibold text-warm-dark mb-2">Code Location</h3>
-              <p className="text-gray-700">
-                <code className="bg-gray-100 px-2 py-1 rounded">/src/pages/ThankYou.tsx</code>
-              </p>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Code Locations</h3>
+              <div className="space-y-2">
+                <div>
+                  <code className="bg-gray-100 px-2 py-1 rounded">/src/pages/ThankYou.tsx</code>
+                  <p className="text-gray-700 text-sm mt-1">Contact form thank you page</p>
+                </div>
+                <div>
+                  <code className="bg-gray-100 px-2 py-1 rounded">/src/pages/ThankYouConsultation.tsx</code>
+                  <p className="text-gray-700 text-sm mt-1">Consultation funnel thank you page</p>
+                </div>
+              </div>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-warm-dark mb-2">Route Configuration</h3>
               <p className="text-gray-700 mb-2">
-                In <code className="bg-gray-100 px-2 py-1 rounded">/src/App.tsx</code>, this route is special:
+                In <code className="bg-gray-100 px-2 py-1 rounded">/src/App.tsx</code>, both routes are special:
               </p>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
                 <pre className="text-sm">
-{`<Route path="/thank-you" element={<ThankYou />} />`}
+{`<Route path="/thank-you" element={<ThankYou />} />
+<Route path="/thank-you-consultation" element={<ThankYouConsultation />} />`}
                 </pre>
               </div>
               <p className="text-gray-700 mt-3">
-                It's defined <strong>outside</strong> the main layout route so it doesn't render the Header/Footer.
+                Both are defined <strong>outside</strong> the main layout route so they don't render the Header/Footer.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-warm-dark mb-2">Contact Form Integration</h3>
-              <p className="text-gray-700">
-                The Contact page redirects here after successful submission:
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Form Integration</h3>
+              <p className="text-gray-700 mb-2">
+                Each form redirects to its respective thank you page:
               </p>
-              <div className="bg-gray-50 p-3 rounded-lg border border-gray-200 mt-2">
-                <code className="text-sm text-gray-800">navigate('/thank-you')</code>
+              <div className="space-y-2">
+                <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                  <p className="text-sm text-gray-600 mb-1">Contact forms (/contact, /contact-2):</p>
+                  <code className="text-sm text-gray-800">navigate('/thank-you')</code>
+                </div>
+                <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                  <p className="text-sm text-gray-600 mb-1">Consultation funnel (/consultation):</p>
+                  <code className="text-sm text-gray-800">navigate('/thank-you-consultation')</code>
+                </div>
               </div>
             </div>
           </div>
@@ -192,7 +241,7 @@ export default function ThankYouDoc() {
             </li>
             <li className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
-              <span><strong>Don't change the route path</strong> from <code className="bg-amber-100 px-2 py-1 rounded">/thank-you</code> - Contact form hardcodes this</span>
+              <span><strong>Don't change the route paths</strong> - <code className="bg-amber-100 px-2 py-1 rounded">/thank-you</code> and <code className="bg-amber-100 px-2 py-1 rounded">/thank-you-consultation</code> are hardcoded in their respective forms</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
@@ -210,22 +259,38 @@ export default function ThankYouDoc() {
 
           <div className="space-y-4">
             <div>
-              <h3 className="text-lg font-semibold text-warm-dark mb-2">End-to-End Flow</h3>
-              <ol className="space-y-2 text-gray-700 list-decimal list-inside">
-                <li>Go to Contact page</li>
-                <li>Fill out and submit form</li>
-                <li>Verify redirect to Thank You page</li>
-                <li>Check URL is <code className="bg-gray-100 px-2 py-1 rounded">/thank-you</code></li>
-                <li>Verify no Header/Footer present</li>
-                <li>Check page title in browser tab</li>
-                <li>Test phone number link (should open dialer on mobile)</li>
-              </ol>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">End-to-End Flow Testing</h3>
+              <p className="text-gray-700 mb-2">Test both conversion paths:</p>
+
+              <div className="bg-gray-50 p-4 rounded-lg mb-3">
+                <p className="font-semibold text-gray-800 mb-2">Contact Form Path:</p>
+                <ol className="space-y-2 text-gray-700 list-decimal list-inside">
+                  <li>Go to /contact or /contact-2</li>
+                  <li>Fill out and submit form</li>
+                  <li>Verify redirect to <code className="bg-gray-100 px-2 py-1 rounded">/thank-you</code></li>
+                  <li>Verify no Header/Footer present</li>
+                  <li>Check page title in browser tab</li>
+                  <li>Test phone number link (should open dialer on mobile)</li>
+                </ol>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold text-gray-800 mb-2">Consultation Funnel Path:</p>
+                <ol className="space-y-2 text-gray-700 list-decimal list-inside">
+                  <li>Go to /consultation</li>
+                  <li>Complete multi-step form</li>
+                  <li>Verify redirect to <code className="bg-gray-100 px-2 py-1 rounded">/thank-you-consultation</code></li>
+                  <li>Verify no Header/Footer present</li>
+                  <li>Check page title in browser tab</li>
+                  <li>Test phone number link (should open dialer on mobile)</li>
+                </ol>
+              </div>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-warm-dark mb-2">SEO Tag Verification</h3>
               <ol className="space-y-2 text-gray-700 list-decimal list-inside">
-                <li>Open Thank You page</li>
+                <li>Open either Thank You page</li>
                 <li>Right-click → Inspect → Head section</li>
                 <li>Look for <code className="bg-gray-100 px-2 py-1 rounded">&lt;meta name="robots" content="noindex, nofollow"&gt;</code></li>
                 <li>Navigate away and check the tag resets</li>
@@ -235,7 +300,7 @@ export default function ThankYouDoc() {
             <div>
               <h3 className="text-lg font-semibold text-warm-dark mb-2">Direct URL Access</h3>
               <p className="text-gray-700 mb-2">
-                Test what happens if someone visits <code className="bg-gray-100 px-2 py-1 rounded">/thank-you</code> directly (not via form):
+                Test what happens if someone visits <code className="bg-gray-100 px-2 py-1 rounded">/thank-you</code> or <code className="bg-gray-100 px-2 py-1 rounded">/thank-you-consultation</code> directly (not via form):
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
@@ -291,6 +356,13 @@ export default function ThankYouDoc() {
               <h3 className="text-lg font-semibold mb-2">❌ No Clear Next Steps</h3>
               <p className="mb-2">
                 Users need to know what happens next. If the timeline section is removed, conversion anxiety increases and satisfaction drops.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">❌ Updating Only One Thank You Page</h3>
+              <p className="mb-2">
+                Both thank you pages should have identical content. If you update messaging, trust badges, or phone numbers on one page, you MUST update the other page too. Users should have the same experience regardless of which conversion path they took.
               </p>
             </div>
           </div>
