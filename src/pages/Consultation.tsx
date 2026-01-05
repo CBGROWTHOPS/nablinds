@@ -188,7 +188,7 @@ export default function Consultation() {
             {currentStep === 2 && (
               <div>
                 <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-2">
-                  Where area are you located?
+                  Where are you located?
                 </h2>
                 <p className="text-gray-600 text-sm mb-6">
                   We serve residential and commercial properties throughout South Florida
