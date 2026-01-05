@@ -23,7 +23,7 @@ export default function AnalyticsDoc() {
             Analytics & Tracking Systems
           </h1>
           <p className="text-gray-600 mt-2">
-            Comprehensive tracking implementation using Facebook Pixel, Google Analytics, Microsoft Clarity, and GoHighLevel
+            Comprehensive tracking implementation using Facebook Pixel, Google Analytics, Google Tag Manager, Microsoft Clarity, and GoHighLevel
           </p>
         </div>
       </div>
@@ -32,9 +32,9 @@ export default function AnalyticsDoc() {
         <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
           <h2 className="text-2xl font-bold text-warm-dark mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            The site uses four complementary analytics systems that work together to provide complete visibility into user behavior, conversions, and site performance.
+            The site uses five complementary analytics systems that work together to provide complete visibility into user behavior, conversions, and site performance.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
             <div className="border border-blue-200 bg-blue-50 p-4 rounded-lg">
               <BarChart3 className="w-8 h-8 text-blue-600 mb-2" />
               <h3 className="font-bold text-blue-900 mb-1">Facebook Pixel</h3>
@@ -44,6 +44,11 @@ export default function AnalyticsDoc() {
               <BarChart3 className="w-8 h-8 text-green-600 mb-2" />
               <h3 className="font-bold text-green-900 mb-1">Google Analytics</h3>
               <p className="text-sm text-green-700">Traffic analysis & user journeys</p>
+            </div>
+            <div className="border border-teal-200 bg-teal-50 p-4 rounded-lg">
+              <BarChart3 className="w-8 h-8 text-teal-600 mb-2" />
+              <h3 className="font-bold text-teal-900 mb-1">Google Tag Manager</h3>
+              <p className="text-sm text-teal-700">Centralized tag management system</p>
             </div>
             <div className="border border-purple-200 bg-purple-50 p-4 rounded-lg">
               <BarChart3 className="w-8 h-8 text-purple-600 mb-2" />
@@ -232,7 +237,116 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
         </div>
 
         <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
-          <h2 className="text-2xl font-bold text-warm-dark mb-4">3. Microsoft Clarity</h2>
+          <h2 className="text-2xl font-bold text-warm-dark mb-4">3. Google Tag Manager</h2>
+
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Purpose</h3>
+              <p className="text-gray-700 mb-3">
+                Google Tag Manager (GTM) is a tag management system that allows you to quickly update tracking codes and related code snippets without editing site code directly:
+              </p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Centralized management of all marketing and analytics tags</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Deploy and update tags without modifying site code</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Version control and testing capabilities for tags</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>Improved site performance through asynchronous tag loading</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Implementation</h3>
+              <p className="text-gray-700 mb-3">
+                Google Tag Manager is loaded in <code className="bg-gray-100 px-2 py-1 rounded text-sm">index.html</code> at the very beginning of the <code className="bg-gray-100 px-2 py-1 rounded text-sm">&lt;head&gt;</code> section:
+              </p>
+              <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+                <pre className="text-sm">
+{`<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQJ34G6X');</script>
+<!-- End Google Tag Manager -->`}
+                </pre>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Container ID</h3>
+              <p className="text-gray-700 mb-2">
+                <strong>GTM Container ID:</strong> <code className="bg-teal-50 px-3 py-1 rounded text-teal-700 font-mono">GTM-WQJ34G6X</code>
+              </p>
+              <p className="text-gray-700">
+                This ID identifies your Google Tag Manager container. All tags, triggers, and variables are managed within this container.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">What You Can Manage with GTM</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Additional analytics platforms</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Conversion tracking pixels</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Remarketing tags</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Custom event tracking</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-ocean rounded-full mt-2 flex-shrink-0"></div>
+                  <span>A/B testing tools</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Dashboard Access</h3>
+              <p className="text-gray-700">
+                <a
+                  href="https://tagmanager.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-ocean hover:underline"
+                >
+                  Google Tag Manager Dashboard
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Key Benefits</h3>
+              <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+                <p className="text-gray-700">
+                  <strong>Why GTM is valuable:</strong> Instead of asking a developer to add new tracking codes to your website every time you need one, you can add, edit, and disable tags yourself through the GTM interface. This makes marketing campaigns more agile and reduces development dependencies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
+          <h2 className="text-2xl font-bold text-warm-dark mb-4">4. Microsoft Clarity</h2>
 
           <div className="space-y-6">
             <div>
@@ -309,7 +423,7 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
         </div>
 
         <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
-          <h2 className="text-2xl font-bold text-warm-dark mb-4">4. GoHighLevel Tracking</h2>
+          <h2 className="text-2xl font-bold text-warm-dark mb-4">5. GoHighLevel Tracking</h2>
 
           <div className="space-y-6">
             <div>
@@ -392,6 +506,10 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
               <h3 className="font-semibold text-warm-dark mb-1">Google Analytics</h3>
               <p className="text-gray-700 text-sm">Shows you where traffic comes from and what they do on your site</p>
             </div>
+            <div className="border-l-4 border-teal-500 pl-4">
+              <h3 className="font-semibold text-warm-dark mb-1">Google Tag Manager</h3>
+              <p className="text-gray-700 text-sm">Manages all tracking tags in one place for easy updates and testing</p>
+            </div>
             <div className="border-l-4 border-purple-500 pl-4">
               <h3 className="font-semibold text-warm-dark mb-1">Microsoft Clarity</h3>
               <p className="text-gray-700 text-sm">Shows you HOW users interact with your site through recordings</p>
@@ -424,7 +542,7 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
             </li>
             <li className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
-              <span><strong>Keep script locations correct</strong> - Facebook, Google, and Clarity in <code className="bg-amber-100 px-2 py-1 rounded">&lt;head&gt;</code>, GoHighLevel before closing <code className="bg-amber-100 px-2 py-1 rounded">&lt;/body&gt;</code></span>
+              <span><strong>Keep script locations correct</strong> - Facebook Pixel, Google Analytics, GTM, and Clarity in <code className="bg-amber-100 px-2 py-1 rounded">&lt;head&gt;</code>, GoHighLevel before closing <code className="bg-amber-100 px-2 py-1 rounded">&lt;/body&gt;</code></span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
@@ -444,6 +562,7 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
                 <li>Go to Console tab</li>
                 <li>Type <code className="bg-gray-100 px-2 py-1 rounded">fbq</code> and press Enter - should show Facebook Pixel function</li>
                 <li>Type <code className="bg-gray-100 px-2 py-1 rounded">gtag</code> and press Enter - should show Google Analytics function</li>
+                <li>Type <code className="bg-gray-100 px-2 py-1 rounded">dataLayer</code> and press Enter - should show Google Tag Manager data layer</li>
                 <li>Type <code className="bg-gray-100 px-2 py-1 rounded">clarity</code> and press Enter - should show Clarity function</li>
                 <li>Check Network tab for <code className="bg-gray-100 px-2 py-1 rounded">link.msgsndr.com</code> - verifies GoHighLevel tracking loaded</li>
               </ol>
@@ -456,10 +575,11 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
                 <li>Reload the page</li>
                 <li>Look for successful requests to:
                   <ul className="ml-6 mt-2 space-y-1 text-sm">
-                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">connect.facebook.net</code></li>
-                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">googletagmanager.com</code></li>
-                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">clarity.ms</code></li>
-                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">link.msgsndr.com</code></li>
+                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">connect.facebook.net</code> (Facebook Pixel)</li>
+                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">www.googletagmanager.com/gtag</code> (Google Analytics)</li>
+                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">www.googletagmanager.com/gtm.js</code> (Google Tag Manager)</li>
+                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">clarity.ms</code> (Microsoft Clarity)</li>
+                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">link.msgsndr.com</code> (GoHighLevel)</li>
                   </ul>
                 </li>
               </ol>
