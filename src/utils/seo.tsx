@@ -32,9 +32,9 @@ export function useSEO({ title, description, canonicalUrl, noindex = false }: SE
     }
 
     return () => {
-      document.title = 'NA Blinds - Custom Window Treatments in South Florida | Miami, Broward, Palm Beach';
+      document.title = 'NA Blinds | Custom Window Treatments South Florida';
       if (metaDescription) {
-        metaDescription.setAttribute('content', 'Professional custom window treatments for South Florida homes and condos. Blinds, shades, shutters, and drapes. BBB A+ rated. Licensed & insured. Serving Miami-Dade, Broward, and Palm Beach counties.');
+        metaDescription.setAttribute('content', 'Professional custom blinds, shades & shutters for South Florida. BBB A+ rated, licensed & insured. Same-week consultations. Serving Miami, Broward & Palm Beach.');
       }
       if (metaRobots) {
         metaRobots.setAttribute('content', 'index, follow');
