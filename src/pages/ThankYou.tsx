@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import { CheckCircle, Phone, Home, Wrench } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 export default function ThankYou() {
+  const [searchParams] = useSearchParams();
+  const email = searchParams.get('email') || '';
+
   useEffect(() => {
     document.title = 'Thank You | NA Blinds';
 

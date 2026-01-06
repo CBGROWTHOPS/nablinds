@@ -29,7 +29,7 @@ const ContactForm = memo(() => {
       address: formData.address,
     });
 
-    navigate('/thank-you');
+    navigate(`/thank-you?email=${encodeURIComponent(formData.email)}`);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
