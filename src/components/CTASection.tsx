@@ -22,7 +22,7 @@ export default function CTASection({
   };
 
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-soft-sand">
+    <section className="py-10 sm:py-16 px-4 sm:px-6 bg-soft-sand">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-warm-dark mb-3 sm:mb-4 leading-tight">
           {title}

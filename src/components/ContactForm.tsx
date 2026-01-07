@@ -55,6 +55,7 @@ const ContactForm = memo(() => {
               id="name"
               name="name"
               required
+              autoComplete="name"
               value={formData.name}
               onChange={handleChange}
               className="w-full px-4 py-3 sm:py-3.5 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean focus:border-transparent transition-shadow"
@@ -70,6 +71,8 @@ const ContactForm = memo(() => {
               id="email"
               name="email"
               required
+              inputMode="email"
+              autoComplete="email"
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-3 sm:py-3.5 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean focus:border-transparent transition-shadow"
@@ -85,6 +88,8 @@ const ContactForm = memo(() => {
               id="phone"
               name="phone"
               required
+              inputMode="tel"
+              autoComplete="tel"
               value={formData.phone}
               onChange={handleChange}
               className="w-full px-4 py-3 sm:py-3.5 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean focus:border-transparent transition-shadow"
@@ -99,6 +104,7 @@ const ContactForm = memo(() => {
               type="text"
               id="address"
               name="address"
+              autoComplete="street-address"
               value={formData.address}
               onChange={handleChange}
               placeholder="City or Zip Code"

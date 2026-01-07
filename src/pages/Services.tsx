@@ -172,9 +172,9 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-10 md:py-20 px-6 bg-warm-white">
         <div className="max-w-7xl mx-auto">
-          <div className="space-y-20">
+          <div className="space-y-12 md:space-y-20">
             {services.map((service, index) => (
               <div
                 key={service.name}

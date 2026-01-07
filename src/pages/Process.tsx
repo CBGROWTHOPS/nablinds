@@ -132,9 +132,9 @@ export default function Process() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-10 md:py-20 px-6 bg-warm-white">
         <div className="max-w-5xl mx-auto">
-          <div className="space-y-16">
+          <div className="space-y-10 md:space-y-16">
             {steps.map((step, index) => (
               <div
                 key={step.number}
@@ -180,7 +180,7 @@ export default function Process() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-10 md:py-20 px-6 bg-soft-sand">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-semibold text-warm-dark mb-4">

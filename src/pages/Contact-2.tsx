@@ -68,7 +68,7 @@ export default function Contact2() {
 
   return (
     <div>
-      <section className="relative py-32 px-6 bg-soft-sand overflow-hidden">
+      <section className="relative py-16 md:py-32 px-6 bg-soft-sand overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/roller_shade__012.jpg)' }}
@@ -84,7 +84,7 @@ export default function Contact2() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-10 md:py-20 px-6 bg-warm-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             <ContactInfo />
@@ -142,7 +142,7 @@ export default function Contact2() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-10 md:py-20 px-6 bg-soft-sand">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-warm-dark mb-4">
             Same-Week Appointments Available

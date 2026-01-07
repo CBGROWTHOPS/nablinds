@@ -42,3 +42,30 @@
     background-color: #e8d5c4;
   }
 }
+
+@layer utilities {
+  @media (max-width: 768px) {
+    .mobile-py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .mobile-py-10 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .mobile-py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .mobile-mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mobile-mb-6 {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

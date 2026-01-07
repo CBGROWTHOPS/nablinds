@@ -202,7 +202,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center py-8 md:py-0">
+      <section className="relative min-h-[450px] md:min-h-[600px] flex items-center py-12 md:py-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -255,7 +255,7 @@ export default function Home() {
 
       <section className="py-6 md:py-8 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             <div className="flex items-center justify-start lg:justify-center gap-2 sm:gap-3">
               <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
               <span className="text-warm-dark font-medium text-sm sm:text-base">BBB A+ Rated</span>
@@ -276,9 +276,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-10 md:py-20 px-6 bg-warm-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
               South Florida Homeowners Face Real Window Problems
             </h2>
@@ -321,9 +321,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-10 md:py-20 px-6 bg-warm-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
               Custom Solutions for Every Window
             </h2>
@@ -356,9 +356,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-10 md:py-20 px-6 bg-soft-sand">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
               Simple Process. Zero Hassle.
             </h2>
@@ -382,9 +382,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-10 md:py-20 px-6 bg-soft-sand">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
               Real Projects. Real Results.
             </h2>
@@ -393,7 +393,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {galleryProjects.map((project, index) => (
               <div
                 key={index}
@@ -428,9 +428,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-10 md:py-20 px-6 bg-warm-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
               Why Homeowners Choose Us
             </h2>
@@ -454,9 +454,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-soft-sand">
+      <section className="py-12 md:py-24 px-6 bg-soft-sand">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <div className="flex justify-center gap-8 mb-8">
               <img
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a8203c13b9c6469cc82d3.png"
@@ -483,7 +483,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -497,7 +497,7 @@ export default function Home() {
               <p className="text-sm font-medium text-warm-dark">Maria G., Coral Gables</p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -511,7 +511,7 @@ export default function Home() {
               <p className="text-sm font-medium text-warm-dark">David R., Boca Raton</p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -538,9 +538,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-10 md:py-20 px-6 bg-soft-sand">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
               Common Questions Homeowners Ask
             </h2>
@@ -557,9 +557,9 @@ export default function Home() {
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-soft-sand transition-colors"
+                  className="w-full px-4 py-4 sm:px-8 sm:py-6 text-left flex items-center justify-between hover:bg-soft-sand transition-colors"
                 >
-                  <h3 className="text-xl font-semibold text-warm-dark pr-8">
+                  <h3 className="text-base sm:text-xl font-semibold text-warm-dark pr-4 sm:pr-8">
                     {faq.question}
                   </h3>
                   <ChevronDown
@@ -569,7 +569,7 @@ export default function Home() {
                   />
                 </button>
                 <div
-                  className={`px-8 pb-6 transition-all duration-300 ${
+                  className={`px-4 pb-4 sm:px-8 sm:pb-6 transition-all duration-300 ${
                     openFaqIndex === index ? 'block' : 'hidden'
                   }`}
                 >
