@@ -219,7 +219,7 @@ export default function Home() {
                 UP TO 25% OFF | FREE MEASURE
               </div>
               <div className="text-sm sm:text-base md:text-lg font-medium drop-shadow-md">
-                Sale extended through 1/20/26
+                Sale extended through 2/20/26
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 md:mb-6 leading-tight">
