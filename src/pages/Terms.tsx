@@ -119,7 +119,31 @@ export default function Terms() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                11. Changes to Terms
+                11. SMS/Text Messaging Terms
+              </h2>
+              <p className="leading-relaxed mb-3">
+                NA Blinds offers SMS/text messaging for appointment reminders, scheduling confirmations, service updates, and promotional messages about special offers and discounts to customers who opt in.
+              </p>
+              <p className="leading-relaxed mb-3">
+                You can cancel the SMS service at any time. Just text "STOP" to the number from which you received the message. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.
+              </p>
+              <p className="leading-relaxed mb-3">
+                If you are experiencing issues with the messaging program, you can reply with the keyword HELP for more assistance, or you can get help directly at 954-629-1373 or info@nablinds.co.
+              </p>
+              <p className="leading-relaxed mb-3">
+                Carriers are not liable for delayed or undelivered messages.
+              </p>
+              <p className="leading-relaxed mb-3">
+                As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.
+              </p>
+              <p className="leading-relaxed">
+                If you have any questions regarding privacy, please read our privacy policy: <a href="/privacy" className="text-ocean hover:underline">Privacy Policy</a>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-warm-dark mb-4">
+                12. Changes to Terms
               </h2>
               <p className="leading-relaxed">
                 NA Blinds reserves the right to modify these terms at any time. Continued use of our services constitutes acceptance of any changes.
@@ -128,7 +152,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                12. Contact Information
+                13. Contact Information
               </h2>
               <p className="leading-relaxed">
                 For questions about these Terms of Service, please contact us at:

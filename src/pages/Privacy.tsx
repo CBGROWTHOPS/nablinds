@@ -100,7 +100,19 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                7. Photo Usage
+                7. SMS/Text Messaging and Mobile Information
+              </h2>
+              <p className="leading-relaxed mb-3">
+                No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Information sharing with subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+              </p>
+              <p className="leading-relaxed">
+                If you opt in to receive SMS/text messages from NA Blinds, you may receive appointment reminders, scheduling confirmations, service updates, and promotional messages about special offers and discounts. You can opt out at any time by replying STOP.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-warm-dark mb-4">
+                8. Photo Usage
               </h2>
               <p className="leading-relaxed">
                 Before and after photos of installations may be used for marketing purposes with your explicit permission. We will never share photos without your consent.
@@ -109,7 +121,7 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                8. Your Rights
+                9. Your Rights
               </h2>
               <p className="leading-relaxed mb-3">
                 You have the right to:
@@ -125,7 +137,7 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                9. Data Retention
+                10. Data Retention
               </h2>
               <p className="leading-relaxed">
                 We retain your information for as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce our agreements. Customer records are typically maintained for warranty and business purposes.
@@ -134,7 +146,7 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                10. Third-Party Links
+                11. Third-Party Links
               </h2>
               <p className="leading-relaxed">
                 Our website may contain links to third-party sites. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies.
@@ -143,7 +155,7 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                11. Children's Privacy
+                12. Children's Privacy
               </h2>
               <p className="leading-relaxed">
                 Our services are not directed to individuals under 18. We do not knowingly collect personal information from children.
@@ -152,7 +164,7 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                12. Changes to This Policy
+                13. Changes to This Policy
               </h2>
               <p className="leading-relaxed">
                 We may update this Privacy Policy periodically. We will notify you of any material changes by posting the new policy on this page with an updated date.
@@ -161,7 +173,7 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-warm-dark mb-4">
-                13. Contact Us
+                14. Contact Us
               </h2>
               <p className="leading-relaxed">
                 If you have questions about this Privacy Policy or how we handle your information, please contact us at:
