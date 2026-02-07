@@ -103,10 +103,16 @@ export default function Privacy() {
                 7. SMS/Text Messaging and Mobile Information
               </h2>
               <p className="leading-relaxed mb-3">
-                No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Information sharing with subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+                <strong>How You Opt In:</strong> By providing your phone number and checking the SMS consent box on our contact or consultation forms, you agree to receive text messages from NA Blinds. Consent is not required to purchase goods or services.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>Types of Messages:</strong> If you opt in, you may receive appointment reminders, scheduling confirmations, service updates, and promotional messages about special offers and discounts. Message frequency varies based on your interactions with us.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>Opt-Out:</strong> You can opt out at any time by replying STOP to any message. Reply HELP for assistance.
               </p>
               <p className="leading-relaxed">
-                If you opt in to receive SMS/text messages from NA Blinds, you may receive appointment reminders, scheduling confirmations, service updates, and promotional messages about special offers and discounts. You can opt out at any time by replying STOP.
+                <strong>Mobile Information Sharing:</strong> No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Information sharing with subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
               </p>
             </section>
 

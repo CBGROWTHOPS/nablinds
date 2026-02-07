@@ -122,22 +122,25 @@ export default function Terms() {
                 11. SMS/Text Messaging Terms
               </h2>
               <p className="leading-relaxed mb-3">
-                NA Blinds offers SMS/text messaging for appointment reminders, scheduling confirmations, service updates, and promotional messages about special offers and discounts to customers who opt in.
+                <strong>Service Description:</strong> NA Blinds offers SMS/text messaging for appointment reminders, scheduling confirmations, service updates, and promotional messages about special offers and discounts to customers who opt in via our website forms.
               </p>
               <p className="leading-relaxed mb-3">
-                You can cancel the SMS service at any time. Just text "STOP" to the number from which you received the message. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.
+                <strong>Age Requirement:</strong> You must be 18 years of age or older to use our SMS messaging service. By opting in, you confirm that you are at least 18 years old.
               </p>
               <p className="leading-relaxed mb-3">
-                If you are experiencing issues with the messaging program, you can reply with the keyword HELP for more assistance, or you can get help directly at 954-629-1373 or info@nablinds.co.
+                <strong>Opt-Out:</strong> You can cancel the SMS service at any time. Just text "STOP" to the number from which you received the message. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.
               </p>
               <p className="leading-relaxed mb-3">
-                Carriers are not liable for delayed or undelivered messages.
+                <strong>Help:</strong> If you are experiencing issues with the messaging program, you can reply with the keyword HELP for more assistance, or you can get help directly at 954-629-1373 or info@nablinds.co.
               </p>
               <p className="leading-relaxed mb-3">
-                As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.
+                <strong>Carrier Disclaimer:</strong> Carriers are not liable for delayed or undelivered messages.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>Message & Data Rates:</strong> Message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.
               </p>
               <p className="leading-relaxed">
-                If you have any questions regarding privacy, please read our privacy policy: <a href="/privacy" className="text-ocean hover:underline">Privacy Policy</a>.
+                <strong>Privacy:</strong> If you have any questions regarding privacy, please read our <a href="/privacy" className="text-ocean hover:underline">Privacy Policy</a>.
               </p>
             </section>
 
