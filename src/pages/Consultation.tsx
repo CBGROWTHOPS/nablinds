@@ -95,7 +95,7 @@ export default function Consultation() {
       case 5:
         return formData.projectPriority !== '';
       case 6:
-        return formData.firstName.trim() !== '' && formData.phone.trim() !== '';
+        return formData.firstName.trim() !== '' && formData.phone.trim() !== '' && formData.email.trim() !== '';
       default:
         return false;
     }
@@ -328,7 +328,7 @@ export default function Consultation() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email (Optional)
+                      Email *
                     </label>
                     <input
                       type="email"
@@ -336,6 +336,7 @@ export default function Consultation() {
                       onChange={(e) =>
                         handleInputChange('email', e.target.value)
                       }
+                      required
                       className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-ocean focus:outline-none"
                     />
                   </div>
