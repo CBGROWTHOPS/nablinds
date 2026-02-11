@@ -23,7 +23,10 @@ export default function AnalyticsDoc() {
             Analytics & Tracking Systems
           </h1>
           <p className="text-gray-600 mt-2">
-            Comprehensive tracking implementation using Facebook Pixel, Google Analytics, Google Tag Manager, Microsoft Clarity, and GoHighLevel
+            Comprehensive tracking implementation using Facebook Pixel, Google Ads, Google Tag Manager, Microsoft Clarity, and GoHighLevel
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Last updated: Feb 11, 2025 — GA4 pixel removed, Google Ads conversion tracking verified
           </p>
         </div>
       </div>
@@ -32,7 +35,7 @@ export default function AnalyticsDoc() {
         <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
           <h2 className="text-2xl font-bold text-warm-dark mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            The site uses five complementary analytics systems that work together to provide complete visibility into user behavior, conversions, and site performance.
+            The site uses five complementary tracking systems that work together to provide complete visibility into user behavior, conversions, and site performance.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
             <div className="border border-blue-200 bg-blue-50 p-4 rounded-lg">
@@ -40,10 +43,10 @@ export default function AnalyticsDoc() {
               <h3 className="font-bold text-blue-900 mb-1">Facebook Pixel</h3>
               <p className="text-sm text-blue-700">Conversion tracking & ad optimization</p>
             </div>
-            <div className="border border-green-200 bg-green-50 p-4 rounded-lg">
-              <BarChart3 className="w-8 h-8 text-green-600 mb-2" />
-              <h3 className="font-bold text-green-900 mb-1">Google Analytics</h3>
-              <p className="text-sm text-green-700">Traffic analysis & user journeys</p>
+            <div className="border border-red-200 bg-red-50 p-4 rounded-lg">
+              <BarChart3 className="w-8 h-8 text-red-600 mb-2" />
+              <h3 className="font-bold text-red-900 mb-1">Google Ads</h3>
+              <p className="text-sm text-red-700">Conversion tracking & call attribution</p>
             </div>
             <div className="border border-teal-200 bg-teal-50 p-4 rounded-lg">
               <BarChart3 className="w-8 h-8 text-teal-600 mb-2" />
@@ -162,30 +165,30 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
         </div>
 
         <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6">
-          <h2 className="text-2xl font-bold text-warm-dark mb-4">2. Google Analytics 4</h2>
+          <h2 className="text-2xl font-bold text-warm-dark mb-4">2. Google Ads Conversion Tracking</h2>
 
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold text-warm-dark mb-2">Purpose</h3>
               <p className="text-gray-700 mb-3">
-                Google Analytics provides comprehensive website traffic analysis and user behavior insights:
+                Google Ads conversion tracking measures direct business results from your Google Ads campaigns:
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>Traffic source tracking (organic, paid, direct, referral)</span>
+                  <span>Phone call conversion tracking from click-to-call buttons</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>User demographics and geographic data</span>
+                  <span>Return on ad spend (ROAS) measurement</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>Page performance and engagement metrics</span>
+                  <span>Ad campaign optimization based on actual conversions</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>Conversion funnel analysis</span>
+                  <span>Attribution from Google Ads click to sale</span>
                 </li>
               </ul>
             </div>
@@ -193,44 +196,93 @@ src="https://www.facebook.com/tr?id=1713496592502419&ev=PageView&noscript=1"
             <div>
               <h3 className="text-lg font-semibold text-warm-dark mb-2">Implementation</h3>
               <p className="text-gray-700 mb-3">
-                Google Analytics is loaded in <code className="bg-gray-100 px-2 py-1 rounded text-sm">index.html</code> in the <code className="bg-gray-100 px-2 py-1 rounded text-sm">&lt;head&gt;</code> section:
+                Google Ads conversion tracking is implemented via Google Tag Manager using gtag.js:
               </p>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
                 <pre className="text-sm">
-{`<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0C7Q5FGZ1V"></script>
+{`<!-- Google Ads Pixel -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17947516684"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-0C7Q5FGZ1V');
+  gtag('config', 'AW-17947516684');
+</script>
+
+<!-- Click to Call Conversion -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17947516684/NULUCKH77vYbEIy-he5C',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+    });
+    return false;
+  }
 </script>`}
                 </pre>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-warm-dark mb-2">Measurement ID</h3>
-              <p className="text-gray-700 mb-2">
-                <strong>GA4 Property ID:</strong> <code className="bg-green-50 px-3 py-1 rounded text-green-700 font-mono">G-0C7Q5FGZ1V</code>
-              </p>
-              <p className="text-gray-700">
-                This is a Google Analytics 4 property that automatically tracks page views, scrolls, clicks, and other engagement metrics.
-              </p>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Account & Conversion IDs</h3>
+              <div className="space-y-2">
+                <p className="text-gray-700">
+                  <strong>Google Ads Account:</strong> <code className="bg-red-50 px-3 py-1 rounded text-red-700 font-mono">8156230499</code> (MCC: 2529129980)
+                </p>
+                <p className="text-gray-700">
+                  <strong>Ads Pixel ID:</strong> <code className="bg-red-50 px-3 py-1 rounded text-red-700 font-mono">AW-17947516684</code>
+                </p>
+                <p className="text-gray-700">
+                  <strong>Conversion Action ID:</strong> <code className="bg-red-50 px-3 py-1 rounded text-red-700 font-mono">NULUCKH77vYbEIy-he5C</code>
+                </p>
+                <p className="text-gray-700">
+                  <strong>Conversion Type:</strong> Phone Call (value: $1.00 USD)
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">Events Tracked</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Phone Click-to-Call:</strong> When user clicks to call (954-629-1373)</span>
+                </li>
+              </ul>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-warm-dark mb-2">Dashboard Access</h3>
               <p className="text-gray-700">
                 <a
-                  href="https://analytics.google.com"
+                  href="https://ads.google.com/home"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-ocean hover:underline"
                 >
-                  Google Analytics Dashboard
+                  Google Ads Dashboard
                   <ExternalLink className="w-4 h-4" />
                 </a>
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-warm-dark mb-2">API Access</h3>
+              <p className="text-gray-700 text-sm mb-2">
+                For automated reporting and integrations, the Google Ads API is available at:
+              </p>
+              <div className="bg-gray-50 p-3 rounded text-sm text-gray-700">
+                <code>https://googleads.googleapis.com/v23/customers/8156230499/googleAds:search</code>
+              </div>
+              <p className="text-gray-700 text-sm mt-2">
+                OAuth credentials and developer tokens stored in secure system keychain.
               </p>
             </div>
           </div>
@@ -500,29 +552,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
               <h3 className="font-semibold text-warm-dark mb-1">Facebook Pixel</h3>
-              <p className="text-gray-700 text-sm">Tells you which ads drive conversions and helps optimize ad campaigns</p>
+              <p className="text-gray-700 text-sm">Tells you which ads drive conversions and helps optimize Facebook/Instagram campaigns</p>
             </div>
-            <div className="border-l-4 border-green-500 pl-4">
-              <h3 className="font-semibold text-warm-dark mb-1">Google Analytics</h3>
-              <p className="text-gray-700 text-sm">Shows you where traffic comes from and what they do on your site</p>
+            <div className="border-l-4 border-red-500 pl-4">
+              <h3 className="font-semibold text-warm-dark mb-1">Google Ads Conversion Tracking</h3>
+              <p className="text-gray-700 text-sm">Measures phone calls from Google Ads clicks to calculate ROI and optimize bid strategy</p>
             </div>
             <div className="border-l-4 border-teal-500 pl-4">
               <h3 className="font-semibold text-warm-dark mb-1">Google Tag Manager</h3>
-              <p className="text-gray-700 text-sm">Manages all tracking tags in one place for easy updates and testing</p>
+              <p className="text-gray-700 text-sm">Manages all conversion and marketing tags in one place for easy updates and testing</p>
             </div>
             <div className="border-l-4 border-purple-500 pl-4">
               <h3 className="font-semibold text-warm-dark mb-1">Microsoft Clarity</h3>
-              <p className="text-gray-700 text-sm">Shows you HOW users interact with your site through recordings</p>
+              <p className="text-gray-700 text-sm">Shows you HOW users interact with your site through session recordings and heatmaps</p>
             </div>
             <div className="border-l-4 border-orange-500 pl-4">
               <h3 className="font-semibold text-warm-dark mb-1">GoHighLevel</h3>
-              <p className="text-gray-700 text-sm">Connects website activity to CRM records for complete lead attribution</p>
+              <p className="text-gray-700 text-sm">Connects website activity to CRM records for complete lead attribution and pipeline management</p>
             </div>
           </div>
 
           <p className="text-gray-700 mt-6">
-            <strong>Example workflow:</strong> Google Analytics shows high bounce rate on a page → Clarity recordings reveal users can't find the contact form → Facebook Pixel confirms ad campaigns are targeting the right audience → GoHighLevel shows which leads came from which campaigns in your CRM.
+            <strong>Example workflow:</strong> Google Ads shows you're getting phone call conversions from specific keywords → Clarity recordings reveal which page elements convince users to call → Facebook Pixel measures if those same users are in your Facebook audience → GoHighLevel tracks which calls converted to scheduled consultations in your CRM.
           </p>
+        </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 mb-6">
+          <h2 className="text-2xl font-bold text-blue-900 mb-4">📝 Recent Changes (Feb 11, 2025)</h2>
+          <div className="space-y-3 text-blue-900">
+            <p className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span><strong>Removed GA4 pixel (G-0C7Q5FGZ1V)</strong> - No longer needed; Google Ads + GTM handle conversion tracking</span>
+            </p>
+            <p className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span><strong>Verified Google Ads Account</strong> - Confirmed account 8156230499 with API access (v23 endpoint)</span>
+            </p>
+            <p className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span><strong>Google Ads Conversion Tracking Active</strong> - Phone call conversions reporting to AW-17947516684/NULUCKH77vYbEIy-he5C</span>
+            </p>
+            <p className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <span><strong>Credentials Secured</strong> - Google Ads OAuth + Developer Token stored in macOS Keychain</span>
+            </p>
+          </div>
         </div>
 
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-8 mb-6">
@@ -538,11 +612,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </li>
             <li className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
-              <span><strong>Don't remove any tracking scripts</strong> - each serves a different purpose</span>
+              <span><strong>Don't remove Google Ads conversion script</strong> - this tracks ROI for phone call conversions</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
-              <span><strong>Keep script locations correct</strong> - Facebook Pixel, Google Analytics, GTM, and Clarity in <code className="bg-amber-100 px-2 py-1 rounded">&lt;head&gt;</code>, GoHighLevel before closing <code className="bg-amber-100 px-2 py-1 rounded">&lt;/body&gt;</code></span>
+              <span><strong>Keep script locations correct</strong> - Facebook Pixel, Google Ads, GTM, and Clarity in <code className="bg-amber-100 px-2 py-1 rounded">&lt;head&gt;</code>, GoHighLevel before closing <code className="bg-amber-100 px-2 py-1 rounded">&lt;/body&gt;</code></span>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
@@ -561,7 +635,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>Open the website and open Developer Tools (F12)</li>
                 <li>Go to Console tab</li>
                 <li>Type <code className="bg-gray-100 px-2 py-1 rounded">fbq</code> and press Enter - should show Facebook Pixel function</li>
-                <li>Type <code className="bg-gray-100 px-2 py-1 rounded">gtag</code> and press Enter - should show Google Analytics function</li>
+                <li>Type <code className="bg-gray-100 px-2 py-1 rounded">gtag</code> and press Enter - should show Google Ads/GTM function</li>
                 <li>Type <code className="bg-gray-100 px-2 py-1 rounded">dataLayer</code> and press Enter - should show Google Tag Manager data layer</li>
                 <li>Type <code className="bg-gray-100 px-2 py-1 rounded">clarity</code> and press Enter - should show Clarity function</li>
                 <li>Check Network tab for <code className="bg-gray-100 px-2 py-1 rounded">link.msgsndr.com</code> - verifies GoHighLevel tracking loaded</li>
@@ -576,8 +650,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>Look for successful requests to:
                   <ul className="ml-6 mt-2 space-y-1 text-sm">
                     <li>• <code className="bg-gray-100 px-2 py-1 rounded">connect.facebook.net</code> (Facebook Pixel)</li>
-                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">www.googletagmanager.com/gtag</code> (Google Analytics)</li>
-                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">www.googletagmanager.com/gtm.js</code> (Google Tag Manager)</li>
+                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">www.googletagmanager.com/gtag/js</code> (Google Ads & GTM)</li>
+                    <li>• <code className="bg-gray-100 px-2 py-1 rounded">www.googletagmanager.com/gtm.js</code> (Google Tag Manager container)</li>
                     <li>• <code className="bg-gray-100 px-2 py-1 rounded">clarity.ms</code> (Microsoft Clarity)</li>
                     <li>• <code className="bg-gray-100 px-2 py-1 rounded">link.msgsndr.com</code> (GoHighLevel)</li>
                   </ul>
@@ -590,7 +664,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <p className="text-gray-700 mb-2">Install browser extensions to verify tracking:</p>
               <ul className="space-y-2 text-gray-700 ml-4">
                 <li>• <strong>Facebook Pixel Helper</strong> - Chrome extension to verify Pixel firing</li>
-                <li>• <strong>Google Analytics Debugger</strong> - Chrome extension to verify GA4 events</li>
+                <li>• <strong>Google Ads Helper</strong> - Chrome extension to verify Google Ads conversion tracking</li>
+                <li>• <strong>Tag Assistant</strong> - Chrome extension to verify GTM container firing</li>
               </ul>
             </div>
           </div>
@@ -603,8 +678,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div>
               <h3 className="text-lg font-semibold mb-2">❌ Ad Blockers Preventing Tracking</h3>
               <p className="mb-2">
-                When testing, disable browser ad blockers. They commonly block Facebook Pixel and analytics. This doesn't affect most real users.
+                When testing, disable browser ad blockers. They commonly block Facebook Pixel and Google Ads pixels. This doesn't affect most real users.
               </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">❌ Google Ads Conversions Not Reporting</h3>
+              <p className="mb-2">
+                If phone call conversions don't show in Google Ads account 8156230499:
+              </p>
+              <ul className="ml-4 space-y-1 text-sm">
+                <li>• Verify conversion ID matches <code className="bg-red-100 px-2 py-1 rounded">NULUCKH77vYbEIy-he5C</code></li>
+                <li>• Check that gtag conversion event is firing (console: <code className="bg-red-100 px-2 py-1 rounded">gtag('event', 'conversion'...)</code>)</li>
+                <li>• Verify call clicks are going through the click-to-call button</li>
+              </ul>
             </div>
 
             <div>
@@ -617,14 +704,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div>
               <h3 className="text-lg font-semibold mb-2">❌ Data Showing in One System But Not Others</h3>
               <p className="mb-2">
-                Each system is independent. If one works but another doesn't, check that specific tracking ID and script implementation.
+                Each system is independent. Google Ads tracks phone calls specifically, while Facebook Pixel and Clarity track broader user behavior. If one works but another doesn't, check that specific tracking ID and script implementation.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold mb-2">❌ Historical Data Lost</h3>
               <p className="mb-2">
-                If tracking IDs are changed, historical data becomes inaccessible. Always verify IDs match the original accounts before making changes.
+                If tracking IDs are changed, historical data becomes inaccessible. Always verify IDs match the original accounts before making changes. Current setup: AW-17947516684 for Google Ads account 8156230499.
               </p>
             </div>
           </div>
