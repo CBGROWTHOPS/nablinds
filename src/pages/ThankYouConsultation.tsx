@@ -111,7 +111,7 @@ export default function ThankYouConsultation() {
 
         <div className="bg-ocean rounded-lg p-5 sm:p-6 md:p-8 mb-6 sm:mb-8 text-center">
           <a
-            href="tel:9546291373"
+            href="tel:9546291373" onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion("tel:9546291373"); }}
             className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-ocean px-5 py-4 sm:px-8 sm:py-5 rounded-lg font-bold text-base sm:text-lg hover:bg-gray-50 active:bg-gray-100 transition-colors duration-200 w-full sm:w-auto touch-manipulation shadow-sm"
           >
             <Phone className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />

@@ -53,6 +53,7 @@ export default function Header() {
             ))}
             <a
               href="tel:954-629-1373"
+              onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion('tel:954-629-1373'); }}
               className="bg-ocean text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-opacity-90 active:bg-opacity-80 transition-all flex items-center gap-2 shadow-sm"
             >
               <Phone className="w-4 h-4 flex-shrink-0" />
@@ -87,6 +88,7 @@ export default function Header() {
             ))}
             <a
               href="tel:954-629-1373"
+              onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion('tel:954-629-1373'); }}
               className="flex items-center justify-center gap-2 bg-ocean text-white px-4 py-4 rounded-lg font-semibold touch-manipulation shadow-sm active:bg-opacity-90"
             >
               <Phone className="w-5 h-5 flex-shrink-0" />

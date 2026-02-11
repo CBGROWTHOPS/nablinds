@@ -40,7 +40,7 @@ export default function CTASection({
             <span>Request Free Estimate</span>
           </Link>
           <a
-            href="tel:954-629-1373"
+            href="tel:954-629-1373" onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion("tel:954-629-1373"); }}
             className="bg-white text-ocean border-2 border-ocean px-6 sm:px-8 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-ocean hover:text-white active:bg-ocean/90 active:text-white transition-all flex items-center justify-center gap-2 touch-manipulation shadow-sm"
           >
             <Phone className="w-5 h-5 flex-shrink-0" />

@@ -61,7 +61,7 @@ export default function ConsultationPopup() {
             <span>Request Free Estimate</span>
           </Link>
           <a
-            href="tel:954-629-1373"
+            href="tel:954-629-1373" onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion("tel:954-629-1373"); }}
             onClick={handleClose}
             className="bg-white text-ocean border-2 border-ocean px-6 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-ocean hover:text-white transition-all flex items-center justify-center gap-2 w-full shadow-sm"
           >

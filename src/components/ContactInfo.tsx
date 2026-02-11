@@ -13,7 +13,7 @@ const ContactInfo = memo(() => {
 
       <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
         <a
-          href="tel:954-629-1373"
+          href="tel:954-629-1373" onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion("tel:954-629-1373"); }}
           className="flex items-start gap-3 sm:gap-4 p-5 sm:p-6 bg-soft-sand rounded-xl hover:bg-white active:bg-white transition-colors group touch-manipulation"
         >
           <div className="w-12 h-12 sm:w-14 sm:h-14 bg-ocean bg-opacity-10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-ocean group-hover:bg-opacity-100 transition-colors">

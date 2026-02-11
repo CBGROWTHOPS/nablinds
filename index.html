@@ -272,6 +272,25 @@
       gtag('config', 'AW-17947516684');
     </script>
     <!-- End Google Ads Pixel -->
+
+    <!-- Click to Call Conversion -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17947516684/NULUCKH77vYbEIy-he5C',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+    <!-- End Click to Call Conversion -->
   </head>
   <body>
     <noscript><img height="1" width="1" style="display:none"

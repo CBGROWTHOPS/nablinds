@@ -56,7 +56,7 @@ export default function MobileStickyCTA() {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-lg">
       <div className="flex gap-2 p-3">
         <a
-          href="tel:954-629-1373"
+          href="tel:954-629-1373" onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion("tel:954-629-1373"); }}
           className="flex items-center justify-center gap-2 flex-1 bg-white text-ocean border-2 border-ocean px-4 py-3 rounded-lg font-semibold text-sm hover:bg-ocean hover:text-white active:bg-ocean active:text-white transition-all touch-manipulation"
         >
           <Phone className="w-4 h-4 flex-shrink-0" />
