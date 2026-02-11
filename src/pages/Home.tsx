@@ -237,7 +237,7 @@ export default function Home() {
                 Request Free Estimate
               </Link>
               <a
-                href="tel:954-629-1373" onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion("tel:954-629-1373"); }}
+                href="tel:954-629-1373"
                 className="bg-white text-warm-dark px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-soft-sand transition-all text-center text-sm sm:text-base"
               >
                 Call 954-629-1373

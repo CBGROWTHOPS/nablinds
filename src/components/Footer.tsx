@@ -91,7 +91,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:954-629-1373" onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion("tel:954-629-1373"); }}
+                  href="tel:954-629-1373"
                   className="flex items-start gap-3 text-warm-gray hover:text-ocean transition-colors text-sm group"
                 >
                   <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-ocean" />
