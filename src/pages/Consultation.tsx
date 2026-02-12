@@ -146,7 +146,7 @@ export default function Consultation() {
               Step {currentStep} of 6
             </p>
             <p className="text-center text-xs text-gray-500 mt-2">
-              Takes about 30 seconds · A local installer will follow up
+              Takes about 30 seconds · A design specialist will contact you personally
             </p>
             <p className="text-center text-xs text-gray-500 mt-1">
               🇺🇸 All products made in the USA
@@ -157,10 +157,10 @@ export default function Consultation() {
             {currentStep === 1 && (
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-warm-dark mb-2">
-                  Blinds Installation in South Florida
+                  Designed & Installed for South Florida Homes
                 </h1>
                 <p className="text-gray-600 mb-6">
-                  Answer a few quick questions to request a consultation.
+                  Tell us about your home and we'll tailor your consultation.
                 </p>
                 <h2 className="text-xl font-bold text-warm-dark mb-4">
                   What do you need help with?
@@ -171,7 +171,7 @@ export default function Consultation() {
                     'Window Shades',
                     'Drapes',
                     'Shutters',
-                    'Not sure yet',
+                    "I'd like professional guidance",
                   ].map((option) => (
                     <button
                       key={option}
