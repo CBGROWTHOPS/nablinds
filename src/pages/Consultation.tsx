@@ -157,14 +157,11 @@ export default function Consultation() {
             {currentStep === 1 && (
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-warm-dark mb-2">
-                  Designed & Installed for South Florida Homes
+                  What do you need help with?
                 </h1>
                 <p className="text-gray-600 mb-6">
                   Tell us about your home and we'll tailor your consultation.
                 </p>
-                <h2 className="text-xl font-bold text-warm-dark mb-4">
-                  What do you need help with?
-                </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
                     'Blinds',
