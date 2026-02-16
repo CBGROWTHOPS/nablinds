@@ -95,7 +95,7 @@ export default function Consultation() {
       case 5:
         return formData.projectPriority !== '';
       case 6:
-        return formData.firstName.trim() !== '' && formData.phone.trim() !== '' && formData.email.trim() !== '';
+        return formData.firstName.trim() !== '' && formData.phone.trim() !== '';
       default:
         return false;
     }
@@ -290,7 +290,7 @@ export default function Consultation() {
                   Where should we send your quote and next steps?
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  We'll reach out shortly to confirm your consultation.
+                  We'll share recommendations based on what you selected.
                 </p>
                 <div className="space-y-4">
                   <div>
@@ -324,7 +324,7 @@ export default function Consultation() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
+                      Email
                     </label>
                     <input
                       type="email"
@@ -332,9 +332,11 @@ export default function Consultation() {
                       onChange={(e) =>
                         handleInputChange('email', e.target.value)
                       }
-                      required
                       className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-ocean focus:outline-none"
                     />
+                    <p className="text-xs text-gray-500 mt-2">
+                      Optional. Helpful if you prefer email over text.
+                    </p>
                   </div>
                   <p className="text-xs text-gray-500 leading-relaxed">
                     By submitting, you agree to be contacted by phone or text
@@ -345,7 +347,7 @@ export default function Consultation() {
                     disabled={!isStepValid(6) || isSubmitting}
                     className="w-full bg-ocean text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 active:bg-opacity-80 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Request Consultation'}
+                    {isSubmitting ? 'Submitting...' : 'Get My Estimate'}
                   </button>
                 </div>
               </form>
