@@ -338,10 +338,6 @@ export default function Consultation() {
                       Optional. Helpful if you prefer email over text.
                     </p>
                   </div>
-                  <p className="text-xs text-gray-500 leading-relaxed">
-                    By submitting, you agree to be contacted by phone or text
-                    regarding your request.
-                  </p>
                   <button
                     type="submit"
                     disabled={!isStepValid(6) || isSubmitting}
@@ -349,6 +345,10 @@ export default function Consultation() {
                   >
                     {isSubmitting ? 'Submitting...' : 'Get My Estimate'}
                   </button>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    By submitting, you agree to be contacted by phone or text
+                    regarding your request.
+                  </p>
                 </div>
               </form>
             )}
