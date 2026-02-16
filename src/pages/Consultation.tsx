@@ -188,28 +188,27 @@ export default function Consultation() {
             {currentStep === 2 && (
               <div>
                 <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-2">
-                  Where are you located?
+                  Which area are you located in?
                 </h2>
                 <p className="text-gray-600 text-sm mb-6">
-                  We serve residential and commercial properties throughout South Florida
+                  We currently serve South Florida properties.
                 </p>
-                <input
-                  type="text"
-                  value={formData.projectLocation}
-                  onChange={(e) =>
-                    handleInputChange('projectLocation', e.target.value)
-                  }
-                  placeholder="Enter zip code or city"
-                  className="w-full p-4 border-2 border-gray-300 rounded-lg text-lg focus:border-ocean focus:outline-none mb-6"
-                  autoFocus
-                />
-                <button
-                  onClick={handleNext}
-                  disabled={!isStepValid(2)}
-                  className="w-full bg-ocean text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 active:bg-opacity-80 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all"
-                >
-                  Continue
-                </button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    'Miami-Dade',
+                    'Broward',
+                    'Palm Beach',
+                    'Other',
+                  ].map((option) => (
+                    <button
+                      key={option}
+                      onClick={() => handleOptionSelect('projectLocation', option)}
+                      className="p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
