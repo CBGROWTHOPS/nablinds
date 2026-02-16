@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { submitConsultationToWebhook } from '../utils/consultationWebhook';
 
-type Step = 1 | 2 | 3 | 4 | 5 | 6;
+type Step = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 interface FormData {
   serviceType: string;
   projectLocation: string;
   installationTimeline: string;
   propertyType: string;
+  windowCount: string;
   projectPriority: string;
   firstName: string;
   phone: string;
@@ -25,6 +26,7 @@ export default function Consultation() {
     projectLocation: '',
     installationTimeline: '',
     propertyType: '',
+    windowCount: '',
     projectPriority: '',
     firstName: '',
     phone: '',
@@ -42,7 +44,7 @@ export default function Consultation() {
     }
     setFormData(updatedData);
     setTimeout(() => {
-      if (currentStep < 6) {
+      if (currentStep < 7) {
         setCurrentStep((currentStep + 1) as Step);
       }
     }, 200);
@@ -53,7 +55,7 @@ export default function Consultation() {
   };
 
   const handleNext = () => {
-    if (currentStep < 6) {
+    if (currentStep < 7) {
       setCurrentStep((currentStep + 1) as Step);
     }
   };
@@ -70,6 +72,7 @@ export default function Consultation() {
       projectLocation: formData.projectLocation,
       installationTimeline: formData.installationTimeline,
       propertyType: formData.propertyType,
+      windowCount: formData.windowCount,
       projectPriority: formData.projectPriority,
       priorityFlag: formData.priorityFlag,
     });
@@ -93,8 +96,10 @@ export default function Consultation() {
       case 4:
         return formData.propertyType !== '';
       case 5:
-        return formData.projectPriority !== '';
+        return formData.windowCount !== '';
       case 6:
+        return formData.projectPriority !== '';
+      case 7:
         return formData.firstName.trim() !== '' && formData.phone.trim() !== '';
       default:
         return false;
@@ -119,7 +124,7 @@ export default function Consultation() {
         <div className="w-full max-w-2xl">
           <div className="mb-6 sm:mb-8">
             <div className="flex justify-between items-center mb-4">
-              {[1, 2, 3, 4, 5, 6].map((step) => (
+              {[1, 2, 3, 4, 5, 6, 7].map((step) => (
                 <div key={step} className="flex-1 flex items-center">
                   <div
                     className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${
@@ -132,7 +137,7 @@ export default function Consultation() {
                   >
                     {step}
                   </div>
-                  {step < 6 && (
+                  {step < 7 && (
                     <div
                       className={`flex-1 h-1 mx-1 sm:mx-2 transition-colors ${
                         step < currentStep ? 'bg-ocean' : 'bg-gray-200'
@@ -143,10 +148,10 @@ export default function Consultation() {
               ))}
             </div>
             <p className="text-center text-sm text-gray-600">
-              Step {currentStep} of 6
+              Step {currentStep} of 7
             </p>
             <p className="text-center text-xs text-gray-500 mt-2">
-              Takes about 30 seconds · A design specialist will contact you personally
+              Takes about 30 seconds · Answer a few quick questions to see pricing options.
             </p>
             <p className="text-center text-xs text-gray-500 mt-1">
               🇺🇸 All products made in the USA
@@ -260,6 +265,30 @@ export default function Consultation() {
             {currentStep === 5 && (
               <div>
                 <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-6">
+                  How many windows need treatment?
+                </h2>
+                <div className="space-y-3">
+                  {[
+                    '1–3',
+                    '4–7',
+                    '8+',
+                    'Not sure',
+                  ].map((option) => (
+                    <button
+                      key={option}
+                      onClick={() => handleOptionSelect('windowCount', option)}
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {currentStep === 6 && (
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-6">
                   What's most important to you for this project?
                 </h2>
                 <div className="space-y-3">
@@ -284,7 +313,7 @@ export default function Consultation() {
               </div>
             )}
 
-            {currentStep === 6 && (
+            {currentStep === 7 && (
               <form onSubmit={handleSubmit}>
                 <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-2">
                   Where should we send your quote and next steps?
