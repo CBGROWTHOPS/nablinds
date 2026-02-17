@@ -159,6 +159,9 @@ export default function Consultation() {
             <p className="text-center text-xs text-gray-500 mt-1">
               🇺🇸 All products made in the USA
             </p>
+            <p className="text-center text-xs text-gray-500 mt-1">
+              ⭐ 4.9 stars · 60+ South Florida homeowners served
+            </p>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
