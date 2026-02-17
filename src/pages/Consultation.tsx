@@ -156,7 +156,7 @@ export default function Consultation() {
             <p className="text-center text-xs text-gray-500 mt-2">
               Takes about 30 seconds · Answer a few quick questions to see pricing options.
             </p>
-            <p className="text-center text-xs text-gray-500 mt-1">
+            <p className="text-center text-xs text-gray-500 mt-4">
               🇺🇸 All products made in the USA
             </p>
             <p className="text-center text-xs text-gray-500 mt-1">
