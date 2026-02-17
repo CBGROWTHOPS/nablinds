@@ -160,7 +160,7 @@ export default function Consultation() {
               🇺🇸 All products made in the USA
             </p>
             <p className="text-center text-xs text-gray-500 mt-1">
-              ⭐ 4.9 stars · 60+ South Florida homeowners served
+              ⭐ 4.9 stars · 1,000+ South Florida homeowners served
             </p>
           </div>
 
