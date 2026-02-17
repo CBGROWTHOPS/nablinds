@@ -200,9 +200,12 @@ export default function Consultation() {
 
             {currentStep === 2 && (
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-6">
-                  Do you want motorized control for that?
+                <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-2">
+                  Would you like motorized control?
                 </h2>
+                <p className="text-gray-600 text-sm mb-6">
+                  Control your blinds with remote, app, or voice.
+                </p>
                 <div className="space-y-3">
                   {[
                     'Yes',
