@@ -229,7 +229,7 @@ export default function Consultation() {
                   {[
                     'As soon as possible',
                     'In the next few weeks',
-                    'Just planning / researching',
+                    'Planning for the future',
                   ].map((option) => (
                     <button
                       key={option}
