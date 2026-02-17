@@ -323,6 +323,13 @@ export default function Consultation() {
                 <p className="text-gray-600 mb-6">
                   We'll share recommendations based on what you selected.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => window.location.href = 'tel:954-629-1373'}
+                  className="w-full bg-black text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-800 active:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all mb-6"
+                >
+                  Call Now for a Quote
+                </button>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
