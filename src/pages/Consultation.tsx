@@ -377,7 +377,7 @@ export default function Consultation() {
                   >
                     {isSubmitting ? 'Submitting...' : 'Get My Estimate'}
                   </button>
-                  <p className="text-xs text-gray-500 leading-relaxed">
+                  <p className="text-xs text-gray-500 leading-relaxed text-center">
                     By submitting, you agree to be contacted by phone or text
                     regarding your request.
                   </p>
