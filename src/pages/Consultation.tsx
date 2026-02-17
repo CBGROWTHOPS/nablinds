@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { submitConsultationToWebhook } from '../utils/consultationWebhook';
+import PromoBar from '../components/PromoBar';
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
@@ -108,6 +109,7 @@ export default function Consultation() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 flex flex-col">
+      <PromoBar />
       <div className="bg-white border-b border-gray-200 py-4 px-4 sm:px-6">
         <div className="max-w-2xl mx-auto">
           <Link to="/">
