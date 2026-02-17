@@ -3,9 +3,11 @@ interface ConsultationWebhookPayload {
   phone: string;
   email: string;
   service_type: string;
+  motorized_interest: string;
   project_location: string;
   installation_timeline: string;
   property_type: string;
+  window_count: string;
   project_priority: string;
   priority_flag?: string;
   source: string;
@@ -32,9 +34,11 @@ export async function submitConsultationToWebhook(data: {
   phone: string;
   email: string;
   serviceType: string;
+  motorizedInterest: string;
   projectLocation: string;
   installationTimeline: string;
   propertyType: string;
+  windowCount: string;
   projectPriority: string;
   priorityFlag?: string;
 }): Promise<boolean> {
@@ -45,9 +49,11 @@ export async function submitConsultationToWebhook(data: {
     phone: formattedPhone,
     email: data.email || '',
     service_type: data.serviceType,
+    motorized_interest: data.motorizedInterest,
     project_location: data.projectLocation,
     installation_timeline: data.installationTimeline,
     property_type: data.propertyType,
+    window_count: data.windowCount,
     project_priority: data.projectPriority,
     ...(data.priorityFlag && { priority_flag: data.priorityFlag }),
     source: 'Google Ads → Consultation Funnel',
