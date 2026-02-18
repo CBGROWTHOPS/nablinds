@@ -231,7 +231,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center max-w-lg mx-auto">
               <Link
-                to="/contact-2#consultation-form"
+                to="/consultation"
                 className="bg-ocean text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all text-center text-sm sm:text-base"
               >
                 Request Free Estimate

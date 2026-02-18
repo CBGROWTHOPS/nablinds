@@ -53,7 +53,7 @@ export default function ConsultationPopup() {
 
         <div className="space-y-3">
           <Link
-            to="/contact-2#consultation-form"
+            to="/consultation"
             onClick={handleClose}
             className="bg-ocean text-white px-6 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 w-full shadow-sm"
           >

@@ -20,6 +20,7 @@ export default function Footer() {
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact-2' },
+    { name: 'Get Estimate', path: '/consultation' },
   ];
 
   return (

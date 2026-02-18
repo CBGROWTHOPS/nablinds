@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Phone } from 'lucide-react';
-import { scrollToConsultationForm } from '../utils/scrollToForm';
 
 const shouldHideStickyBar = (pathname: string): boolean => {
   const excludedPages = [
@@ -28,7 +27,6 @@ export default function MobileStickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const isOnContactPage = location.pathname === '/contact' || location.pathname === '/contact-2';
   const shouldHide = shouldHideStickyBar(location.pathname);
 
   useEffect(() => {
@@ -63,13 +61,7 @@ export default function MobileStickyCTA() {
           <span>Call</span>
         </a>
         <button
-          onClick={() => {
-            if (isOnContactPage) {
-              scrollToConsultationForm();
-            } else {
-              navigate('/contact-2#consultation-form');
-            }
-          }}
+          onClick={() => navigate('/consultation')}
           className="flex-[2] bg-ocean text-white px-4 py-3 rounded-lg font-semibold text-sm hover:bg-ocean/90 active:bg-ocean/90 transition-all touch-manipulation"
         >
           Request Free Estimate

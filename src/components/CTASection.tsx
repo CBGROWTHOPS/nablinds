@@ -1,6 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Phone, Calendar } from 'lucide-react';
-import { scrollToConsultationForm } from '../utils/scrollToForm';
 
 interface CTASectionProps {
   title?: string;
@@ -11,15 +10,6 @@ export default function CTASection({
   title = 'Ready to Transform Your Space?',
   subtitle = 'Schedule your free in-home consultation today. Same-week appointments available.',
 }: CTASectionProps) {
-  const location = useLocation();
-  const isOnContactPage = location.pathname === '/contact' || location.pathname === '/contact-2';
-
-  const handleConsultationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isOnContactPage) {
-      e.preventDefault();
-      scrollToConsultationForm();
-    }
-  };
 
   return (
     <section className="py-10 sm:py-16 px-4 sm:px-6 bg-soft-sand">
@@ -32,8 +22,7 @@ export default function CTASection({
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Link
-            to="/contact-2#consultation-form"
-            onClick={handleConsultationClick}
+            to="/consultation"
             className="bg-ocean text-white px-6 sm:px-8 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-opacity-90 active:bg-opacity-80 transition-all flex items-center justify-center gap-2 touch-manipulation shadow-sm"
           >
             <Calendar className="w-5 h-5 flex-shrink-0" />
