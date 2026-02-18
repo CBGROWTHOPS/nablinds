@@ -19,6 +19,7 @@ import ThankYou from './pages/ThankYou';
 import ThankYouConsultation from './pages/ThankYouConsultation';
 import Contact2 from './pages/Contact-2';
 import Consultation from './pages/Consultation';
+import MotorizedBlinds from './pages/MotorizedBlinds';
 import DocsHub from './pages/docs/DocsHub';
 import ClarityDoc from './pages/docs/ClarityDoc';
 import AnalyticsDoc from './pages/docs/AnalyticsDoc';
@@ -67,6 +68,7 @@ function App() {
           <Route path="/docs/database" element={<DatabaseDoc />} />
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />
+          <Route path="/motorized-blinds" element={<Layout><MotorizedBlinds /></Layout>} />
           <Route path="/process" element={<Layout><Process /></Layout>} />
           <Route path="/service-areas" element={<Layout><ServiceAreas /></Layout>} />
           <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
