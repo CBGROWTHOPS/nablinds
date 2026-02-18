@@ -1,10 +1,16 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Zap, Home, Volume2, Shield, Calendar, Lock } from 'lucide-react';
-import SEO from '../components/SEO';
+import { useSEO } from '../utils/seo';
 import { trackPageView } from '../utils/tracking';
 
 export default function MotorizedBlinds() {
+  useSEO({
+    title: 'Motorized Blinds & Shades in South Florida | NA Blinds',
+    description: 'Smart motorized blinds for Miami, Broward & Palm Beach homes. Remote control, voice activation, energy efficiency. Explore options & install fast.',
+    canonicalUrl: 'https://www.nablinds.co/motorized-blinds'
+  });
+
   useEffect(() => {
     trackPageView('/motorized-blinds', 'Motorized Blinds & Smart Shades | NA Blinds');
   }, []);
@@ -42,12 +48,6 @@ export default function MotorizedBlinds() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO
-        title="Motorized Blinds & Shades in South Florida | NA Blinds"
-        description="Smart motorized blinds for Miami, Broward & Palm Beach homes. Remote control, voice activation, energy efficiency. Explore options & install fast."
-        canonical="/motorized-blinds"
-      />
-
       {/* HERO SECTION */}
       <section className="bg-gradient-to-br from-ocean to-ocean/90 text-white py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
