@@ -9,7 +9,7 @@ export default function Footer() {
     { name: 'Vertical Blinds', path: '/services#vertical-blinds' },
     { name: 'Roman Shades', path: '/services#roman-shades' },
     { name: 'Custom Drapes', path: '/services#custom-drapes' },
-    { name: 'Motorized & Smart Shades', path: '/services#motorized-smart' },
+    { name: 'Motorized & Smart Shades', path: '/motorized-blinds' },
   ];
 
   const companyLinks = [
