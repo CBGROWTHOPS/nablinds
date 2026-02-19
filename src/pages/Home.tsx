@@ -235,11 +235,8 @@ export default function Home() {
         <div className="relative w-full px-4 sm:px-6 text-white">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-5 md:mb-7">
-              <div className="text-base sm:text-lg md:text-xl font-extrabold tracking-wide mb-1.5 drop-shadow-lg">
+              <div className="text-base sm:text-lg md:text-xl font-extrabold tracking-wide drop-shadow-lg text-warm-gold">
                 UP TO 25% OFF + FREE MEASURE
-              </div>
-              <div className="text-sm sm:text-base md:text-lg font-medium drop-shadow-md">
-                Sale extended through 2/20/26
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 md:mb-6 leading-tight">
@@ -274,24 +271,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12 bg-white border-b border-gray-200">
+      <section className="py-8 md:py-12 bg-charcoal-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
-              <span className="font-semibold text-warm-dark text-sm sm:text-base">BBB A+ Rated</span>
+              <CheckCircle className="w-8 h-8 text-warm-gold flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-white text-sm sm:text-base">BBB A+ Rated</span>
             </div>
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
-              <span className="font-semibold text-warm-dark text-sm sm:text-base">Licensed & Insured</span>
+              <CheckCircle className="w-8 h-8 text-warm-gold flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-white text-sm sm:text-base">Licensed & Insured</span>
             </div>
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
-              <span className="font-semibold text-warm-dark text-sm sm:text-base">10+ Years Experience</span>
+              <CheckCircle className="w-8 h-8 text-warm-gold flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-white text-sm sm:text-base">10+ Years Experience</span>
             </div>
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
-              <span className="font-semibold text-warm-dark text-sm sm:text-base">Same-Week Consultations</span>
+              <CheckCircle className="w-8 h-8 text-warm-gold flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-white text-sm sm:text-base">Same-Week Consultations</span>
             </div>
           </div>
         </div>
@@ -484,7 +481,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-charcoal-dark">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
             <div className="flex justify-center gap-8 mb-8">
@@ -504,16 +501,16 @@ export default function Home() {
                 className="h-20 w-auto"
               />
             </div>
-            <h2 className="text-warm-dark mb-8">
+            <h2 className="text-warm-gold mb-8">
               Trusted by South Florida Homeowners
             </h2>
-            <p className="text-lg text-warm-gray mb-12">
+            <p className="text-lg text-white/90 mb-12">
               BBB A+ rating and Angi Super Service Award. Quality work and reliable service.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-6 md:p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+            <div className="bg-white/5 backdrop-blur border border-white/10 p-6 md:p-8 rounded-lg">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -521,13 +518,13 @@ export default function Home() {
                   </svg>
                 ))}
               </div>
-              <p className="text-warm-gray mb-4 leading-relaxed">
+              <p className="text-white/90 mb-4 leading-relaxed">
                 "Professional service from start to finish. They helped us choose the perfect shades for our condo and the installation was flawless."
               </p>
-              <p className="text-sm font-medium text-warm-dark">Maria G., Coral Gables</p>
+              <p className="text-sm font-medium text-warm-gold">Maria G., Coral Gables</p>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+            <div className="bg-white/5 backdrop-blur border border-white/10 p-6 md:p-8 rounded-lg">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -535,13 +532,13 @@ export default function Home() {
                   </svg>
                 ))}
               </div>
-              <p className="text-warm-gray mb-4 leading-relaxed">
+              <p className="text-white/90 mb-4 leading-relaxed">
                 "Quick turnaround and excellent quality. Our motorized shades work perfectly and look amazing. Highly recommend!"
               </p>
-              <p className="text-sm font-medium text-warm-dark">David R., Boca Raton</p>
+              <p className="text-sm font-medium text-warm-gold">David R., Boca Raton</p>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+            <div className="bg-white/5 backdrop-blur border border-white/10 p-6 md:p-8 rounded-lg">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -549,17 +546,17 @@ export default function Home() {
                   </svg>
                 ))}
               </div>
-              <p className="text-warm-gray mb-4 leading-relaxed">
+              <p className="text-white/90 mb-4 leading-relaxed">
                 "They made everything so easy. Showed up on time, very clean work, and the results exceeded our expectations."
               </p>
-              <p className="text-sm font-medium text-warm-dark">Jennifer L., Miami Beach</p>
+              <p className="text-sm font-medium text-warm-gold">Jennifer L., Miami Beach</p>
             </div>
           </div>
 
           <div className="text-center">
             <Link
               to="/testimonials"
-              className="inline-flex items-center gap-2 text-navy font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-warm-gold font-medium hover:text-warm-gold/80 hover:gap-3 transition-all"
             >
               Read Customer Reviews
               <ArrowRight className="w-4 h-4" />
