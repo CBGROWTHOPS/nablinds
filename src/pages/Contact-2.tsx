@@ -68,14 +68,14 @@ export default function Contact2() {
 
   return (
     <div>
-      <section className="relative py-16 md:py-32 px-6 bg-soft-sand overflow-hidden">
+      <section className="relative py-20 md:py-28 px-6 bg-soft-sand overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/roller_shade__012.jpg)' }}
         />
         <div className="absolute inset-0 bg-warm-dark/70" />
         <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-semibold text-white mb-6 drop-shadow-2xl">
+          <h1 className="text-5xl md:text-6xl text-white mb-6 drop-shadow-2xl">
             Get Started Today
           </h1>
           <p className="text-xl text-white leading-relaxed drop-shadow-xl">
@@ -84,15 +84,15 @@ export default function Contact2() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             <ContactInfo />
 
             <div className="overflow-hidden" id="consultation-form">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                 <div className="px-4 sm:px-6 pt-4 sm:pt-6 pb-3 sm:pb-4">
-                  <h2 className="text-lg sm:text-2xl font-semibold text-warm-dark whitespace-nowrap mb-2">
+                  <h2 className="text-lg sm:text-2xl text-warm-dark whitespace-nowrap mb-2">
                     Request a Free Estimate
                   </h2>
                   <p className="text-sm text-warm-gray">
@@ -131,7 +131,7 @@ export default function Contact2() {
                 <p className="text-warm-gray mb-3 sm:mb-4 text-sm sm:text-base">Prefer to call?</p>
                 <a
                   href="tel:954-629-1373"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-ocean border-2 border-ocean px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-ocean hover:text-white active:bg-ocean active:text-white transition-all touch-manipulation shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-phone border-2 border-phone px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-phone hover:text-white active:bg-phone active:text-white transition-all touch-manipulation shadow-sm"
                 >
                   <Phone className="w-5 h-5 flex-shrink-0" />
                   <span>Call 954-629-1373 Now</span>
@@ -142,9 +142,9 @@ export default function Contact2() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-warm-dark mb-4">
+          <h2 className="text-warm-dark mb-8">
             Same-Week Appointments Available
           </h2>
           <p className="text-lg text-warm-gray">

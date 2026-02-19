@@ -123,7 +123,7 @@ export default function Process() {
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
         </div>
         <div className="relative max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-lg">
             Our Window Treatment Installation Process
           </h1>
           <p className="text-xl leading-relaxed drop-shadow-md">
@@ -132,7 +132,7 @@ export default function Process() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="space-y-10 md:space-y-16">
             {steps.map((step, index) => (
@@ -142,16 +142,16 @@ export default function Process() {
               >
                 <div className="grid md:grid-cols-[120px_1fr] gap-8">
                   <div className="flex flex-col items-center md:items-start">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-ocean bg-opacity-10 rounded-full mb-4">
-                      <step.icon className="w-10 h-10 text-ocean" />
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-taupe/20 rounded-full mb-4">
+                      <step.icon className="w-10 h-10 text-charcoal" />
                     </div>
-                    <div className="text-5xl font-bold text-ocean text-opacity-30">
+                    <div className="text-5xl font-bold text-taupe text-opacity-40">
                       {step.number}
                     </div>
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-semibold text-warm-dark mb-4">
+                    <h2 className="text-warm-dark mb-8">
                       {step.title}
                     </h2>
                     <p className="text-lg text-warm-gray mb-6 leading-relaxed">
@@ -163,7 +163,7 @@ export default function Process() {
                           key={detail}
                           className="flex items-start gap-3 text-warm-gray"
                         >
-                          <div className="w-1.5 h-1.5 bg-ocean rounded-full mt-2.5 flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 bg-taupe rounded-full mt-2.5 flex-shrink-0"></div>
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -172,7 +172,7 @@ export default function Process() {
                 </div>
 
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute left-10 top-24 w-0.5 h-16 bg-ocean bg-opacity-20"></div>
+                  <div className="hidden md:block absolute left-10 top-24 w-0.5 h-16 bg-taupe/30"></div>
                 )}
               </div>
             ))}
@@ -180,10 +180,10 @@ export default function Process() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Our Commitment to You
             </h2>
             <p className="text-lg text-warm-gray max-w-2xl mx-auto">
@@ -191,11 +191,11 @@ export default function Process() {
             </p>
           </div>
 
-          <div className="bg-white p-10 rounded-xl shadow-sm">
+          <div className="bg-white p-10 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
             <div className="grid md:grid-cols-2 gap-6">
               {guarantees.map((guarantee) => (
                 <div key={guarantee} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-charcoal flex-shrink-0 mt-0.5" />
                   <span className="text-warm-dark">{guarantee}</span>
                 </div>
               ))}
@@ -204,10 +204,10 @@ export default function Process() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Pricing & Timeline
             </h2>
             <p className="text-lg text-warm-gray max-w-2xl mx-auto">
@@ -216,45 +216,45 @@ export default function Process() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-soft-sand p-8 rounded-xl">
-              <h3 className="text-xl font-semibold text-warm-dark mb-4">How Pricing Works</h3>
+            <div className="bg-soft-sand p-8 rounded-lg">
+              <h3 className="text-xl text-warm-dark mb-4">How Pricing Works</h3>
               <ul className="space-y-3 text-warm-gray">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span>Estimates provided during free in-home consultation</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span>Based on window size, product type, and installation scope</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span>Itemized breakdown of materials and labor</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span>No hidden fees or surprise charges</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-soft-sand p-8 rounded-xl">
-              <h3 className="text-xl font-semibold text-warm-dark mb-4">Typical Timeline</h3>
+            <div className="bg-soft-sand p-8 rounded-lg">
+              <h3 className="text-xl text-warm-dark mb-4">Typical Timeline</h3>
               <ul className="space-y-3 text-warm-gray">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span><strong>Same week:</strong> Consultation scheduled</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span><strong>7-10 days:</strong> Custom fabrication completed</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span><strong>1-2 days:</strong> Installation completed</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                   <span>Most projects completed within 2 weeks total</span>
                 </li>
               </ul>
@@ -264,8 +264,8 @@ export default function Process() {
       </section>
 
       <CTASection
-        title="Ready to Get Started?"
-        subtitle="Free consultation. Transparent pricing. Professional installation."
+        title="Start With a Conversation"
+        subtitle="Free consultation with transparent pricing and no obligation. Professional installation from start to finish."
       />
     </div>
   );

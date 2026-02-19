@@ -29,7 +29,7 @@ export default function ThankYou() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="min-h-screen bg-white">
       <div className="bg-white border-b border-gray-200 py-4 sm:py-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Link to="/" className="inline-block touch-manipulation">
@@ -42,10 +42,10 @@ export default function ThankYou() {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-20 md:py-28">
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-ocean/10 rounded-full mb-4 sm:mb-6">
-            <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-ocean" />
+          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-taupe/20 rounded-full mb-4 sm:mb-6">
+            <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-charcoal" />
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-warm-dark mb-3 sm:mb-4 leading-tight px-2">
             Thanks — Your Consultation Request Is Confirmed
@@ -56,13 +56,13 @@ export default function ThankYou() {
         </div>
 
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 sm:p-6 md:p-8 mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-5 sm:mb-6">What Happens Next</h2>
+          <h2 className="text-warm-dark mb-8">What Happens Next</h2>
 
           <div className="space-y-5 sm:space-y-6">
             <div className="flex gap-3 sm:gap-4">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-ocean/10 rounded-full">
-                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-ocean" />
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-taupe/20 rounded-full">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-charcoal" />
                 </div>
               </div>
               <div>
@@ -75,8 +75,8 @@ export default function ThankYou() {
 
             <div className="flex gap-3 sm:gap-4">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-ocean/10 rounded-full">
-                  <Home className="w-5 h-5 sm:w-6 sm:h-6 text-ocean" />
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-taupe/20 rounded-full">
+                  <Home className="w-5 h-5 sm:w-6 sm:h-6 text-charcoal" />
                 </div>
               </div>
               <div>
@@ -89,8 +89,8 @@ export default function ThankYou() {
 
             <div className="flex gap-3 sm:gap-4">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-ocean/10 rounded-full">
-                  <Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-ocean" />
+                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-taupe/20 rounded-full">
+                  <Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-charcoal" />
                 </div>
               </div>
               <div>
@@ -109,10 +109,10 @@ export default function ThankYou() {
           </div>
         </div>
 
-        <div className="bg-ocean rounded-lg p-5 sm:p-6 md:p-8 mb-6 sm:mb-8 text-center">
+        <div className="bg-navy rounded-lg p-5 sm:p-6 md:p-8 mb-6 sm:mb-8 text-center">
           <a
             href="tel:9546291373"
-            className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-ocean px-5 py-4 sm:px-8 sm:py-5 rounded-lg font-bold text-base sm:text-lg hover:bg-gray-50 active:bg-gray-100 transition-colors duration-200 w-full sm:w-auto touch-manipulation shadow-sm"
+            className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-navy px-5 py-4 sm:px-8 sm:py-5 rounded-lg font-bold text-base sm:text-lg hover:bg-gray-50 active:bg-gray-100 transition-colors duration-200 w-full sm:w-auto touch-manipulation shadow-sm"
           >
             <Phone className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
             <span className="hidden min-[400px]:inline">Call Now to Confirm Your Consultation</span>
@@ -123,47 +123,47 @@ export default function ThankYou() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 sm:p-6 md:p-8 mb-6 sm:mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-5 sm:mb-6 text-center">
+        <div className="bg-soft-sand rounded-lg shadow-sm border border-gray-200 p-5 sm:p-6 md:p-8 mb-6 sm:mb-8">
+          <h2 className="text-warm-dark mb-8 text-center">
             Why Homeowners Trust NA Blinds
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-charcoal flex-shrink-0" />
               <span className="text-sm sm:text-base text-gray-700 font-medium">BBB A+ Rated</span>
             </div>
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-charcoal flex-shrink-0" />
               <span className="text-sm sm:text-base text-gray-700 font-medium">Licensed & Insured</span>
             </div>
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-charcoal flex-shrink-0" />
               <span className="text-sm sm:text-base text-gray-700 font-medium">10+ Years Serving South Florida</span>
             </div>
             <div className="flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-charcoal flex-shrink-0" />
               <span className="text-sm sm:text-base text-gray-700 font-medium">Same-Week Consultations</span>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-5 sm:p-6 md:p-8 mb-6 sm:mb-8">
-          <h2 className="text-lg sm:text-xl font-bold text-warm-dark mb-4 sm:mb-5">
+        <div className="bg-white rounded-lg border border-gray-200 p-5 sm:p-6 md:p-8 mb-6 sm:mb-8">
+          <h2 className="text-warm-dark mb-8">
             Want to Get the Most From Your Consultation?
           </h2>
 
           <div className="space-y-3 sm:space-y-4">
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
               <span className="text-sm sm:text-base text-gray-700 leading-relaxed">Rooms you'd like to focus on</span>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
               <span className="text-sm sm:text-base text-gray-700 leading-relaxed">Heat, glare, or privacy concerns</span>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
               <span className="text-sm sm:text-base text-gray-700 leading-relaxed">Condo or HOA requirements (if applicable)</span>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function ThankYou() {
         <div className="text-center py-4">
           <Link
             to="/"
-            className="text-gray-500 hover:text-ocean transition-colors duration-200 text-sm touch-manipulation inline-block py-2 px-4"
+            className="text-gray-500 hover:text-navy transition-colors duration-200 text-sm touch-manipulation inline-block py-2 px-4"
           >
             Return to Homepage
           </Link>

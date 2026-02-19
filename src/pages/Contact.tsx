@@ -42,7 +42,7 @@ export default function Contact() {
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
         </div>
         <div className="relative max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6 drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl text-white mb-6 drop-shadow-lg">
             Get Started Today
           </h1>
           <p className="text-xl leading-relaxed drop-shadow-md">
@@ -68,7 +68,7 @@ export default function Contact() {
                 <p className="text-warm-gray mb-3 sm:mb-4 text-sm sm:text-base">Prefer to call?</p>
                 <a
                   href="tel:954-629-1373"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-ocean border-2 border-ocean px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-ocean hover:text-white active:bg-ocean active:text-white transition-all touch-manipulation shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-phone border-2 border-phone px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-phone hover:text-white active:bg-phone active:text-white transition-all touch-manipulation shadow-sm"
                 >
                   <Phone className="w-5 h-5 flex-shrink-0" />
                   <span>Call 954-629-1373 Now</span>

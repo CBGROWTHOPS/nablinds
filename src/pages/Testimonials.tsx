@@ -1,5 +1,4 @@
 import { Star, Quote } from 'lucide-react';
-import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 
 export default function Testimonials() {
@@ -74,9 +73,9 @@ export default function Testimonials() {
 
   return (
     <div>
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-semibold text-warm-dark mb-6">
+          <h1 className="text-5xl md:text-6xl text-warm-dark mb-6">
             Customer Reviews
           </h1>
           <p className="text-xl text-warm-gray leading-relaxed">
@@ -90,7 +89,7 @@ export default function Testimonials() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-ocean mb-2">
+                <p className="text-4xl md:text-5xl font-bold text-charcoal mb-2">
                   {stat.number}
                 </p>
                 <p className="text-warm-gray font-medium">{stat.label}</p>
@@ -100,7 +99,7 @@ export default function Testimonials() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center gap-4 mb-12">
             <img
@@ -124,14 +123,15 @@ export default function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-sm border border-gray-200"
+                className="bg-white p-8 rounded-lg border border-gray-200"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
-                <Quote className="w-8 h-8 text-ocean text-opacity-30 mb-4" />
+                <Quote className="w-8 h-8 text-taupe/40 mb-4" />
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 fill-ocean text-ocean"
+                      className="w-5 h-5 fill-taupe text-taupe"
                     />
                   ))}
                 </div>
@@ -149,22 +149,6 @@ export default function Testimonials() {
           </div>
         </div>
       </section>
-
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold text-warm-dark mb-6">
-            Join Hundreds of Satisfied Customers
-          </h2>
-          <p className="text-lg text-warm-gray mb-8">
-            Experience the same quality service and exceptional results.
-          </p>
-        </div>
-      </section>
-
-      <CTASection
-        title="Ready for Your Own Transformation?"
-        subtitle="Schedule your free consultation and see why South Florida homeowners trust NA Blinds."
-      />
     </div>
   );
 }

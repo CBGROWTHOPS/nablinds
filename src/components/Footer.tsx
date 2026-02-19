@@ -10,6 +10,8 @@ export default function Footer() {
     { name: 'Roman Shades', path: '/services#roman-shades' },
     { name: 'Custom Drapes', path: '/services#custom-drapes' },
     { name: 'Motorized & Smart Shades', path: '/motorized-blinds' },
+    { name: 'Condo Treatments', path: '/condo-window-treatments' },
+    { name: 'Get Estimate', path: '/consultation' },
   ];
 
   const companyLinks = [
@@ -19,14 +21,14 @@ export default function Footer() {
     { name: 'Gallery', path: '/gallery' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'FAQ', path: '/faq' },
-    { name: 'Contact', path: '/contact-2' },
-    { name: 'Get Estimate', path: '/consultation' },
+    { name: 'Guides', path: '/guides' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <footer className="bg-soft-sand border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-white border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid md:grid-cols-4 gap-16 mb-16">
           <div>
             <img
               src="/nablinds_logo_transparent_black.png"
@@ -62,7 +64,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-warm-gray hover:text-ocean transition-colors text-sm"
+                    className="text-warm-gray hover:text-navy transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -78,7 +80,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-warm-gray hover:text-ocean transition-colors text-sm"
+                    className="text-warm-gray hover:text-navy transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -93,18 +95,18 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:954-629-1373"
-                  className="flex items-start gap-3 text-warm-gray hover:text-ocean transition-colors text-sm group"
+                  className="flex items-start gap-3 text-warm-gray hover:text-navy transition-colors text-sm group"
                 >
-                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-ocean" />
+                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-navy" />
                   <span>954-629-1373</span>
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:info@nablinds.co"
-                  className="flex items-start gap-3 text-warm-gray hover:text-ocean transition-colors text-sm group"
+                  className="flex items-start gap-3 text-warm-gray hover:text-navy transition-colors text-sm group"
                 >
-                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-ocean" />
+                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-navy" />
                   <span>info@nablinds.co</span>
                 </a>
               </li>
@@ -123,7 +125,7 @@ export default function Footer() {
                   href="https://www.facebook.com/nablindsofficial/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-warm-gray hover:text-ocean transition-colors"
+                  className="text-warm-gray hover:text-navy transition-colors"
                   aria-label="Facebook"
                 >
                   <Facebook className="w-5 h-5" />
@@ -132,7 +134,7 @@ export default function Footer() {
                   href="https://www.instagram.com/nablindsofficial/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-warm-gray hover:text-ocean transition-colors"
+                  className="text-warm-gray hover:text-navy transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
@@ -146,10 +148,10 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm text-warm-gray">
             <p>© {new Date().getFullYear()} NA Blinds. All rights reserved.</p>
             <div className="flex items-center gap-4">
-              <Link to="/terms" className="hover:text-ocean transition-colors">
+              <Link to="/terms" className="hover:text-navy transition-colors">
                 Terms
               </Link>
-              <Link to="/privacy" className="hover:text-ocean transition-colors">
+              <Link to="/privacy" className="hover:text-navy transition-colors">
                 Privacy
               </Link>
             </div>

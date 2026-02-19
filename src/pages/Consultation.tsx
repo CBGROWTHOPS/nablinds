@@ -137,9 +137,9 @@ export default function Consultation() {
                   <div
                     className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${
                       step < currentStep
-                        ? 'bg-ocean text-white'
+                        ? 'bg-charcoal text-white'
                         : step === currentStep
-                        ? 'bg-ocean text-white'
+                        ? 'bg-charcoal text-white'
                         : 'bg-gray-200 text-gray-500'
                     }`}
                   >
@@ -148,24 +148,24 @@ export default function Consultation() {
                   {step < 8 && (
                     <div
                       className={`flex-1 h-1 mx-1 sm:mx-2 transition-colors ${
-                        step < currentStep ? 'bg-ocean' : 'bg-gray-200'
+                        step < currentStep ? 'bg-charcoal' : 'bg-gray-200'
                       }`}
                     />
                   )}
                 </div>
               ))}
             </div>
-            <p className="text-center text-sm text-gray-600">
+            <p className="text-center text-sm text-warm-gray">
               Step {currentStep} of 8
             </p>
-            <p className="text-center text-xs text-gray-500 mt-2">
+            <p className="text-center text-xs text-warm-gray mt-2">
               Takes about 30 seconds · Answer a few quick questions to see pricing options.
             </p>
-            <p className="text-center text-xs text-gray-500 mt-4">
+            <p className="text-center text-xs text-warm-gray mt-4">
               🇺🇸 All products made in the USA
             </p>
-            <p className="text-center text-xs text-gray-500 mt-1">
-              ⭐ 4.9 stars · 1,000+ South Florida homeowners served
+            <p className="text-center text-xs text-warm-gray mt-1">
+              ⭐ 4.8 stars · 120+ South Florida homeowners served
             </p>
           </div>
 
@@ -189,7 +189,7 @@ export default function Consultation() {
                     <button
                       key={option}
                       onClick={() => handleOptionSelect('serviceType', option)}
-                      className="p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                      className="p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-all text-left"
                     >
                       {option}
                     </button>
@@ -215,7 +215,7 @@ export default function Consultation() {
                     <button
                       key={option}
                       onClick={() => handleOptionSelect('motorizedInterest', option)}
-                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-all text-left"
                     >
                       {option}
                     </button>
@@ -242,7 +242,7 @@ export default function Consultation() {
                     <button
                       key={option}
                       onClick={() => handleOptionSelect('projectLocation', option)}
-                      className="p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                      className="p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-all text-left"
                     >
                       {option}
                     </button>
@@ -267,7 +267,7 @@ export default function Consultation() {
                       onClick={() =>
                         handleOptionSelect('installationTimeline', option)
                       }
-                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-all text-left"
                     >
                       {option}
                     </button>
@@ -290,7 +290,7 @@ export default function Consultation() {
                     <button
                       key={option}
                       onClick={() => handleOptionSelect('propertyType', option)}
-                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-all text-left"
                     >
                       {option}
                     </button>
@@ -314,7 +314,7 @@ export default function Consultation() {
                     <button
                       key={option}
                       onClick={() => handleOptionSelect('windowCount', option)}
-                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-all text-left"
                     >
                       {option}
                     </button>
@@ -341,7 +341,7 @@ export default function Consultation() {
                       onClick={() =>
                         handleOptionSelect('projectPriority', option)
                       }
-                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-ocean hover:bg-ocean/5 active:bg-ocean/10 transition-all text-left"
+                      className="w-full p-4 border-2 border-gray-300 rounded-lg font-medium text-warm-dark hover:border-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-all text-left"
                     >
                       {option}
                     </button>
@@ -355,9 +355,19 @@ export default function Consultation() {
                 <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-2">
                   Where should we send your quote and next steps?
                 </h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-4">
                   We'll share recommendations based on what you selected.
                 </p>
+                <div className="mb-6 p-4 bg-warm-white rounded-lg border border-taupe/15 text-center">
+                  <p className="text-sm text-warm-gray mb-2">Want to skip the form and talk to someone now?</p>
+                  <a
+                    href="tel:954-629-1373"
+                    className="inline-flex items-center gap-2 text-warm-dark font-medium hover:text-navy transition-colors"
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span>Call 954-629-1373</span>
+                  </a>
+                </div>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -370,7 +380,7 @@ export default function Consultation() {
                         handleInputChange('firstName', e.target.value)
                       }
                       required
-                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-ocean focus:outline-none"
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none"
                       autoFocus
                     />
                   </div>
@@ -385,7 +395,7 @@ export default function Consultation() {
                         handleInputChange('phone', e.target.value)
                       }
                       required
-                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-ocean focus:outline-none"
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none"
                     />
                   </div>
                   <div>
@@ -398,7 +408,7 @@ export default function Consultation() {
                       onChange={(e) =>
                         handleInputChange('email', e.target.value)
                       }
-                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-ocean focus:outline-none"
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none"
                     />
                     <p className="text-xs text-gray-500 mt-2">
                       Optional. Helpful if you prefer email over text.
@@ -407,23 +417,13 @@ export default function Consultation() {
                   <button
                     type="submit"
                     disabled={!isStepValid(8) || isSubmitting}
-                    className="w-full bg-ocean text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 active:bg-opacity-80 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all"
+                    className="w-full bg-navy text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 active:bg-opacity-80 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all"
                   >
                     {isSubmitting ? 'Submitting...' : 'Get My Estimate'}
                   </button>
                   <p className="text-xs text-gray-500 leading-relaxed text-center">
                     By submitting, you agree to be contacted by phone or text
                     regarding your request.
-                  </p>
-                  <p className="text-sm text-gray-600 text-center mt-4">
-                    Prefer to talk?{' '}
-                    <a
-                      href="tel:954-629-1373"
-                      className="inline-flex items-center gap-1 text-ocean hover:text-warm-dark font-medium transition-colors"
-                    >
-                      <Phone className="w-4 h-4" />
-                      Call us at 954-629-1373
-                    </a>
                   </p>
                 </div>
               </form>
@@ -435,7 +435,7 @@ export default function Consultation() {
       <footer className="bg-white border-t border-gray-200 py-4 px-4 text-center text-sm text-gray-600">
         <p>
           NA Blinds · South Florida ·{' '}
-          <Link to="/privacy" className="text-ocean hover:underline">
+          <Link to="/privacy" className="text-phone hover:underline">
             Privacy Policy
           </Link>
         </p>

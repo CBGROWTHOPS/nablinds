@@ -5,7 +5,7 @@ import { useSEO } from '../utils/seo';
 export default function About() {
   useSEO({
     title: 'About NA Blinds | 10+ Years Serving South Florida | BBB A+ Rated',
-    description: 'Family-owned window treatment company serving South Florida since 2014. BBB A+ rating, licensed & insured. Over 500 homes transformed across Miami-Dade, Broward, and Palm Beach counties.',
+    description: 'Family-owned window treatment company serving South Florida. BBB A+ rating, licensed & insured. Over 500 homes transformed across Miami-Dade, Broward, and Palm Beach counties.',
     canonicalUrl: 'https://www.nablinds.co/about'
   });
   const values = [
@@ -79,20 +79,20 @@ export default function About() {
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
         </div>
         <div className="relative max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6 drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl text-white mb-6 drop-shadow-lg">
             About NA Blinds
           </h1>
           <p className="text-xl leading-relaxed drop-shadow-md">
-            South Florida's trusted choice for custom window treatments since 2014.
+            South Florida's trusted choice for custom window treatments.
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <h2 className="text-4xl font-semibold text-warm-dark mb-6">
+              <h2 className="text-warm-dark mb-8">
                 Our Story
               </h2>
               <div className="space-y-4 text-warm-gray leading-relaxed">
@@ -110,11 +110,11 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="bg-soft-sand p-10 rounded-xl">
+            <div className="bg-soft-sand p-10 rounded-lg">
               <div className="grid grid-cols-2 gap-8">
                 {credentials.map((credential) => (
                   <div key={credential} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-ocean flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-charcoal flex-shrink-0 mt-0.5" />
                     <span className="text-warm-dark font-medium">{credential}</span>
                   </div>
                 ))}
@@ -141,10 +141,10 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Our Values
             </h2>
             <p className="text-lg text-warm-gray max-w-2xl mx-auto">
@@ -154,12 +154,12 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value) => (
-              <div key={value.title} className="bg-white p-8 rounded-xl shadow-sm text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-ocean bg-opacity-10 rounded-full mb-6">
-                  <value.icon className="w-8 h-8 text-ocean" />
+              <div key={value.title} className="bg-white p-8 rounded-lg text-center" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-taupe/20 rounded-full mb-6">
+                  <value.icon className="w-8 h-8 text-charcoal" />
                 </div>
-                <h3 className="text-xl font-semibold text-warm-dark mb-3">
-                  {value.title}
+<h3 className="text-xl text-warm-dark mb-3">
+                {value.title}
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
                   {value.description}
@@ -170,10 +170,10 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Why Choose NA Blinds?
             </h2>
             <p className="text-lg text-warm-gray max-w-2xl mx-auto">
@@ -183,9 +183,9 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((reason) => (
-              <div key={reason.title} className="bg-soft-sand p-8 rounded-xl">
-                <h3 className="text-xl font-semibold text-warm-dark mb-3">
-                  {reason.title}
+              <div key={reason.title} className="bg-soft-sand p-8 rounded-lg">
+<h3 className="text-xl text-warm-dark mb-3">
+                {reason.title}
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
                   {reason.description}
@@ -196,25 +196,25 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold text-warm-dark mb-6">
-            Serving South Florida Since 2014
+          <h2 className="text-warm-dark mb-8">
+            Serving South Florida
           </h2>
           <p className="text-lg text-warm-gray mb-8 leading-relaxed">
             We are proud to serve homeowners throughout Miami-Dade, Broward, and Palm Beach counties. Our reputation is built on quality work, honest service, and customer satisfaction.
           </p>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-5xl font-bold text-ocean mb-2">500+</p>
+              <p className="text-5xl font-bold text-charcoal mb-2">500+</p>
               <p className="text-warm-dark font-medium">Homes Transformed</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-ocean mb-2">10+</p>
+              <p className="text-5xl font-bold text-charcoal mb-2">10+</p>
               <p className="text-warm-dark font-medium">Years Experience</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-ocean mb-2">100%</p>
+              <p className="text-5xl font-bold text-charcoal mb-2">100%</p>
               <p className="text-warm-dark font-medium">Customer Focused</p>
             </div>
           </div>
@@ -222,8 +222,8 @@ export default function About() {
       </section>
 
       <CTASection
-        title="Ready to Work With Us?"
-        subtitle="Experience the NA Blinds difference. Schedule your free consultation today."
+        title="Work With a Team You Can Trust"
+        subtitle="Over a decade of experience and a commitment to getting it right. Schedule your consultation to see the difference."
       />
     </div>
   );

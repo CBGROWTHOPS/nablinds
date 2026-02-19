@@ -55,14 +55,14 @@ export default function MobileStickyCTA() {
       <div className="flex gap-2 p-3">
         <a
           href="tel:954-629-1373"
-          className="flex items-center justify-center gap-2 flex-1 bg-white text-ocean border-2 border-ocean px-4 py-3 rounded-lg font-semibold text-sm hover:bg-ocean hover:text-white active:bg-ocean active:text-white transition-all touch-manipulation"
+          className="flex items-center justify-center gap-2 flex-1 bg-white text-warm-dark border border-warm-dark/20 px-4 py-3 rounded font-medium text-sm active:bg-warm-cream transition-all touch-manipulation"
         >
           <Phone className="w-4 h-4 flex-shrink-0" />
           <span>Call</span>
         </a>
         <button
           onClick={() => navigate('/consultation')}
-          className="flex-[2] bg-ocean text-white px-4 py-3 rounded-lg font-semibold text-sm hover:bg-ocean/90 active:bg-ocean/90 transition-all touch-manipulation"
+          className="flex-[2] bg-warm-dark text-white px-4 py-3 rounded font-medium text-sm hover:bg-warm-dark/90 active:bg-warm-dark/80 transition-all touch-manipulation"
         >
           Request Free Estimate
         </button>

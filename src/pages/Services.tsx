@@ -163,7 +163,7 @@ export default function Services() {
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
         </div>
         <div className="relative max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-lg">
             Custom Window Treatments for South Florida Homes
           </h1>
           <p className="text-xl leading-relaxed drop-shadow-md">
@@ -172,7 +172,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-12 md:space-y-20">
             {services.map((service, index) => (
@@ -184,7 +184,7 @@ export default function Services() {
                 }`}
               >
                 <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                  <div className="rounded-xl overflow-hidden shadow-md">
+                  <div className="rounded-lg overflow-hidden shadow-md">
                     <img
                       src={service.image}
                       alt={service.name}
@@ -193,13 +193,13 @@ export default function Services() {
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                  <h2 className="text-3xl md:text-4xl font-semibold text-warm-dark mb-4">
+                  <h2 className="text-warm-dark mb-8">
                     {service.name}
                   </h2>
                   <p className="text-lg text-warm-gray mb-3 leading-relaxed">
                     {service.description}
                   </p>
-                  <p className="text-sm text-ocean font-medium mb-4">
+                  <p className="text-sm text-charcoal font-medium mb-4">
                     {service.id === 'solar-light-filtering' && 'Custom-measured for a precise fit — no gaps.'}
                     {service.id === 'blackout' && 'Ideal for condos and large South Florida windows.'}
                     {service.id === 'zebra-dual-layer' && 'Installed cleanly in one visit in most homes.'}
@@ -209,7 +209,7 @@ export default function Services() {
                     {service.id === 'motorized-smart' && 'Designed for South Florida homes and high-rise condos.'}
                   </p>
                   <div className="mb-6">
-                    <p className="text-sm font-semibold text-ocean mb-1">Best For</p>
+                    <p className="text-sm font-semibold text-charcoal mb-1">Best For</p>
                     <p className="text-warm-gray">{service.bestFor}</p>
                   </div>
                   <ul className="space-y-3 mb-8">
@@ -218,14 +218,14 @@ export default function Services() {
                         key={feature}
                         className="flex items-start gap-3 text-warm-gray"
                       >
-                        <div className="w-1.5 h-1.5 bg-ocean rounded-full mt-2.5 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 bg-taupe rounded-full mt-2.5 flex-shrink-0"></div>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     to="/contact-2#consultation-form"
-                    className="inline-block bg-ocean text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
+                    className="inline-block bg-navy text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
                   >
                     Request Estimate
                   </Link>
@@ -236,22 +236,22 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Features & Benefits
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
             {features.map((feature) => (
-              <div key={feature.title} className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-ocean bg-opacity-10 rounded-full mb-6">
-                  <feature.icon className="w-6 h-6 text-ocean" />
+              <div key={feature.title} className="bg-white p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-taupe/20 rounded-full mb-6">
+                  <feature.icon className="w-6 h-6 text-charcoal" />
                 </div>
-                <h3 className="text-xl font-semibold text-warm-dark mb-3">
-                  {feature.title}
+<h3 className="text-xl text-warm-dark mb-3">
+                {feature.title}
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
                   {feature.description}
@@ -263,8 +263,8 @@ export default function Services() {
       </section>
 
       <CTASection
-        title="Not Sure Which Product Is Right?"
-        subtitle="Schedule a free consultation. We'll help you choose the best solution for each room."
+        title="Not Sure Where to Start?"
+        subtitle="We bring samples to your home and help you choose the right solution for each room. No pressure, just guidance."
       />
     </div>
   );

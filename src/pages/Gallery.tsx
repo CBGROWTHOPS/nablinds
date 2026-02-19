@@ -70,7 +70,7 @@ export default function Gallery() {
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
         </div>
         <div className="relative max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6 drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl text-white mb-6 drop-shadow-lg">
             Our Work
           </h1>
           <p className="text-xl leading-relaxed drop-shadow-md">
@@ -79,13 +79,14 @@ export default function Gallery() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project) => (
               <div
                 key={project.title + project.location}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -95,10 +96,10 @@ export default function Gallery() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-warm-dark mb-2">
+                  <h3 className="text-xl text-warm-dark mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-ocean mb-3">{project.location}</p>
+                  <p className="text-sm text-taupe mb-3">{project.location}</p>
                   <p className="text-warm-gray leading-relaxed">
                     {project.description}
                   </p>
@@ -110,8 +111,8 @@ export default function Gallery() {
       </section>
 
       <CTASection
-        title="Ready to Transform Your Space?"
-        subtitle="Schedule your free consultation. We'll visit your home and create a custom solution."
+        title="See What's Possible in Your Home"
+        subtitle="Every project starts with a conversation. We'll visit your home, show samples, and create a custom solution."
       />
     </div>
   );

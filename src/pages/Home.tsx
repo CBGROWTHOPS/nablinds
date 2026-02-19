@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, Shield, Clock, Award, ArrowRight, ChevronDown } from 'lucide-react';
+import { CheckCircle, Shield, Clock, Award, ArrowRight, ChevronDown, Phone } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 import { getUserLocation } from '../utils/geolocation';
+
+const HERO_SLIDES = [
+  'https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a7162c656aa364c236bf9.png',
+  '/roller_shade__011.jpg',
+  '/roller_shade__013.jpg',
+  '/roller_shade__012.jpg',
+];
 
 export default function Home() {
   useSEO({
@@ -14,6 +21,14 @@ export default function Home() {
 
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [userLocation, setUserLocation] = useState<string>('South Florida');
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroSlideIndex((i) => (i + 1) % HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     getUserLocation().then(location => {
@@ -102,19 +117,19 @@ export default function Home() {
 
   const benefits = [
     {
+      icon: Clock,
+      title: 'Same-Week Speed',
+      description: 'Consultations scheduled within days, not weeks. Most projects completed in under two weeks from first call to finished installation.',
+    },
+    {
       icon: Shield,
-      title: 'Licensed & Insured',
-      description: 'BBB A+ rated with complete coverage and professional standards.',
+      title: 'HOA & Condo Expertise',
+      description: 'We navigate HOA and building requirements daily across South Florida high-rises and communities. Documentation and compliance handled for you.',
     },
     {
       icon: Award,
-      title: '10+ Years Experience',
-      description: 'Thousands of South Florida homes and condos successfully completed.',
-    },
-    {
-      icon: Clock,
-      title: 'Same-Week Appointments',
-      description: 'Fast scheduling with most projects finished within 10 days.',
+      title: 'Climate-Optimized Solutions',
+      description: 'Products chosen specifically for South Florida heat, humidity, and UV exposure. We recommend what actually performs here, not generic options.',
     },
   ];
 
@@ -202,14 +217,19 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative min-h-[450px] md:min-h-[600px] flex items-center py-12 md:py-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a7162c656aa364c236bf9.png')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-warm-dark bg-opacity-40"></div>
+      <section className="relative min-h-[450px] md:min-h-[600px] flex items-center py-12 md:py-0 overflow-hidden">
+        <div className="absolute inset-0">
+          {HERO_SLIDES.map((src, i) => (
+            <div
+              key={src}
+              className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+              style={{
+                backgroundImage: `url('${src}')`,
+                opacity: i === heroSlideIndex ? 1 : 0,
+              }}
+            />
+          ))}
+          <div className="absolute inset-0 bg-warm-dark bg-opacity-40" />
         </div>
 
         <div className="relative w-full px-4 sm:px-6 text-white">
@@ -222,7 +242,7 @@ export default function Home() {
                 Sale extended through 2/20/26
               </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 md:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 md:mb-6 leading-tight">
               Custom Window Treatments for {userLocation} Homes & Condos
             </h1>
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 leading-relaxed">
@@ -232,15 +252,16 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center max-w-lg mx-auto">
               <Link
                 to="/consultation"
-                className="bg-ocean text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all text-center text-sm sm:text-base"
+                className="bg-white text-warm-dark px-6 sm:px-8 py-3 sm:py-4 rounded font-medium hover:bg-warm-cream transition-all text-center text-sm sm:text-base"
               >
                 Request Free Estimate
               </Link>
               <a
                 href="tel:954-629-1373"
-                className="bg-white text-warm-dark px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-soft-sand transition-all text-center text-sm sm:text-base"
+                className="bg-warm-dark text-white px-6 sm:px-8 py-4 rounded font-medium text-base sm:text-lg hover:bg-warm-dark/90 active:bg-warm-dark/80 transition-all flex items-center justify-center gap-2 touch-manipulation"
               >
-                Call 954-629-1373
+                <Phone className="w-5 h-5 flex-shrink-0" />
+                <span>Call 954-629-1373</span>
               </a>
             </div>
             <p className="mt-4 text-sm md:text-base text-white opacity-90">
@@ -253,33 +274,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-6 md:py-8 bg-white border-b border-gray-200">
+      <section className="py-8 md:py-12 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-            <div className="flex items-center justify-start lg:justify-center gap-2 sm:gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
-              <span className="text-warm-dark font-medium text-sm sm:text-base">BBB A+ Rated</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="flex items-center gap-3">
+              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-warm-dark text-sm sm:text-base">BBB A+ Rated</span>
             </div>
-            <div className="flex items-center justify-start lg:justify-center gap-2 sm:gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
-              <span className="text-warm-dark font-medium text-sm sm:text-base">Licensed & Insured</span>
+            <div className="flex items-center gap-3">
+              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-warm-dark text-sm sm:text-base">Licensed & Insured</span>
             </div>
-            <div className="flex items-center justify-start lg:justify-center gap-2 sm:gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
-              <span className="text-warm-dark font-medium text-sm sm:text-base">10+ Years Experience</span>
+            <div className="flex items-center gap-3">
+              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-warm-dark text-sm sm:text-base">10+ Years Experience</span>
             </div>
-            <div className="flex items-center justify-start lg:justify-center gap-2 sm:gap-3">
-              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-ocean flex-shrink-0" />
-              <span className="text-warm-dark font-medium text-sm sm:text-base">Same-Week Consultations</span>
+            <div className="flex items-center gap-3">
+              <CheckCircle className="w-8 h-8 text-taupe flex-shrink-0" strokeWidth={2} />
+              <span className="font-semibold text-warm-dark text-sm sm:text-base">Same-Week Consultations</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               South Florida Homeowners Face Real Window Problems
             </h2>
             <p className="text-lg text-warm-gray max-w-3xl mx-auto">
@@ -288,8 +309,8 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-soft-sand p-10 rounded-xl">
-              <h3 className="text-2xl font-semibold text-warm-dark mb-8">
+            <div className="bg-soft-sand p-10 rounded-lg">
+              <h3 className="text-2xl text-warm-dark mb-8">
                 Common Frustrations
               </h3>
               <ul className="space-y-5">
@@ -304,14 +325,14 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-ocean bg-opacity-5 p-10 rounded-xl">
-              <h3 className="text-2xl font-semibold text-warm-dark mb-8">
+            <div className="bg-taupe/10 p-10 rounded-lg">
+              <h3 className="text-2xl text-warm-dark mb-8">
                 The NA Blinds Solution
               </h3>
               <ul className="space-y-5">
                 {solutions.map((solution, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <CheckCircle className="w-6 h-6 text-ocean flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-charcoal flex-shrink-0 mt-0.5" />
                     <span className="text-warm-gray leading-relaxed">{solution}</span>
                   </li>
                 ))}
@@ -321,10 +342,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Custom Solutions for Every Window
             </h2>
             <p className="text-lg text-warm-gray max-w-3xl mx-auto">
@@ -334,9 +355,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {customSolutions.map((solution) => (
-              <div key={solution.name} className="bg-white p-8 rounded-xl shadow-sm">
-                <h3 className="text-xl font-semibold text-warm-dark mb-3">
-                  {solution.name}
+              <div key={solution.name} className="bg-white p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+<h3 className="text-xl text-warm-dark mb-3">
+                {solution.name}
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
                   {solution.description}
@@ -348,18 +369,19 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-block bg-ocean text-white px-8 py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center gap-2 text-charcoal font-medium hover:gap-3 transition-all border-b border-charcoal/30 pb-0.5"
             >
-              View All Products
+              Explore All Products
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Simple Process. Zero Hassle.
             </h2>
           </div>
@@ -367,11 +389,11 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12">
             {process.map((step) => (
               <div key={step.number} className="text-center md:text-left">
-                <div className="text-6xl font-bold text-ocean text-opacity-20 mb-4">
+                <div className="text-6xl font-bold text-taupe/40 mb-4">
                   {step.number}
                 </div>
-                <h3 className="text-2xl font-semibold text-warm-dark mb-3">
-                  {step.title}
+<h3 className="text-2xl text-warm-dark mb-3">
+                {step.title}
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
                   {step.description}
@@ -382,10 +404,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Real Projects. Real Results.
             </h2>
             <p className="text-lg text-warm-gray max-w-2xl mx-auto">
@@ -397,7 +419,8 @@ export default function Home() {
             {galleryProjects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -407,10 +430,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-warm-dark mb-1">
+                  <h3 className="text-lg text-warm-dark mb-1">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-ocean">{project.location}</p>
+                  <p className="text-sm text-taupe">{project.location}</p>
                 </div>
               </div>
             ))}
@@ -419,7 +442,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/gallery"
-              className="inline-block text-ocean font-medium flex items-center gap-2 hover:gap-3 transition-all justify-center"
+              className="inline-flex items-center gap-2 text-navy font-medium hover:gap-3 transition-all justify-center"
             >
               View Full Gallery
               <ArrowRight className="w-4 h-4" />
@@ -428,10 +451,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Why Homeowners Choose Us
             </h2>
           </div>
@@ -439,11 +462,11 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12">
             {benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-ocean bg-opacity-10 rounded-full mb-6">
-                  <benefit.icon className="w-8 h-8 text-ocean" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-taupe/20 rounded-full mb-6">
+                  <benefit.icon className="w-8 h-8 text-charcoal" />
                 </div>
-                <h3 className="text-xl font-semibold text-warm-dark mb-3">
-                  {benefit.title}
+<h3 className="text-xl text-warm-dark mb-3">
+                {benefit.title}
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
                   {benefit.description}
@@ -451,10 +474,17 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="mt-16 max-w-3xl mx-auto text-center bg-soft-sand p-8 md:p-10 rounded-lg">
+            <h3 className="text-xl text-warm-dark mb-3">Our Satisfaction Guarantee</h3>
+            <p className="text-warm-gray leading-relaxed">
+              Every installation is backed by manufacturer warranties and our workmanship guarantee. If something isn't right, we make it right — no questions asked. We've built our reputation on standing behind our work for over a decade.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 md:py-24 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
             <div className="flex justify-center gap-8 mb-8">
@@ -474,7 +504,7 @@ export default function Home() {
                 className="h-20 w-auto"
               />
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-warm-dark mb-6">
+            <h2 className="text-warm-dark mb-8">
               Trusted by South Florida Homeowners
             </h2>
             <p className="text-lg text-warm-gray mb-12">
@@ -483,7 +513,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-6 md:p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -497,7 +527,7 @@ export default function Home() {
               <p className="text-sm font-medium text-warm-dark">Maria G., Coral Gables</p>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-6 md:p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -511,7 +541,7 @@ export default function Home() {
               <p className="text-sm font-medium text-warm-dark">David R., Boca Raton</p>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-6 md:p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -529,7 +559,7 @@ export default function Home() {
           <div className="text-center">
             <Link
               to="/testimonials"
-              className="inline-flex items-center gap-2 text-ocean font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-navy font-medium hover:gap-3 transition-all"
             >
               Read Customer Reviews
               <ArrowRight className="w-4 h-4" />
@@ -538,10 +568,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Common Questions Homeowners Ask
             </h2>
             <p className="text-lg text-warm-gray">
@@ -553,17 +583,18 @@ export default function Home() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-sm overflow-hidden"
+                className="bg-white rounded-lg overflow-hidden"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                   className="w-full px-4 py-4 sm:px-8 sm:py-6 text-left flex items-center justify-between hover:bg-soft-sand transition-colors"
                 >
-                  <h3 className="text-base sm:text-xl font-semibold text-warm-dark pr-4 sm:pr-8">
+                  <h3 className="text-base sm:text-xl text-warm-dark pr-4 sm:pr-8">
                     {faq.question}
                   </h3>
                   <ChevronDown
-                    className={`w-6 h-6 text-ocean flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-6 h-6 text-charcoal flex-shrink-0 transition-transform duration-300 ${
                       openFaqIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -584,7 +615,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/faq"
-              className="inline-flex items-center gap-2 text-ocean font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-navy font-medium hover:gap-3 transition-all"
             >
               View All FAQs
               <ArrowRight className="w-4 h-4" />

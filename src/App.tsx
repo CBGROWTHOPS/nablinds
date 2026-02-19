@@ -20,6 +20,10 @@ import ThankYouConsultation from './pages/ThankYouConsultation';
 import Contact2 from './pages/Contact-2';
 import Consultation from './pages/Consultation';
 import MotorizedBlinds from './pages/MotorizedBlinds';
+import Guides from './pages/Guides';
+import BuyersGuide from './pages/guides/BuyersGuide';
+import ShadeComparison from './pages/guides/ShadeComparison';
+import CondoWindowTreatments from './pages/CondoWindowTreatments';
 import DocsHub from './pages/docs/DocsHub';
 import ClarityDoc from './pages/docs/ClarityDoc';
 import AnalyticsDoc from './pages/docs/AnalyticsDoc';
@@ -77,6 +81,10 @@ function App() {
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
           <Route path="/contact-2" element={<Layout><Contact2 /></Layout>} />
+          <Route path="/guides" element={<Layout><Guides /></Layout>} />
+          <Route path="/guides/south-florida-buyers-guide" element={<Layout><BuyersGuide /></Layout>} />
+          <Route path="/guides/solar-vs-blackout-vs-zebra" element={<Layout><ShadeComparison /></Layout>} />
+          <Route path="/condo-window-treatments" element={<Layout><CondoWindowTreatments /></Layout>} />
           <Route path="/terms" element={<Layout><Terms /></Layout>} />
           <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
         </Routes>

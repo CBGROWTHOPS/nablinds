@@ -140,7 +140,7 @@ export default function Terms() {
                 <strong>Message & Data Rates:</strong> Message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.
               </p>
               <p className="leading-relaxed">
-                <strong>Privacy:</strong> If you have any questions regarding privacy, please read our <a href="/privacy" className="text-ocean hover:underline">Privacy Policy</a>.
+                <strong>Privacy:</strong> If you have any questions regarding privacy, please read our <a href="/privacy" className="text-navy hover:underline">Privacy Policy</a>.
               </p>
             </section>
 

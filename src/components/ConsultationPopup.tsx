@@ -33,7 +33,7 @@ export default function ConsultationPopup() {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl">
+        <div className="bg-white rounded-lg max-w-md w-full p-6 sm:p-8 relative shadow-2xl">
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 text-warm-gray hover:text-warm-dark transition-colors"
@@ -43,7 +43,7 @@ export default function ConsultationPopup() {
         </button>
 
         <div className="text-center mb-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-warm-dark mb-3">
+          <h2 className="text-warm-dark mb-3">
             Ready to Transform Your Space?
           </h2>
           <p className="text-base sm:text-lg text-warm-gray leading-relaxed">
@@ -55,7 +55,7 @@ export default function ConsultationPopup() {
           <Link
             to="/consultation"
             onClick={handleClose}
-            className="bg-ocean text-white px-6 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 w-full shadow-sm"
+            className="bg-warm-dark text-white px-6 py-4 rounded font-medium text-base sm:text-lg hover:bg-warm-dark/90 transition-all flex items-center justify-center gap-2 w-full"
           >
             <Calendar className="w-5 h-5 flex-shrink-0" />
             <span>Request Free Estimate</span>
@@ -63,7 +63,7 @@ export default function ConsultationPopup() {
           <a
             href="tel:954-629-1373"
             onClick={handleClose}
-            className="bg-white text-ocean border-2 border-ocean px-6 py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-ocean hover:text-white transition-all flex items-center justify-center gap-2 w-full shadow-sm"
+            className="bg-white text-warm-dark border border-warm-dark/20 px-6 py-4 rounded font-medium text-base sm:text-lg hover:bg-warm-cream transition-all flex items-center justify-center gap-2 w-full"
           >
             <Phone className="w-5 h-5 flex-shrink-0" />
             <span>Call 954-629-1373</span>

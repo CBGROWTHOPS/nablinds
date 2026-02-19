@@ -87,9 +87,9 @@ export default function FAQ() {
 
   return (
     <div>
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-warm-dark mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-warm-dark mb-6">
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-warm-gray leading-relaxed">
@@ -98,13 +98,13 @@ export default function FAQ() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden"
+                className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -114,7 +114,7 @@ export default function FAQ() {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-6 h-6 text-ocean flex-shrink-0 transition-transform ${
+                    className={`w-6 h-6 text-charcoal flex-shrink-0 transition-transform ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -132,28 +132,9 @@ export default function FAQ() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold text-warm-dark mb-6">
-            Still Have Questions?
-          </h2>
-          <p className="text-lg text-warm-gray mb-8">
-            We're here to help. Give us a call or schedule a consultation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:954-629-1373"
-              className="bg-ocean text-white px-8 py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all text-center"
-            >
-              Call 954-629-1373
-            </a>
-          </div>
-        </div>
-      </section>
-
       <CTASection
-        title="Ready to Get Started?"
-        subtitle="Schedule your free consultation and let's discuss your project."
+        title="Have More Questions?"
+        subtitle="We're happy to answer them. Schedule a consultation or give us a call — no obligation."
       />
     </div>
   );

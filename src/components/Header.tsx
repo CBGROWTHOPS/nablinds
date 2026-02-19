@@ -12,7 +12,8 @@ export default function Header() {
     { name: 'Services', path: '/services' },
     { name: 'Process', path: '/process' },
     { name: 'Service Areas', path: '/service-areas' },
-    { name: 'Contact', path: '/contact-2' },
+    { name: 'Guides', path: '/guides' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -44,8 +45,8 @@ export default function Header() {
                 to={item.path}
                 className={`text-sm font-medium transition-colors ${
                   isActive(item.path)
-                    ? 'text-ocean'
-                    : 'text-warm-dark hover:text-ocean'
+                    ? 'text-navy'
+                    : 'text-warm-dark hover:text-navy'
                 }`}
               >
                 {item.name}
@@ -53,7 +54,7 @@ export default function Header() {
             ))}
             <a
               href="tel:954-629-1373"
-              className="bg-ocean text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-opacity-90 active:bg-opacity-80 transition-all flex items-center gap-2 shadow-sm"
+              className="text-warm-dark border border-warm-dark/30 px-5 py-2 rounded font-medium hover:bg-warm-cream transition-all flex items-center gap-2 text-sm"
             >
               <Phone className="w-4 h-4 flex-shrink-0" />
               <span>954-629-1373</span>
@@ -78,7 +79,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-4 py-3 rounded-lg transition-colors font-medium touch-manipulation ${
                   isActive(item.path)
-                    ? 'bg-ocean text-white'
+                    ? 'bg-navy text-white'
                     : 'text-warm-dark hover:bg-soft-sand active:bg-soft-sand'
                 }`}
               >
@@ -87,7 +88,7 @@ export default function Header() {
             ))}
             <a
               href="tel:954-629-1373"
-              className="flex items-center justify-center gap-2 bg-ocean text-white px-4 py-4 rounded-lg font-semibold touch-manipulation shadow-sm active:bg-opacity-90"
+              className="flex items-center justify-center gap-2 text-warm-dark border border-warm-dark/30 px-4 py-3 rounded font-medium touch-manipulation active:bg-warm-cream"
             >
               <Phone className="w-5 h-5 flex-shrink-0" />
               <span>Call 954-629-1373</span>

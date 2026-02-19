@@ -1,5 +1,4 @@
 import { MapPin, CheckCircle } from 'lucide-react';
-import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 
 export default function ServiceAreas() {
@@ -81,7 +80,7 @@ export default function ServiceAreas() {
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
         </div>
         <div className="relative max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6 drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-lg">
             Window Treatment Services Across South Florida
           </h1>
           <p className="text-xl leading-relaxed drop-shadow-md">
@@ -90,14 +89,14 @@ export default function ServiceAreas() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-10">
             {counties.map((county) => (
-              <div key={county.name} className="bg-soft-sand p-8 rounded-xl">
+              <div key={county.name} className="bg-soft-sand p-8 rounded-lg">
                 <div className="flex items-center gap-3 mb-4">
-                  <MapPin className="w-6 h-6 text-ocean" />
-                  <h2 className="text-2xl font-semibold text-warm-dark">
+                  <MapPin className="w-6 h-6 text-charcoal" />
+                  <h2 className="text-2xl text-warm-dark">
                     {county.name}
                   </h2>
                 </div>
@@ -106,14 +105,14 @@ export default function ServiceAreas() {
                   {county.name === 'Broward County' && 'Professional window treatment installation across Broward County. Specialized in both single-family homes and high-rise condo installations.'}
                   {county.name === 'Palm Beach County' && 'Trusted window treatment provider throughout Palm Beach County. Expert in luxury homes, condos, and HOA-regulated properties.'}
                 </p>
-                <h3 className="text-sm font-semibold text-ocean mb-3">Cities We Serve:</h3>
+                <h3 className="text-sm text-charcoal mb-3">Cities We Serve:</h3>
                 <ul className="space-y-2">
                   {county.cities.map((city) => (
                     <li
                       key={city}
                       className="flex items-center gap-3 text-warm-gray text-sm"
                     >
-                      <div className="w-1.5 h-1.5 bg-ocean rounded-full flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-taupe rounded-full flex-shrink-0"></div>
                       <span>{city}</span>
                     </li>
                   ))}
@@ -122,10 +121,10 @@ export default function ServiceAreas() {
             ))}
           </div>
 
-          <div className="mt-12 p-8 bg-soft-sand rounded-xl text-center">
+          <div className="mt-12 p-8 bg-soft-sand rounded-lg text-center">
             <p className="text-warm-gray">
               Don't see your city listed?{' '}
-              <a href="tel:954-629-1373" className="text-ocean font-medium hover:underline">
+              <a href="tel:954-629-1373" className="text-navy font-medium hover:underline">
                 Call us at 954-629-1373
               </a>{' '}
               to confirm service availability in your area.
@@ -134,10 +133,10 @@ export default function ServiceAreas() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-soft-sand">
+      <section className="py-20 md:py-28 px-6 bg-soft-sand">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-warm-dark mb-4">
+            <h2 className="text-warm-dark mb-8">
               Why Choose a Local Provider?
             </h2>
             <p className="text-lg text-warm-gray max-w-2xl mx-auto">
@@ -149,9 +148,10 @@ export default function ServiceAreas() {
             {benefits.map((benefit) => (
               <div
                 key={benefit}
-                className="bg-white p-6 rounded-xl shadow-sm flex items-start gap-4"
+                className="bg-white p-6 rounded-lg flex items-start gap-4"
+                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
-                <CheckCircle className="w-6 h-6 text-ocean flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-charcoal flex-shrink-0 mt-0.5" />
                 <span className="text-warm-dark">{benefit}</span>
               </div>
             ))}
@@ -159,12 +159,12 @@ export default function ServiceAreas() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-warm-white">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-soft-sand p-12 rounded-xl">
+          <div className="bg-soft-sand p-12 rounded-lg">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-semibold text-warm-dark mb-4">
+                <h2 className="text-warm-dark mb-8">
                   South Florida Expertise
                 </h2>
                 <p className="text-warm-gray leading-relaxed mb-6">
@@ -172,34 +172,34 @@ export default function ServiceAreas() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-warm-gray">
-                    <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                     <span>Solar shades to reduce heat and glare</span>
                   </li>
                   <li className="flex items-start gap-3 text-warm-gray">
-                    <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                     <span>Moisture-resistant materials for coastal homes</span>
                   </li>
                   <li className="flex items-start gap-3 text-warm-gray">
-                    <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                     <span>Energy-efficient options to lower cooling costs</span>
                   </li>
                   <li className="flex items-start gap-3 text-warm-gray">
-                    <CheckCircle className="w-5 h-5 text-ocean flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-charcoal flex-shrink-0 mt-0.5" />
                     <span>Hurricane-resistant installation methods</span>
                   </li>
                 </ul>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-                <MapPin className="w-16 h-16 text-ocean mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-warm-dark mb-3">
-                  Serving All of South Florida
+              <div className="bg-white p-8 rounded-lg text-center" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+                <MapPin className="w-16 h-16 text-charcoal mx-auto mb-4" />
+<h3 className="text-2xl text-warm-dark mb-3">
+                Serving All of South Florida
                 </h3>
                 <p className="text-warm-gray mb-6">
                   No matter where you are in the tri-county area, we're ready to help.
                 </p>
                 <a
                   href="tel:954-629-1373"
-                  className="inline-block bg-ocean text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
+                  className="inline-block bg-navy text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
                 >
                   Call 954-629-1373
                 </a>
@@ -208,11 +208,6 @@ export default function ServiceAreas() {
           </div>
         </div>
       </section>
-
-      <CTASection
-        title="Ready to Schedule Your Consultation?"
-        subtitle="We serve homeowners throughout Miami-Dade, Broward, and Palm Beach counties."
-      />
     </div>
   );
 }
