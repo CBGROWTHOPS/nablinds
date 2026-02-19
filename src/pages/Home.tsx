@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, Shield, Clock, Award, ArrowRight, ChevronDown, Phone } from 'lucide-react';
+import { CheckCircle, Shield, Clock, Award, ArrowRight, ChevronDown, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 import { getUserLocation } from '../utils/geolocation';
@@ -22,6 +22,7 @@ export default function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [userLocation, setUserLocation] = useState<string>('South Florida');
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
+  const [solutionsScrollRef, setSolutionsScrollRef] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -134,43 +135,24 @@ export default function Home() {
   ];
 
   const customSolutions = [
-    {
-      name: 'Solar & Light-Filtering Shades',
-      description: 'Block heat and glare while keeping your view. Ideal for South Florida\'s intense sun.',
-    },
-    {
-      name: 'Blackout Shades',
-      description: 'Complete darkness and privacy. Perfect for bedrooms and media rooms.',
-    },
-    {
-      name: 'Zebra & Dual-Layer Shades',
-      description: 'Adjust between sheer and opaque instantly. Modern style with flexible control.',
-    },
-    {
-      name: 'Cellular (Honeycomb) Shades',
-      description: 'Energy-efficient shades designed to insulate against heat while providing privacy and a clean, modern look.',
-    },
-    {
-      name: 'Vertical Blinds for Sliding Doors',
-      description: 'Smooth operation for large openings. Built for high-traffic areas.',
-    },
-    {
-      name: 'Custom Roman Shades',
-      description: 'Elegant fabric folds with tailored finishes for a refined, designer look.',
-    },
-    {
-      name: 'Custom Drapes',
-      description: 'Soft, flowing fabrics with premium hardware for sophisticated window dressing.',
-    },
-    {
-      name: 'Shutters',
-      description: 'Durable, low-maintenance shutters that provide privacy, light control, and a timeless finished look.',
-    },
-    {
-      name: 'Motorized & Smart Shades',
-      description: 'Control shades by remote, app, or voice. Automate for comfort and efficiency.',
-    },
+    { name: 'Solar & Light-Filtering Shades', description: 'Block heat and glare while keeping your view. Ideal for South Florida\'s intense sun.', image: '/solar-shades-room.png' },
+    { name: 'Blackout Shades', description: 'Complete darkness and privacy. Perfect for bedrooms and media rooms.', image: '/blackout-shades-room.png' },
+    { name: 'Zebra & Dual-Layer Shades', description: 'Adjust between sheer and opaque instantly. Modern style with flexible control.', image: '/zebra-shades-room.png' },
+    { name: 'Cellular (Honeycomb) Shades', description: 'Energy-efficient shades designed to insulate against heat while providing privacy and a clean, modern look.', image: '/cellular-shades-room.png' },
+    { name: 'Vertical Blinds for Sliding Doors', description: 'Smooth operation for large openings. Built for high-traffic areas.', image: '/vertical-blinds-room.png' },
+    { name: 'Custom Roman Shades', description: 'Elegant fabric folds with tailored finishes for a refined, designer look.', image: '/roman-shades-room.png' },
+    { name: 'Custom Drapes', description: 'Soft, flowing fabrics with premium hardware for sophisticated window dressing.', image: '/custom-drapes-room.png' },
+    { name: 'Shutters', description: 'Durable, low-maintenance shutters that provide privacy, light control, and a timeless finished look.', image: '/shutters-room.png' },
+    { name: 'Motorized & Smart Shades', description: 'Control shades by remote, app, or voice. Automate for comfort and efficiency.', image: '/motorized-shades-room.png' },
   ];
+
+  const scrollSolutions = (dir: 'left' | 'right') => {
+    if (!solutionsScrollRef) return;
+    const cardWidth = 320;
+    const gap = 24;
+    const scrollAmount = (cardWidth + gap) * (dir === 'right' ? 1 : -1);
+    solutionsScrollRef.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
 
   const galleryProjects = [
     {
@@ -235,8 +217,8 @@ export default function Home() {
         <div className="relative w-full px-4 sm:px-6 text-white">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-5 md:mb-7">
-              <div className="text-base sm:text-lg md:text-xl font-extrabold tracking-wide drop-shadow-lg text-warm-gold">
-                UP TO 25% OFF + FREE MEASURE
+              <div className="text-base sm:text-lg md:text-xl font-extrabold tracking-wide drop-shadow-lg text-white">
+                25% OFF + FREE MEASURE
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 md:mb-6 leading-tight">
@@ -294,7 +276,93 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 px-6 bg-soft-sand">
+      <section id="custom-solutions" className="py-16 md:py-24 px-6 bg-white scroll-mt-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-warm-dark mb-4">
+              Custom Solutions for Every Window
+            </h2>
+            <p className="text-lg text-warm-gray max-w-3xl mx-auto">
+              Control light, reduce heat, increase privacy, and elevate your home's style.
+            </p>
+          </div>
+          <div className="relative pl-14 pr-14 md:pl-16 md:pr-16">
+            <button
+              onClick={() => scrollSolutions('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center text-warm-dark hover:bg-soft-sand transition-colors"
+              aria-label="Previous products"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+            <button
+              onClick={() => scrollSolutions('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center text-warm-dark hover:bg-soft-sand transition-colors"
+              aria-label="Next products"
+            >
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+            <div
+              ref={setSolutionsScrollRef}
+              className="flex flex-nowrap gap-6 overflow-x-scroll overflow-y-visible scroll-smooth snap-x snap-mandatory pb-4 w-full scrollbar-hide"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            >
+              {customSolutions.map((solution) => (
+                <div
+                  key={solution.name}
+                  className="flex-none w-[280px] sm:w-[320px] snap-start bg-white rounded-lg overflow-hidden shadow-md"
+                >
+                  <div className="aspect-[4/3] min-h-[180px] w-full overflow-hidden bg-soft-sand">
+                    <img
+                      src={solution.image}
+                      alt={solution.name}
+                      className="w-full h-full object-cover block"
+                      loading="eager"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl text-warm-dark mb-3">{solution.name}</h3>
+                    <p className="text-warm-gray leading-relaxed text-sm">{solution.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/services" className="inline-flex items-center gap-2 text-navy font-medium hover:gap-3 transition-all">
+              Explore All Products
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 px-6 bg-soft-sand">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-warm-dark mb-2">
+              How It Works
+            </h2>
+            <p className="text-warm-gray">Simple, straightforward—from first call to finished install.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-10">
+            {process.map((step) => (
+              <div key={step.number} className="text-center">
+                <div className="text-5xl font-bold text-taupe/40 mb-3">
+                  {step.number}
+                </div>
+                <h3 className="text-xl text-warm-dark mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-warm-gray text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="text-warm-dark mb-8">
@@ -335,68 +403,6 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-warm-dark mb-8">
-              Custom Solutions for Every Window
-            </h2>
-            <p className="text-lg text-warm-gray max-w-3xl mx-auto">
-              Control light, reduce heat, increase privacy, and elevate your home's style. Experienced with condo and high-rise installations.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {customSolutions.map((solution) => (
-              <div key={solution.name} className="bg-white p-8 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-<h3 className="text-xl text-warm-dark mb-3">
-                {solution.name}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {solution.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 text-charcoal font-medium hover:gap-3 transition-all border-b border-charcoal/30 pb-0.5"
-            >
-              Explore All Products
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-warm-dark mb-8">
-              Simple Process. Zero Hassle.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {process.map((step) => (
-              <div key={step.number} className="text-center md:text-left">
-                <div className="text-6xl font-bold text-taupe/40 mb-4">
-                  {step.number}
-                </div>
-<h3 className="text-2xl text-warm-dark mb-3">
-                {step.title}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

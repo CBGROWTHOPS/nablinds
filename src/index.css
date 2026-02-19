@@ -119,6 +119,10 @@
 }
 
 @layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     .mobile-py-12 {
       padding-top: 3rem;

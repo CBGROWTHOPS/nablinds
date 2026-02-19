@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import EmailSignup from './EmailSignup';
+import ImagePlaceholder from './ImagePlaceholder';
 
 export default function Footer() {
   const serviceLinks = [
@@ -20,6 +22,7 @@ export default function Footer() {
     { name: 'Service Areas', path: '/service-areas' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Testimonials', path: '/testimonials' },
+    { name: 'Trade Program', path: '/trade' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Guides', path: '/guides' },
     { name: 'Contact', path: '/contact' },
@@ -28,17 +31,32 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-20">
+        {/* Email signup with incentive */}
+        <section className="mb-16 pb-16 border-b border-gray-200">
+          <div className="max-w-2xl">
+            <h3 className="text-lg font-semibold text-warm-dark mb-2">Get 15% off your first order</h3>
+            <p className="text-warm-gray text-sm mb-4">Join our email list for design tips, seasonal offers, and exclusive savings.</p>
+            <EmailSignup />
+          </div>
+        </section>
+
         <div className="grid md:grid-cols-4 gap-16 mb-16">
           <div>
             <img
               src="/nablinds_logo_transparent_black.png"
               alt="NA Blinds"
-              className="h-12 w-auto mb-6"
+              className="h-12 w-auto mb-4"
             />
             <p className="text-warm-gray text-sm leading-relaxed mb-6">
-              South Florida's trusted partner for custom window treatments. Professional service from consultation to installation.
+              South Florida light is unlike anywhere else. We've spent over a decade learning exactly how to dress it—from consultation to installation.
             </p>
-            <div className="flex gap-4">
+            <div className="w-[120px] h-10 rounded overflow-hidden flex-shrink-0">
+              <ImagePlaceholder width={120} height={40} description="Rove logo — partner or parent brand. 120×40px min." className="!aspect-auto w-full h-full" />
+            </div>
+            <p className="text-warm-gray text-xs leading-relaxed max-w-[200px]">
+              Proud partner in South Florida design. We work with interior designers and the Rove network.
+            </p>
+            <div className="flex gap-4 mt-6">
               <img
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a8203c13b9c6469cc82d3.png"
                 alt="Angi Super Service Award"

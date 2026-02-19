@@ -83,7 +83,7 @@ export default function About() {
             About NA Blinds
           </h1>
           <p className="text-xl leading-relaxed drop-shadow-md">
-            South Florida's trusted choice for custom window treatments.
+            South Florida light is unlike anywhere else. We've spent over a decade learning exactly how to dress it.
           </p>
         </div>
       </section>
@@ -97,7 +97,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-warm-gray leading-relaxed">
                 <p>
-                  NA Blinds was founded with a simple mission: to provide South Florida homeowners with beautiful, functional window treatments backed by exceptional service.
+                  NA Blinds was founded with a simple mission: to provide South Florida homeowners with beautiful, functional window treatments backed by service that stands behind every installation. There's a human touch behind everything we do.
                 </p>
                 <p>
                   For over 10 years, we have been transforming homes throughout Miami-Dade, Broward, and Palm Beach counties. What started as a small operation has grown through word-of-mouth referrals and a commitment to quality that never wavers.

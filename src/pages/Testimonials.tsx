@@ -1,4 +1,5 @@
 import { Star, Quote } from 'lucide-react';
+import ImagePlaceholder from '../components/ImagePlaceholder';
 import { useSEO } from '../utils/seo';
 
 export default function Testimonials() {
@@ -126,6 +127,9 @@ export default function Testimonials() {
                 className="bg-white p-8 rounded-lg border border-gray-200"
                 style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
               >
+                <div className="w-20 h-20 rounded-full overflow-hidden mb-4 flex-shrink-0">
+                  <ImagePlaceholder width={80} height={80} description="Client headshot — professional photo of homeowner, neutral background" className="rounded-full w-full h-full" />
+                </div>
                 <Quote className="w-8 h-8 text-taupe/40 mb-4" />
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -146,6 +150,23 @@ export default function Testimonials() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-20">
+            <h3 className="text-2xl text-warm-dark text-center mb-10">Before & After</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="rounded-lg overflow-hidden border border-gray-200">
+                  <div className="grid grid-cols-2 gap-0">
+                    <ImagePlaceholder width={400} height={300} description="Window before treatment — bare window, same room" />
+                    <ImagePlaceholder width={400} height={300} description="Window after installation — same window with treatment" />
+                  </div>
+                  <div className="p-4 bg-white text-center">
+                    <p className="text-sm text-warm-gray">Project {i} — South Florida home</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
