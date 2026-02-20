@@ -56,10 +56,10 @@ export default function MobileStickyCTA() {
       <div className="flex gap-2 p-3">
         <a
           href="tel:954-629-1373"
-          className="flex items-center justify-center gap-2 flex-1 bg-white text-warm-dark border border-warm-dark/20 px-4 py-3 rounded font-medium text-sm active:bg-warm-cream transition-all touch-manipulation"
+          className="flex items-center justify-center gap-2 flex-1 bg-phone text-white px-4 py-3 rounded font-medium text-sm active:bg-phone/90 transition-all touch-manipulation"
         >
           <Phone className="w-4 h-4 flex-shrink-0" />
-          <span>Call</span>
+          <span>Call Now</span>
         </a>
         <button
           onClick={() => navigate('/consultation')}

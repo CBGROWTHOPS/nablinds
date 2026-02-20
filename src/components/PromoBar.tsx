@@ -41,11 +41,11 @@ export default function PromoBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-[#A89B8A] text-white py-2.5 px-4 relative border-b border-taupe/30">
-      <div className="max-w-7xl mx-auto text-center">
+    <div className="bg-[#A89B8A] text-white py-2.5 px-4 relative border-b border-taupe/30 overflow-hidden w-full min-w-0">
+      <div className="max-w-7xl mx-auto text-center min-w-0">
         <Link
           to="/consultation"
-          className="text-xs sm:text-sm font-medium tracking-wide uppercase pr-8 block hover:text-white/90 transition-colors"
+          className="text-xs sm:text-sm font-medium tracking-wide uppercase pr-8 block hover:text-white/90 transition-colors break-words"
         >
           25% OFF + FREE MEASURE — Shop now through {endDate}
         </Link>
