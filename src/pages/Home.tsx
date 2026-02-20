@@ -458,56 +458,31 @@ export default function Home() {
       <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-warm-dark mb-4">
-              Why South Florida Homeowners Trust NA Blinds
+            <h2 className="text-warm-dark mb-8">
+              Why Homeowners Choose Us
             </h2>
-            <p className="text-lg text-warm-gray max-w-3xl mx-auto">
-              We're not just another installer. We solve the specific problems that South Florida homeowners face.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Same-Week Speed */}
-            <div className="bg-soft-sand p-8 md:p-10 rounded-xl border-l-4 border-ocean">
-              <div className="flex items-start gap-4 mb-4">
-                <Clock className="w-8 h-8 text-ocean flex-shrink-0 mt-0.5" />
-                <h3 className="text-2xl font-semibold text-warm-dark">Same-Week Speed</h3>
+          <div className="grid md:grid-cols-3 gap-12">
+            {benefits.map((benefit) => (
+              <div key={benefit.title} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-taupe/20 rounded-full mb-6">
+                  <benefit.icon className="w-8 h-8 text-charcoal" />
+                </div>
+                <h3 className="text-xl text-warm-dark mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-warm-gray leading-relaxed">
+                  {benefit.description}
+                </p>
               </div>
-              <p className="text-warm-gray leading-relaxed mb-4">
-                National chains take 4–6 weeks. We schedule consultations within days and install within 7–10 days. Your windows don't have to wait.
-              </p>
-              <div className="text-sm font-medium text-ocean">Local, responsive, fast.</div>
-            </div>
-
-            {/* HOA Expertise */}
-            <div className="bg-soft-sand p-8 md:p-10 rounded-xl border-l-4 border-ocean">
-              <div className="flex items-start gap-4 mb-4">
-                <Shield className="w-8 h-8 text-ocean flex-shrink-0 mt-0.5" />
-                <h3 className="text-2xl font-semibold text-warm-dark">HOA Expertise</h3>
-              </div>
-              <p className="text-warm-gray leading-relaxed mb-4">
-                Condo and HOA rules confuse homeowners. We navigate approvals daily across Miami-Dade, Broward, and Palm Beach. Zero rejected installations.
-              </p>
-              <div className="text-sm font-medium text-ocean">Compliance guaranteed.</div>
-            </div>
-
-            {/* Climate-Optimized */}
-            <div className="bg-soft-sand p-8 md:p-10 rounded-xl border-l-4 border-ocean">
-              <div className="flex items-start gap-4 mb-4">
-                <Award className="w-8 h-8 text-ocean flex-shrink-0 mt-0.5" />
-                <h3 className="text-2xl font-semibold text-warm-dark">Climate-Optimized</h3>
-              </div>
-              <p className="text-warm-gray leading-relaxed mb-4">
-                South Florida heat, humidity, and salt air demand specific solutions. We spec products built for your climate, not generic recommendations.
-              </p>
-              <div className="text-sm font-medium text-ocean">Built for Florida.</div>
-            </div>
+            ))}
           </div>
 
-          <div className="mt-12 md:mt-16 bg-ocean bg-opacity-5 p-8 md:p-12 rounded-xl border border-ocean border-opacity-20">
-            <h3 className="text-2xl font-semibold text-warm-dark mb-4">Our Promise</h3>
-            <p className="text-lg text-warm-gray leading-relaxed">
-              <span className="font-medium text-warm-dark">100% Satisfaction Guarantee.</span> If you're not completely happy with your installation, we make it right. Licensed. Insured. BBB A+ Rated. 10+ years of proven results across South Florida.
+          <div className="mt-16 max-w-3xl mx-auto text-center bg-soft-sand p-8 md:p-10 rounded-lg">
+            <h3 className="text-xl text-warm-dark mb-3">Our Satisfaction Guarantee</h3>
+            <p className="text-warm-gray leading-relaxed">
+              Every installation is backed by manufacturer warranties and our workmanship guarantee. If something isn't right, we make it right — no questions asked. We've built our reputation on standing behind our work for over a decade.
             </p>
           </div>
         </div>
