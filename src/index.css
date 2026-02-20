@@ -123,6 +123,40 @@
     display: none;
   }
 
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInBack {
+    from {
+      opacity: 0;
+      transform: translateX(-24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-back {
+    animation: slideInBack 0.4s ease-out forwards;
+  }
+
+  .animate-fadeIn {
+    animation: slideIn 0.35s ease-out forwards;
+  }
+
   @media (max-width: 768px) {
     .mobile-py-12 {
       padding-top: 3rem;

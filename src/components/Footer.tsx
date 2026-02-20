@@ -17,6 +17,7 @@ export default function Footer() {
     { name: 'Custom Drapes', path: '/services#custom-drapes' },
     { name: 'Motorized & Smart Shades', path: '/motorized-blinds' },
     { name: 'Condo Treatments', path: '/condo-window-treatments' },
+    { name: 'Build Your Project', path: '/build-your-project' },
     { name: 'Get Estimate', path: '/consultation' },
   ];
 

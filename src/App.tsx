@@ -27,6 +27,7 @@ import CondoWindowTreatments from './pages/CondoWindowTreatments';
 import Trade from './pages/Trade';
 import ProductHub from './pages/products/ProductHub';
 import ProductType from './pages/products/ProductType';
+import BuildYourProject from './pages/BuildYourProject';
 import DocsHub from './pages/docs/DocsHub';
 import ClarityDoc from './pages/docs/ClarityDoc';
 import AnalyticsDoc from './pages/docs/AnalyticsDoc';
@@ -60,6 +61,7 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <Routes>
           <Route path="/consultation" element={<Consultation />} />
+          <Route path="/build-your-project" element={<BuildYourProject />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/thank-you-consultation" element={<ThankYouConsultation />} />
           <Route path="/docs" element={<DocsHub />} />

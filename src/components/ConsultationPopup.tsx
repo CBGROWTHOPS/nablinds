@@ -7,7 +7,7 @@ export default function ConsultationPopup() {
   const [hasShown, setHasShown] = useState(false);
   const location = useLocation();
 
-  const excludedPages = ['/thank-you', '/thank-you-consultation', '/contact', '/contact-2', '/consultation'].includes(location.pathname) ||
+  const excludedPages = ['/thank-you', '/thank-you-consultation', '/contact', '/contact-2', '/consultation', '/build-your-project'].includes(location.pathname) ||
                         location.pathname.startsWith('/docs');
 
   useEffect(() => {
