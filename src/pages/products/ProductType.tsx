@@ -13,7 +13,7 @@ function TypeLongForm({ category, slug }: { category: ProductCategory; slug: str
   const hasMotorization = motorizedSlugs.includes(slug);
 
   return (
-    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-p:text-warm-gray prose-a:text-navy text-left">
+    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-headings:mt-10 prose-headings:mb-4 prose-p:text-warm-gray prose-p:mb-6 prose-p:leading-relaxed prose-a:text-navy prose-li:text-warm-gray text-left">
       <h2>Overview</h2>
       <p>{type.shortDescription} South Florida homeowners choose {type.name.toLowerCase()} for their combination of style, function, and durability in our climate.</p>
 
