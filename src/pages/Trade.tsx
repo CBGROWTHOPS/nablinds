@@ -33,7 +33,7 @@ export default function Trade() {
       <section className="relative min-h-[400px] md:min-h-[500px] flex items-center py-8 md:py-20 px-6">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/roller_shade__001.jpg')` }}
+          style={{ backgroundImage: `url('/hero-trade.png')` }}
         >
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50" />
         </div>

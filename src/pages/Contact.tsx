@@ -36,7 +36,7 @@ export default function Contact() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/nablinds_van.png')`,
+            backgroundImage: `url('/hero-contact.png')`,
           }}
         >
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>

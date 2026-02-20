@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
-import EmailSignup from './EmailSignup';
-import ImagePlaceholder from './ImagePlaceholder';
-
 export default function Footer() {
   const serviceLinks = [
     { name: 'Solar & Light-Filtering Shades', path: '/services#solar-light-filtering' },
@@ -31,15 +28,6 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-20">
-        {/* Email signup with incentive */}
-        <section className="mb-16 pb-16 border-b border-gray-200">
-          <div className="max-w-2xl">
-            <h3 className="text-lg font-semibold text-warm-dark mb-2">Get 15% off your first order</h3>
-            <p className="text-warm-gray text-sm mb-4">Join our email list for design tips, seasonal offers, and exclusive savings.</p>
-            <EmailSignup />
-          </div>
-        </section>
-
         <div className="grid md:grid-cols-4 gap-16 mb-16">
           <div>
             <img
@@ -50,9 +38,6 @@ export default function Footer() {
             <p className="text-warm-gray text-sm leading-relaxed mb-6">
               South Florida light is unlike anywhere else. We've spent over a decade learning exactly how to dress it—from consultation to installation.
             </p>
-            <div className="w-[120px] h-10 rounded overflow-hidden flex-shrink-0">
-              <ImagePlaceholder width={120} height={40} description="Rove logo — partner or parent brand. 120×40px min." className="!aspect-auto w-full h-full" />
-            </div>
             <p className="text-warm-gray text-xs leading-relaxed max-w-[200px]">
               Proud partner in South Florida design. We work with interior designers and the Rove network.
             </p>

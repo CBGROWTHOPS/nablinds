@@ -117,7 +117,7 @@ export default function Process() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/roller_shade__013.jpg')`,
+            backgroundImage: `url('/hero-process.png')`,
           }}
         >
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>

@@ -71,7 +71,7 @@ export default function Contact2() {
       <section className="relative py-20 md:py-28 px-6 bg-soft-sand overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/roller_shade__012.jpg)' }}
+          style={{ backgroundImage: 'url(/hero-contact-2.png)' }}
         />
         <div className="absolute inset-0 bg-warm-dark/70" />
         <div className="relative max-w-4xl mx-auto text-center">

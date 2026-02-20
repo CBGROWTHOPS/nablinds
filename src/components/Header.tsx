@@ -1,19 +1,26 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import PromoBar from './PromoBar';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [productsOpenMobile, setProductsOpenMobile] = useState(false);
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
-    { name: 'Process', path: '/process' },
     { name: 'Service Areas', path: '/service-areas' },
     { name: 'Guides', path: '/guides' },
     { name: 'Contact', path: '/contact' },
+  ];
+
+  const productsDropdown = [
+    { name: 'Blinds', path: '/services#vertical-blinds' },
+    { name: 'Shades', path: '/services#solar-light-filtering' },
+    { name: 'Drapes', path: '/services#custom-drapes' },
+    { name: 'Shutters', path: '/services' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -39,6 +46,35 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">
+            <div
+              className="relative"
+              onMouseEnter={() => setProductsOpen(true)}
+              onMouseLeave={() => setProductsOpen(false)}
+            >
+              <button
+                className={`text-sm font-medium transition-colors flex items-center gap-1 ${
+                  productsOpen ? 'text-navy' : 'text-warm-dark hover:text-navy'
+                }`}
+              >
+                Products
+                <ChevronDown className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {productsOpen && (
+                <div className="absolute top-full left-0 pt-2">
+                  <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[160px]">
+                    {productsDropdown.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="block px-4 py-2 text-sm text-warm-dark hover:bg-soft-sand hover:text-navy transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
             {navigation.map((item) => (
               <Link
                 key={item.path}
@@ -72,6 +108,29 @@ export default function Header() {
 
         {isMenuOpen && (
           <nav className="lg:hidden mt-3 sm:mt-4 pb-3 sm:pb-4 space-y-2">
+            <div>
+              <button
+                onClick={() => setProductsOpenMobile(!productsOpenMobile)}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-warm-dark hover:bg-soft-sand active:bg-soft-sand font-medium touch-manipulation"
+              >
+                Products
+                <ChevronDown className={`w-5 h-5 transition-transform ${productsOpenMobile ? 'rotate-180' : ''}`} />
+              </button>
+              {productsOpenMobile && (
+                <div className="pl-4 pt-1 space-y-1">
+                  {productsDropdown.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => { setIsMenuOpen(false); setProductsOpenMobile(false); }}
+                      className="block px-4 py-2 rounded-lg text-warm-gray hover:bg-soft-sand active:bg-soft-sand text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             {navigation.map((item) => (
               <Link
                 key={item.path}

@@ -158,42 +158,42 @@ export default function Home() {
     {
       title: 'Light-Filtering Roller Shades',
       location: 'Coconut Grove, Living Room',
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6cfac13b9cc739c9b6fc.png',
+      image: '/roller-shades-room.png',
     },
     {
       title: 'Blackout Roller Shade',
       location: 'Coral Gables, Bedroom',
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a705b865e6116092501a8.png',
+      image: '/blackout-shades-room.png',
     },
     {
       title: 'Zebra Shades',
       location: 'Pinecrest, Bedroom',
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6e23865e61df5f24bf18.png',
+      image: '/zebra-shades-room.png',
     },
     {
-      title: 'Room-Darkening Roman Shade',
+      title: 'Custom Roman Shades',
       location: 'Boca Raton, Bedroom',
-      image: '/roman_shade__006.jpg',
+      image: '/roman-shades-room.png',
     },
     {
       title: 'Vertical Blinds',
       location: 'Weston, Living Room',
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9c109dca1362.png',
+      image: '/vertical-blinds-room.png',
     },
     {
       title: 'Solar Roller Shades',
       location: 'Brickell High-Rise, Office',
-      image: 'https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9ce352ca1361.png',
+      image: '/solar-shades-room.png',
     },
     {
       title: 'Drapery Panels',
       location: 'Palm Beach, Master Bedroom',
-      image: '/drapery_panels__015.jpg',
+      image: '/custom-drapes-room.png',
     },
     {
       title: 'Custom Shutters',
       location: 'Boca Raton, Living Room',
-      image: '/shutters__001.jpg',
+      image: '/shutters-room.png',
     },
   ];
 

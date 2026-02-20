@@ -41,17 +41,17 @@ export default function PromoBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-warm-cream text-warm-dark py-2.5 px-4 relative border-b border-taupe/20">
+    <div className="bg-[#A89B8A] text-white py-2.5 px-4 relative border-b border-taupe/30">
       <div className="max-w-7xl mx-auto text-center">
         <Link
           to="/consultation"
-          className="text-xs sm:text-sm font-medium tracking-wide uppercase pr-8 block hover:text-navy transition-colors"
+          className="text-xs sm:text-sm font-medium tracking-wide uppercase pr-8 block hover:text-white/90 transition-colors"
         >
           25% OFF + FREE MEASURE — Shop now through {endDate}
         </Link>
         <button
           onClick={handleDismiss}
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-warm-gray hover:text-warm-dark transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-white/90 hover:text-white transition-colors"
           aria-label="Close announcement"
         >
           <X className="w-4 h-4" />

@@ -18,7 +18,7 @@ export default function ConsultationPopup() {
         setIsVisible(true);
         setHasShown(true);
       }
-    }, 120000);
+    }, 300000);
 
     return () => {
       clearTimeout(timeTimeout);

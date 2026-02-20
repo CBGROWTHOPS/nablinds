@@ -73,7 +73,7 @@ export default function About() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/roller_shade__010.jpg')`,
+            backgroundImage: `url('/hero-about.png')`,
           }}
         >
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>

@@ -36,7 +36,7 @@ export default function Services() {
         'Maintain your view',
         'UV protection',
       ],
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6cfac13b9cc739c9b6fc.png',
+      image: '/solar-shades-room.png',
     },
     {
       id: 'blackout',
@@ -49,7 +49,7 @@ export default function Services() {
         'Temperature control',
         'Cordless and motorized options',
       ],
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a705b865e6116092501a8.png',
+      image: '/blackout-shades-room.png',
     },
     {
       id: 'zebra-dual-layer',
@@ -62,7 +62,7 @@ export default function Services() {
         'Modern, clean aesthetic',
         'Easy operation',
       ],
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6e23865e61df5f24bf18.png',
+      image: '/zebra-shades-room.png',
     },
     {
       id: 'vertical-blinds',
@@ -75,7 +75,7 @@ export default function Services() {
         'Durable construction',
         'Budget-friendly solution',
       ],
-      image: 'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9c109dca1362.png',
+      image: '/vertical-blinds-room.png',
     },
     {
       id: 'roman-shades',
@@ -88,7 +88,7 @@ export default function Services() {
         'Lined and unlined options',
         'Custom-measured for perfect fit',
       ],
-      image: '/roman_shade__001.jpg',
+      image: '/roman-shades-room.png',
     },
     {
       id: 'custom-drapes',
@@ -101,7 +101,7 @@ export default function Services() {
         'Blackout, thermal, or decorative linings',
         'Professional installation included',
       ],
-      image: '/drapery_panels__006.jpg',
+      image: '/custom-drapes-room.png',
     },
     {
       id: 'motorized-smart',
@@ -114,7 +114,7 @@ export default function Services() {
         'Programmable schedules',
         'Compatible with most shade types',
       ],
-      image: 'https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9ce352ca1361.png',
+      image: '/motorized-shades-room.png',
     },
   ];
 
@@ -157,7 +157,7 @@ export default function Services() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/roller_shade__011.jpg')`,
+            backgroundImage: `url('/hero-services.png')`,
           }}
         >
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
