@@ -356,7 +356,7 @@ export default function Consultation() {
             {currentStep === 8 && (
               <form onSubmit={handleSubmit}>
                 <h2 className="text-xl sm:text-2xl font-bold text-warm-dark mb-2">
-                  Where should we send your quote and next steps?
+                  What's a good time to call and discuss your project?
                 </h2>
                 <p className="text-gray-600 mb-4">
                   We'll share recommendations based on what you selected.
