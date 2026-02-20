@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Sun, Moon, Wind, Palette, Droplets, Shield } from 'lucide-react';
+import { Sun, Moon, Wind, Palette, Droplets, Shield, Ruler, MessageSquare, Calculator, Smartphone, Home, CheckCircle } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 
@@ -8,8 +8,8 @@ export default function Services() {
   const location = useLocation();
 
   useSEO({
-    title: 'Window Shades & Blinds Installation South Florida | NA Blinds',
-    description: 'Explore solar shades, blackout shades, zebra shades, drapes, and motorized window treatments professionally installed across South Florida.',
+    title: 'Window Treatment Services South Florida | Free Estimate & Installation | NA Blinds',
+    description: 'Professional window treatment services in Miami, Fort Lauderdale & Palm Beach. Free in-home estimates, expert design consultation, precision measuring, and smart home integration.',
     canonicalUrl: 'https://www.nablinds.co/services'
   });
 
@@ -151,6 +151,29 @@ export default function Services() {
     },
   ];
 
+  const coreServices = [
+    {
+      icon: Calculator,
+      title: 'Free In-Home Estimate',
+      description: 'We come to you with samples and provide a detailed quote on the spot. No obligation, no pressure. See exactly what your project will cost before you commit.',
+    },
+    {
+      icon: Ruler,
+      title: 'Professional Measuring',
+      description: 'Precise measurements are critical for a clean fit. Our technicians measure every window to the millimeter, accounting for depth, headroom, and mounting options.',
+    },
+    {
+      icon: MessageSquare,
+      title: 'Expert Design Consultation',
+      description: 'Not sure what works best? We assess your rooms, lighting, and lifestyle to recommend the right products. We bring fabric samples so you can see options in your actual space.',
+    },
+    {
+      icon: Smartphone,
+      title: 'Motorized & Smart Home Integration',
+      description: 'Control your shades by remote, app, or voice. We install motorized systems compatible with Alexa, Google Home, Apple HomeKit, and most smart home platforms.',
+    },
+  ];
+
   return (
     <div>
       <section className="relative min-h-[400px] md:min-h-[500px] flex items-center py-8 md:py-20 px-6">
@@ -162,18 +185,105 @@ export default function Services() {
         >
           <div className="absolute inset-0 bg-warm-dark bg-opacity-50"></div>
         </div>
-        <div className="relative max-w-4xl mx-auto text-center text-white">
+        <div className="relative max-w-4xl mx-auto text-white">
           <h1 className="text-3xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-lg">
-            Custom Window Treatments for South Florida Homes
+            Professional Window Treatment Services
           </h1>
-          <p className="text-xl leading-relaxed drop-shadow-md">
-            Professional installation of blinds, shades, and drapes. Serving homeowners across Miami-Dade, Broward, and Palm Beach counties.
+          <p className="text-xl leading-relaxed drop-shadow-md max-w-2xl">
+            From your first call to finished installation, we handle everything. Free estimates, expert guidance, precision measuring, and professional installation across South Florida.
           </p>
         </div>
       </section>
 
+      {/* Core Services */}
+      <section className="py-20 md:py-28 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-warm-dark mb-4">What We Do</h2>
+            <p className="text-lg text-warm-gray max-w-3xl">
+              Window treatments are only as good as the service behind them. We handle measurement, design, ordering, and installation so you get a perfect result without the hassle.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {coreServices.map((service) => (
+              <div key={service.title} className="bg-soft-sand p-8 rounded-lg">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                    <service.icon className="w-6 h-6 text-charcoal" />
+                  </div>
+                  <h3 className="text-xl text-warm-dark pt-2">{service.title}</h3>
+                </div>
+                <p className="text-warm-gray leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              to="/consultation"
+              className="inline-block bg-navy text-white px-8 py-4 rounded font-medium hover:bg-navy/90 transition-colors"
+            >
+              Schedule Free Estimate
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Service Area */}
+      <section className="py-16 md:py-20 px-6 bg-warm-white border-y border-gray-200">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-warm-dark mb-4">Serving South Florida Homeowners</h2>
+              <p className="text-warm-gray leading-relaxed mb-6">
+                We install window treatments throughout Miami-Dade, Broward, and Palm Beach counties. Whether you're in a downtown Miami high-rise, a Boca Raton single-family home, or a Fort Lauderdale condo, we bring the showroom to you.
+              </p>
+              <p className="text-warm-gray leading-relaxed mb-6">
+                South Florida's climate demands specific solutions. Intense sun, humidity, and salt air affect which products perform best. We recommend treatments built for these conditions, not generic options that fade or warp.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['Miami', 'Fort Lauderdale', 'Boca Raton', 'West Palm Beach', 'Coral Gables', 'Hollywood', 'Pembroke Pines', 'Weston'].map((city) => (
+                  <span key={city} className="bg-soft-sand px-3 py-1 rounded text-sm text-warm-gray">{city}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="bg-soft-sand p-8 rounded-lg">
+                <h3 className="text-lg text-warm-dark mb-4 flex items-center gap-2">
+                  <Home className="w-5 h-5" />
+                  What to Expect
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    'Same-week consultations available',
+                    'We bring samples to your home',
+                    'Transparent pricing with no hidden fees',
+                    'Professional installation in one visit',
+                    'Manufacturer warranties included',
+                    'HOA documentation provided when needed',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-warm-gray">
+                      <CheckCircle className="w-5 h-5 text-phone flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
       <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-warm-dark mb-4">Products We Install</h2>
+            <p className="text-lg text-warm-gray max-w-3xl">
+              We carry a full range of window treatments from leading manufacturers. Each product is custom-measured and professionally installed.
+            </p>
+          </div>
           <div className="space-y-12 md:space-y-20">
             {services.map((service, index) => (
               <div
@@ -224,10 +334,10 @@ export default function Services() {
                     ))}
                   </ul>
                   <Link
-                    to="/contact-2#consultation-form"
+                    to="/consultation"
                     className="inline-block bg-navy text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
                   >
-                    Request Estimate
+                    Get Free Estimate
                   </Link>
                 </div>
               </div>
