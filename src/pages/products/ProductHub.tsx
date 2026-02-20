@@ -78,7 +78,7 @@ function HubLongForm({ category }: { category: ProductCategory }) {
   };
 
   return (
-    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-p:text-warm-gray prose-a:text-navy text-left">
+    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-headings:mt-10 prose-headings:mb-4 prose-p:text-warm-gray prose-p:mb-6 prose-p:leading-relaxed prose-a:text-navy text-left">
       {content[category]}
     </article>
   );
