@@ -94,23 +94,15 @@ function HowToChoose({ category }: { category: ProductCategory }) {
 
   return (
     <section className="py-16 md:py-20 px-6 bg-soft-sand">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-warm-dark text-2xl md:text-3xl mb-8">How to Choose the Right Option</h2>
-        <div className="grid sm:grid-cols-2 gap-6">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-warm-dark text-2xl md:text-3xl mb-10 text-center">How to Choose the Right Option</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item) => (
-            <div key={item.label} className="bg-white p-6 rounded-lg">
-              <h3 className="text-navy font-semibold mb-2">{item.label}</h3>
+            <div key={item.label} className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-navy font-semibold text-lg mb-3">{item.label}</h3>
               <p className="text-warm-gray text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
-        </div>
-        <div className="mt-10">
-          <Link
-            to="/consultation"
-            className="inline-block bg-navy text-white px-8 py-4 rounded font-medium hover:bg-navy/90 transition-colors"
-          >
-            Get a Free Consultation
-          </Link>
         </div>
       </div>
     </section>
