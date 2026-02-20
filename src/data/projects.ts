@@ -1,5 +1,5 @@
-export type Room = 'Living Room' | 'Bedroom' | 'Kitchen' | 'Bathroom' | 'Office';
-export type ProductType = 'Roller Shades' | 'Roman Shades' | 'Zebra Shades' | 'Vertical Blinds' | 'Drapes' | 'Solar Shades' | 'Shutters' | 'Cellular Shades';
+export type Room = 'Living Room' | 'Bedroom' | 'Kitchen' | 'Bathroom' | 'Office' | 'Full Home';
+export type ProductType = 'Roller Shades' | 'Roman Shades' | 'Zebra Shades' | 'Vertical Blinds' | 'Drapes' | 'Solar Shades' | 'Shutters' | 'Cellular Shades' | 'Motorized Shades' | 'Motorized Blinds';
 
 export type Project = {
   id: string;
@@ -13,8 +13,10 @@ export type Project = {
   highlight?: string;
 };
 
-export const ROOMS: Room[] = ['Living Room', 'Bedroom', 'Kitchen', 'Bathroom', 'Office'];
-export const PRODUCT_TYPES: ProductType[] = ['Roller Shades', 'Roman Shades', 'Zebra Shades', 'Cellular Shades', 'Vertical Blinds', 'Drapes', 'Solar Shades', 'Shutters'];
+const G = '/images/gallery';
+
+export const ROOMS: Room[] = ['Living Room', 'Bedroom', 'Kitchen', 'Bathroom', 'Office', 'Full Home'];
+export const PRODUCT_TYPES: ProductType[] = ['Roller Shades', 'Roman Shades', 'Zebra Shades', 'Cellular Shades', 'Vertical Blinds', 'Drapes', 'Solar Shades', 'Shutters', 'Motorized Shades', 'Motorized Blinds'];
 
 export const projects: Project[] = [
   {
@@ -23,12 +25,7 @@ export const projects: Project[] = [
     location: 'Coconut Grove',
     room: 'Living Room',
     productTypes: ['Roller Shades'],
-    images: [
-      '/roller-shades-room.png',
-      '/roller_shade__011.jpg',
-      '/roller_shade__012.jpg',
-      '/roller_shade__013.jpg',
-    ],
+    images: [`${G}/gallery-roller-coastal-living.png`],
     description: 'Filters harsh sunlight while maintaining privacy and views. The living room stays bright and comfortable without glare on screens or furniture.',
   },
   {
@@ -37,12 +34,8 @@ export const projects: Project[] = [
     location: 'Coral Gables',
     room: 'Bedroom',
     productTypes: ['Roller Shades'],
-    images: [
-      '/blackout-shades-room.png',
-      'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a705b865e6116092501a8.png',
-      '/roller_shade__010.jpg',
-    ],
-    highlight: 'Challenge: East-facing bedroom with harsh morning light. Solution: Custom blackout shades for complete darkness and restful sleep.',
+    images: [`${G}/gallery-blackout-bedroom.png`],
+    highlight: 'Challenge: East-facing bedroom with harsh morning light. Solution: Blackout shades for complete darkness and restful sleep.',
     description: 'Complete darkness for restful sleep. Perfect for shift workers and light-sensitive sleepers.',
   },
   {
@@ -51,24 +44,16 @@ export const projects: Project[] = [
     location: 'Pinecrest',
     room: 'Bedroom',
     productTypes: ['Zebra Shades'],
-    images: [
-      '/zebra-shades-room.png',
-      'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6e23865e61df5f24bf18.png',
-    ],
+    images: [`${G}/gallery-zebra-bedroom-boho.png`],
     description: 'Adjustable light and privacy control. Modern style with flexible control—sheer for daytime, opaque for privacy.',
   },
   {
     id: 'boca-raton-bedroom-roman',
-    title: 'Custom Roman Shades',
+    title: 'Roman Shades',
     location: 'Boca Raton',
     room: 'Bedroom',
     productTypes: ['Roman Shades'],
-    images: [
-      '/roman-shades-room.png',
-      '/roman_shade__006.jpg',
-      '/roman_shade__001.jpg',
-      '/roman_shade__009.jpg',
-    ],
+    images: [`${G}/gallery-roman-bedroom-trad.png`],
     description: 'Elegant fabric folds with tailored finishes. A refined look that suits traditional and transitional bedrooms. Available in light-filtering or room-darkening options.',
   },
   {
@@ -77,11 +62,7 @@ export const projects: Project[] = [
     location: 'Delray Beach',
     room: 'Kitchen',
     productTypes: ['Roller Shades'],
-    images: [
-      '/roller-shades-room.png',
-      '/roller_shade__001.jpg',
-      '/roller_shade__013.jpg',
-    ],
+    images: [`${G}/gallery-roller-kitchen-cozy.png`],
     description: 'Designer pattern with soft natural light. Kitchen stays bright for cooking while reducing afternoon glare.',
   },
   {
@@ -90,10 +71,7 @@ export const projects: Project[] = [
     location: 'Weston',
     room: 'Living Room',
     productTypes: ['Vertical Blinds'],
-    images: [
-      '/vertical-blinds-room.png',
-      'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9c109dca1362.png',
-    ],
+    images: [`${G}/gallery-vertical-mcm-living.png`],
     highlight: 'Challenge: Wide sliding door to the pool. Solution: Durable vertical blinds for easy operation and UV protection.',
     description: 'Smooth operation for sliding glass doors. Built for high-traffic areas and pool access.',
   },
@@ -103,25 +81,16 @@ export const projects: Project[] = [
     location: 'Brickell',
     room: 'Office',
     productTypes: ['Solar Shades'],
-    images: [
-      '/solar-shades-room.png',
-      'https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9ce352ca1361.png',
-      'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6cfac13b9cc739c9b6fc.png',
-    ],
+    images: [`${G}/gallery-solar-office-harsh.png`],
     description: 'Glare reduction and UV protection with maintained view. Ideal for high-rise condos and home offices.',
   },
   {
     id: 'palm-beach-gardens-drapes',
-    title: 'Custom Drapes',
+    title: 'Drapes',
     location: 'Palm Beach Gardens',
     room: 'Bedroom',
     productTypes: ['Drapes'],
-    images: [
-      '/custom-drapes-room.png',
-      '/drapery_panels__015.jpg',
-      '/drapery_panels__016.jpg',
-      'https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a705bc13b9c0f5fca135d.png',
-    ],
+    images: [`${G}/gallery-drapes-master-southflorida.png`, `${G}/gallery-drapes-3.png`],
     description: 'Tailored luxury with premium fabric and hardware. Floor-length panels for a sophisticated finish.',
   },
   {
@@ -130,24 +99,17 @@ export const projects: Project[] = [
     location: 'Miami Beach',
     room: 'Bathroom',
     productTypes: ['Roller Shades'],
-    images: [
-      '/roller-shades-room.png',
-      '/roller_shade__010.jpg',
-      '/roller_shade__011.jpg',
-    ],
+    images: [`${G}/gallery-roller-bathroom.png`],
     highlight: 'Challenge: Humid coastal bathroom. Solution: Moisture-resistant fabric that holds up in salt air.',
     description: 'Moisture-resistant fabric for humid coastal bathrooms. Privacy without sacrificing light.',
   },
   {
     id: 'boca-raton-living-shutters',
-    title: 'Custom Shutters',
+    title: 'Shutters',
     location: 'Boca Raton',
     room: 'Living Room',
     productTypes: ['Shutters'],
-    images: [
-      '/shutters-room.png',
-      '/shutters__001.jpg',
-    ],
+    images: [`${G}/gallery-shutters-mediterranean.png`],
     description: 'Durable, low-maintenance shutters that provide privacy, light control, and a timeless finished look.',
   },
   {
@@ -156,11 +118,8 @@ export const projects: Project[] = [
     location: 'Coconut Grove',
     room: 'Bedroom',
     productTypes: ['Zebra Shades', 'Drapes'],
-    images: [
-      '/zebra-shades-room.png',
-      '/custom-drapes-room.png',
-    ],
-    description: 'Combination of zebra shades for light control and custom drapes for a layered, designer look.',
+    images: [`${G}/gallery-dual-zebra-drapes.png`],
+    description: 'Combination of zebra shades for light control and drapes for a layered, designer look.',
   },
   {
     id: 'key-biscayne-condo',
@@ -168,10 +127,7 @@ export const projects: Project[] = [
     location: 'Key Biscayne',
     room: 'Living Room',
     productTypes: ['Solar Shades'],
-    images: [
-      '/solar-shades-room.png',
-      'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6cfac13b9cc739c9b6fc.png',
-    ],
+    images: [`${G}/gallery-solar-condo-overcast.png`],
     highlight: 'Challenge: HOA-compliant window coverings for floor-to-ceiling glass. Solution: Solar shades that meet building requirements.',
     description: 'HOA-compliant solar shades for floor-to-ceiling windows. Glare reduction with maintained ocean view.',
   },
@@ -181,9 +137,7 @@ export const projects: Project[] = [
     location: 'Fort Lauderdale',
     room: 'Office',
     productTypes: ['Cellular Shades'],
-    images: [
-      '/cellular-shades-room.png',
-    ],
+    images: [`${G}/gallery-cellular-office-sunset.png`],
     highlight: 'Challenge: West-facing home office with intense afternoon heat. Solution: Energy-efficient cellular shades that insulate and reduce cooling costs.',
     description: 'Energy-efficient honeycomb design insulates against South Florida heat. Clean, modern look with excellent light control.',
   },
@@ -192,27 +146,10 @@ export const projects: Project[] = [
     title: 'Motorized Roller Shades',
     location: 'Coral Gables',
     room: 'Bedroom',
-    productTypes: ['Roller Shades'],
-    images: [
-      '/motorized-shades-room.png',
-      '/roller_shade__012.jpg',
-    ],
+    productTypes: ['Roller Shades', 'Motorized Shades'],
+    images: [`${G}/gallery-motorized-bedroom.png`],
     highlight: 'Challenge: Hard-to-reach windows and desire for smart home integration. Solution: Motorized shades controlled by remote, app, or voice.',
     description: 'Control shades by remote, app, or voice. Perfect for large windows and smart home enthusiasts.',
-  },
-  {
-    id: 'delray-beach-living-roman',
-    title: 'Custom Roman Shades',
-    location: 'Delray Beach',
-    room: 'Living Room',
-    productTypes: ['Roman Shades'],
-    images: [
-      '/roman-shades-room.png',
-      '/roman_shade__001.jpg',
-      '/roman_shade__007.jpg',
-      '/roman_shade__006.jpg',
-    ],
-    description: 'Elegant fabric folds add timeless sophistication to the living room. Tailored to exact window dimensions.',
   },
   {
     id: 'west-palm-beach-drapes',
@@ -220,12 +157,7 @@ export const projects: Project[] = [
     location: 'West Palm Beach',
     room: 'Living Room',
     productTypes: ['Drapes'],
-    images: [
-      '/drapery_panels__003.jpg',
-      '/drapery_panels__006.jpg',
-      '/drapery_panels__012.jpg',
-      '/custom-drapes-room.png',
-    ],
+    images: [`${G}/gallery-drapes-formal-southflorida.png`, `${G}/gallery-drapes-condo.png`],
     description: 'Floor-length panels in premium fabric frame the view. Custom hardware and blackout lining available.',
   },
   {
@@ -234,10 +166,80 @@ export const projects: Project[] = [
     location: 'Miami',
     room: 'Living Room',
     productTypes: ['Solar Shades'],
-    images: [
-      '/solar-shades-room.png',
-      'https://storage.googleapis.com/msgsndr/pKgTEQf1DpuyRDPhTsOA/media/691a6cfac13b9cc739c9b6fc.png',
-    ],
+    images: [`${G}/gallery-solar-living-warm.png`],
     description: 'Glare reduction with maintained view. Ideal for living rooms with floor-to-ceiling windows facing the pool or water.',
+  },
+  {
+    id: 'boca-raton-motorized-living',
+    title: 'Motorized Solar Shades',
+    location: 'Boca Raton',
+    room: 'Living Room',
+    productTypes: ['Solar Shades', 'Motorized Shades'],
+    images: [`${G}/gallery-motorized-living.png`],
+    highlight: 'Remote and voice control for floor-to-ceiling windows. One-touch adjustment for sun and privacy.',
+    description: 'Smart motorized solar shades throughout the living room. Control via app, remote, or voice assistant.',
+  },
+  {
+    id: 'palm-beach-motorized-shutters',
+    title: 'Motorized Plantation Shutters',
+    location: 'Palm Beach',
+    room: 'Living Room',
+    productTypes: ['Shutters', 'Motorized Blinds'],
+    images: [`${G}/gallery-motorized-shutters-southflorida.png`],
+    highlight: 'Motorized louvers for effortless light control. Premium smart-home integration.',
+    description: 'Automated plantation shutters with remote and app control. Timeless style meets modern convenience.',
+  },
+  {
+    id: 'weston-full-home',
+    title: 'Whole-Home Transformation',
+    location: 'Weston',
+    room: 'Full Home',
+    productTypes: ['Roller Shades', 'Solar Shades', 'Shutters', 'Drapes', 'Motorized Shades'],
+    images: [
+      `${G}/gallery-fullhome-mediterranean.png`,
+      `${G}/gallery-fullhome-kitchen.png`,
+      `${G}/gallery-fullhome-bedroom.png`,
+      `${G}/gallery-fullhome-office.png`,
+    ],
+    highlight: 'Complete window treatment overhaul across living room, bedrooms, kitchen, and home office.',
+    description: 'A cohesive whole-home project combining roller shades, shutters, solar shades, motorized shades, and drapes. Each room tailored to its function while maintaining a unified aesthetic.',
+  },
+  {
+    id: 'coconut-grove-full-home',
+    title: 'Coastal Estate — Full Home',
+    location: 'Coconut Grove',
+    room: 'Full Home',
+    productTypes: ['Shutters', 'Zebra Shades', 'Drapes', 'Motorized Shades'],
+    images: [
+      `${G}/gallery-drapes-7.png`,
+      `${G}/gallery-drapes-5.png`,
+      `${G}/gallery-drapes-6.png`,
+      `${G}/gallery-drapes-1.png`,
+    ],
+    description: 'Luxury coastal home with plantation shutters in living areas, zebra shades in bedrooms, motorized solar shades in the office, and designer drapes in the master.',
+  },
+  {
+    id: 'key-biscayne-motorized-condo',
+    title: 'Motorized Shades — High-Rise',
+    location: 'Key Biscayne',
+    room: 'Living Room',
+    productTypes: ['Solar Shades', 'Motorized Shades'],
+    images: [`${G}/gallery-motorized-condo-dusk.png`],
+    highlight: 'Floor-to-ceiling windows with motorized solar shades. Voice and app control for waterfront views.',
+    description: 'Smart motorized shades in a high-rise condo. Hard-to-reach windows made effortless with remote and app control.',
+  },
+  {
+    id: 'delray-beach-full-home',
+    title: 'Family Home — Entire House',
+    location: 'Delray Beach',
+    room: 'Full Home',
+    productTypes: ['Roller Shades', 'Cellular Shades', 'Drapes', 'Motorized Shades'],
+    images: [
+      `${G}/gallery-shutters-minimal.png`,
+      `${G}/gallery-drapes-2.png`,
+      `${G}/gallery-drapes-4.png`,
+      `${G}/gallery-drapes-8.png`,
+    ],
+    description: 'Complete installation across bedrooms (blackout), living room (cellular), master (drapes), and office (motorized). Family-friendly and energy-efficient.',
   },
 ];

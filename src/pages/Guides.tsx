@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, Sun, Building2 } from 'lucide-react';
+import { BookOpen, Sun } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { useSEO } from '../utils/seo';
 
@@ -17,13 +17,6 @@ const guides = [
     description: 'The three most popular shade types compared side by side. Learn which works best for each room, how they handle heat and light, and what to expect on pricing.',
     link: '/guides/solar-vs-blackout-vs-zebra',
     readTime: '6 min read',
-  },
-  {
-    icon: Building2,
-    title: 'Window Treatments for Condos & High-Rises',
-    description: 'A guide to choosing the right treatments for condo living — from managing intense sun and privacy in high-rises to working with building requirements.',
-    link: '/condo-window-treatments',
-    readTime: '5 min read',
   },
 ];
 
@@ -49,7 +42,7 @@ export default function Guides() {
 
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {guides.map((guide) => {
               const Icon = guide.icon;
               return (

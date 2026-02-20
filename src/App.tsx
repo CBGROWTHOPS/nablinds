@@ -23,7 +23,6 @@ import MotorizedBlinds from './pages/MotorizedBlinds';
 import Guides from './pages/Guides';
 import BuyersGuide from './pages/guides/BuyersGuide';
 import ShadeComparison from './pages/guides/ShadeComparison';
-import CondoWindowTreatments from './pages/CondoWindowTreatments';
 import Trade from './pages/Trade';
 import ProductHub from './pages/products/ProductHub';
 import ProductType from './pages/products/ProductType';
@@ -91,7 +90,6 @@ function App() {
           <Route path="/guides" element={<Layout><Guides /></Layout>} />
           <Route path="/guides/south-florida-buyers-guide" element={<Layout><BuyersGuide /></Layout>} />
           <Route path="/guides/solar-vs-blackout-vs-zebra" element={<Layout><ShadeComparison /></Layout>} />
-          <Route path="/condo-window-treatments" element={<Layout><CondoWindowTreatments /></Layout>} />
           <Route path="/trade" element={<Layout><Trade /></Layout>} />
           <Route path="/terms" element={<Layout><Terms /></Layout>} />
           <Route path="/privacy" element={<Layout><Privacy /></Layout>} />

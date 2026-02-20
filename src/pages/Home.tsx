@@ -186,9 +186,9 @@ export default function Home() {
       image: '/solar-shades-room.png',
     },
     {
-      title: 'Drapery Panels',
-      location: 'Palm Beach, Master Bedroom',
-      image: '/custom-drapes-room.png',
+      title: 'Faux Wood Blinds',
+      location: 'Palm Beach, Bathroom',
+      image: '/images/configurator/configurator-bathroom.png',
     },
     {
       title: 'Custom Shutters',

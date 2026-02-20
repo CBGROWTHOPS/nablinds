@@ -1,92 +1,39 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+
 export default function Footer() {
-  const productLinks = [
+  const exploreLinks = [
     { name: 'Blinds', path: '/products/blinds' },
     { name: 'Shades', path: '/products/shades' },
     { name: 'Shutters', path: '/products/shutters' },
     { name: 'Drapes', path: '/products/drapes' },
+    { name: 'Motorized & Smart', path: '/motorized-blinds' },
   ];
 
-  const serviceLinks = [
-    { name: 'Solar & Light-Filtering Shades', path: '/services#solar-light-filtering' },
-    { name: 'Blackout Shades', path: '/services#blackout' },
-    { name: 'Zebra & Dual-Layer Shades', path: '/services#zebra-dual-layer' },
-    { name: 'Vertical Blinds', path: '/services#vertical-blinds' },
-    { name: 'Roman Shades', path: '/services#roman-shades' },
-    { name: 'Custom Drapes', path: '/services#custom-drapes' },
-    { name: 'Motorized & Smart Shades', path: '/motorized-blinds' },
-    { name: 'Condo Treatments', path: '/condo-window-treatments' },
+  const planLinks = [
     { name: 'Build Your Project', path: '/build-your-project' },
     { name: 'Get Estimate', path: '/consultation' },
+    { name: 'Process', path: '/process' },
+    { name: 'Guides', path: '/guides' },
+    { name: 'Gallery', path: '/gallery' },
   ];
 
   const companyLinks = [
     { name: 'About Us', path: '/about' },
-    { name: 'Process', path: '/process' },
-    { name: 'Service Areas', path: '/service-areas' },
-    { name: 'Gallery', path: '/gallery' },
     { name: 'Testimonials', path: '/testimonials' },
+    { name: 'Service Areas', path: '/service-areas' },
     { name: 'Trade Program', path: '/trade' },
     { name: 'FAQ', path: '/faq' },
-    { name: 'Guides', path: '/guides' },
-    { name: 'Contact', path: '/contact' },
   ];
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-5 gap-12 mb-16">
-          <div className="md:col-span-1">
-            <img
-              src="/nablinds_logo_transparent_black.png"
-              alt="NA Blinds"
-              className="h-12 w-auto mb-4"
-            />
-            <p className="text-warm-gray text-sm leading-relaxed mb-6">
-              South Florida light is unlike anywhere else. We've spent over a decade learning exactly how to dress it—from consultation to installation.
-            </p>
-            <p className="text-warm-gray text-xs leading-relaxed max-w-[200px]">
-              Proud partner in South Florida design. We work with interior designers and the Rove network.
-            </p>
-            <div className="flex gap-4 mt-6">
-              <img
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a8203c13b9c6469cc82d3.png"
-                alt="Angi Super Service Award"
-                className="h-12 w-auto"
-              />
-              <img
-                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/pKgTEQf1DpuyRDPhTsOA/media/691a8045a0fb4a71324d0823.png"
-                alt="BBB Accredited"
-                className="h-12 w-auto"
-              />
-              <img
-                src="/houzz.png"
-                alt="Houzz"
-                className="h-12 w-auto"
-              />
-            </div>
-          </div>
-
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-16">
           <div>
-            <h3 className="text-warm-dark font-semibold mb-4">Products</h3>
-            <ul className="space-y-2">
-              {productLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-warm-gray hover:text-navy transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-warm-dark font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
-              {serviceLinks.map((link) => (
+            <h3 className="text-warm-dark font-bold text-sm uppercase tracking-wider mb-5">Explore</h3>
+            <ul className="space-y-3">
+              {exploreLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
@@ -100,8 +47,24 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-warm-dark font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
+            <h3 className="text-warm-dark font-bold text-sm uppercase tracking-wider mb-5">Plan</h3>
+            <ul className="space-y-3">
+              {planLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-warm-gray hover:text-navy transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-warm-dark font-bold text-sm uppercase tracking-wider mb-5">Company</h3>
+            <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -116,7 +79,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-warm-dark font-semibold mb-4">Contact</h3>
+            <h3 className="text-warm-dark font-bold text-sm uppercase tracking-wider mb-5">Contact</h3>
             <ul className="space-y-4">
               <li>
                 <a
@@ -146,7 +109,7 @@ export default function Footer() {
                   <div className="mt-2 text-xs opacity-80">Serving Miami-Dade, Broward & Palm Beach Counties</div>
                 </address>
               </li>
-              <li className="flex items-center gap-4 pt-2">
+              <li className="flex items-center gap-4 pt-1">
                 <a
                   href="https://www.facebook.com/nablindsofficial/"
                   target="_blank"
