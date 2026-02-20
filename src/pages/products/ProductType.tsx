@@ -13,7 +13,7 @@ function TypeLongForm({ category, slug }: { category: ProductCategory; slug: str
   const hasMotorization = motorizedSlugs.includes(slug);
 
   return (
-    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-p:text-warm-gray prose-a:text-navy">
+    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-p:text-warm-gray prose-a:text-navy text-left">
       <h2>Overview</h2>
       <p>{type.shortDescription} South Florida homeowners choose {type.name.toLowerCase()} for their combination of style, function, and durability in our climate.</p>
 
@@ -108,7 +108,7 @@ export default function ProductType() {
         >
           <div className="absolute inset-0 bg-warm-dark/60" />
         </div>
-        <div className="relative max-w-4xl mx-auto text-center text-white">
+        <div className="relative max-w-4xl mx-auto text-white">
           <nav className="text-sm mb-4">
             <Link to="/" className="text-white/80 hover:text-white">Home</Link>
             <span className="mx-2">/</span>
@@ -121,7 +121,7 @@ export default function ProductType() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-white mb-6 drop-shadow-lg">
             {type.name}
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed drop-shadow-md mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl leading-relaxed drop-shadow-md mb-8 max-w-2xl">
             {type.shortDescription}
           </p>
           <Link

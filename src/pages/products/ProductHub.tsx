@@ -78,7 +78,7 @@ function HubLongForm({ category }: { category: ProductCategory }) {
   };
 
   return (
-    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-p:text-warm-gray prose-a:text-navy">
+    <article className="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:text-warm-dark prose-p:text-warm-gray prose-a:text-navy text-left">
       {content[category]}
     </article>
   );
@@ -95,7 +95,7 @@ function HowToChoose({ category }: { category: ProductCategory }) {
   return (
     <section className="py-16 md:py-20 px-6 bg-soft-sand">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-warm-dark text-2xl md:text-3xl mb-8 text-center">How to Choose the Right Option</h2>
+        <h2 className="text-warm-dark text-2xl md:text-3xl mb-8">How to Choose the Right Option</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {items.map((item) => (
             <div key={item.label} className="bg-white p-6 rounded-lg">
@@ -104,7 +104,7 @@ function HowToChoose({ category }: { category: ProductCategory }) {
             </div>
           ))}
         </div>
-        <div className="mt-10 text-center">
+        <div className="mt-10">
           <Link
             to="/consultation"
             className="inline-block bg-navy text-white px-8 py-4 rounded font-medium hover:bg-navy/90 transition-colors"
@@ -155,7 +155,7 @@ export default function ProductHub() {
         >
           <div className="absolute inset-0 bg-warm-dark/60" />
         </div>
-        <div className="relative max-w-4xl mx-auto text-center text-white">
+        <div className="relative max-w-4xl mx-auto text-white">
           <nav className="text-sm mb-4">
             <Link to="/" className="text-white/80 hover:text-white">Home</Link>
             <span className="mx-2">/</span>
@@ -169,7 +169,7 @@ export default function ProductHub() {
           <p className="text-xl leading-relaxed drop-shadow-md mb-8">
             {config.heroSubhead}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/consultation"
               className="bg-white text-navy px-8 py-4 rounded font-semibold hover:bg-gray-100 transition-colors"
@@ -189,7 +189,7 @@ export default function ProductHub() {
       {/* Types Grid */}
       <section id="types-grid" className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-warm-dark text-2xl md:text-3xl mb-10 text-center">Popular {catName} Types</h2>
+          <h2 className="text-warm-dark text-2xl md:text-3xl mb-10">Popular {catName} Types</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {types.map((type) => (
               <Link
