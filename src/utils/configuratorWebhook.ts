@@ -10,11 +10,24 @@ function formatAustralianPhone(phone: string): string {
   return phone;
 }
 
-export async function submitConfiguratorToWebhook(data: {
-  room: string;
-  productCategory: string;
+export interface GroupConfig {
+  areas: string[];
+  category: string;
   productType: string;
   colour: string;
+  customColour: string;
+  control: string;
+}
+
+export interface ConfiguratorWebhookData {
+  projectScope: string;
+  room: string;
+  windowCountRange: string;
+  productVariation: string;
+  groups: GroupConfig[];
+  productCategory?: string;
+  productType?: string;
+  colour?: string;
   customColour?: string;
   controlType?: string;
   knowsDimensions: boolean;
@@ -25,8 +38,17 @@ export async function submitConfiguratorToWebhook(data: {
   mobile: string;
   email: string;
   suburb: string;
-}): Promise<boolean> {
+  additionalNotes?: string;
+}
+
+export async function submitConfiguratorToWebhook(data: ConfiguratorWebhookData): Promise<boolean> {
   const formattedPhone = formatAustralianPhone(data.mobile);
+
+  const useGrouping = data.productVariation === 'different' && data.groups.length > 1;
+
+  const serviceType = useGrouping
+    ? data.groups.map((g, i) => `Group ${i + 1}: ${g.category} - ${g.productType}`).join('; ')
+    : `${data.productCategory || data.groups[0]?.category} - ${data.productType || data.groups[0]?.productType}`;
 
   const payload = {
     first_name: data.firstName,
@@ -35,18 +57,30 @@ export async function submitConfiguratorToWebhook(data: {
     email: data.email,
     source: 'Build Your Project Configurator',
     form_name: 'Window Covering Configurator',
-    page_url: window.location.href,
-    service_type: `${data.productCategory} - ${data.productType}`,
+    page_url: typeof window !== 'undefined' ? window.location.href : '',
+    service_type: serviceType,
     project_location: data.suburb,
-    room: data.room,
-    product_category: data.productCategory,
-    product_type: data.productType,
-    colour: data.colour,
+    project_scope: data.projectScope,
+    room: data.room || '',
+    window_count_range: data.windowCountRange,
+    product_variation: data.productVariation,
+    groups: JSON.stringify(data.groups.map((g) => ({
+      areas: g.areas,
+      category: g.category,
+      product_type: g.productType,
+      colour: g.colour,
+      custom_colour: g.customColour || '',
+      control: g.control,
+    }))),
+    product_category: data.productCategory || data.groups[0]?.category || '',
+    product_type: data.productType || data.groups[0]?.productType || '',
+    colour: data.colour || data.groups[0]?.colour || '',
     ...(data.customColour && { custom_colour: data.customColour }),
     ...(data.controlType && { control_type: data.controlType }),
     knows_dimensions: data.knowsDimensions,
     ...(data.widthCm && { width_cm: data.widthCm }),
     ...(data.heightCm && { height_cm: data.heightCm }),
+    ...(data.additionalNotes && { additional_notes: data.additionalNotes }),
   };
 
   try {

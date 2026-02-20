@@ -77,3 +77,48 @@ export const CONTROL_TYPES = [
   { id: 'manual', name: 'Manual / Cord', badge: 'Most Popular', description: 'Simple, reliable, cost effective', image: `${C}/configurator-control-manual.png`, alt: 'Manual cord control for window coverings' },
   { id: 'motorised', name: 'Motorised', badge: 'Premium', description: 'Adjust with remote or smartphone for convenience', image: `${C}/configurator-control-motorised.png`, alt: 'Motorised window coverings' },
 ];
+
+export type ProjectScope = 'single-room' | 'multiple-rooms' | 'whole-home' | 'new-build' | 'exploring';
+
+export const PROJECT_SCOPES: { id: ProjectScope; name: string; description: string }[] = [
+  { id: 'single-room', name: 'Single Room', description: 'One room or area' },
+  { id: 'multiple-rooms', name: 'Multiple Rooms', description: 'Several rooms in your home' },
+  { id: 'whole-home', name: 'Whole Home', description: 'Complete home coverage' },
+  { id: 'new-build', name: 'New Build / Renovation', description: 'New construction or major remodel' },
+  { id: 'exploring', name: 'Just Exploring Options', description: 'Getting ideas and pricing' },
+];
+
+export type WindowCountRange = '1-2' | '3-5' | '6-9' | '10-14' | '15+' | 'not-sure';
+
+export const WINDOW_COUNT_RANGES: { id: WindowCountRange; name: string }[] = [
+  { id: '1-2', name: '1–2' },
+  { id: '3-5', name: '3–5' },
+  { id: '6-9', name: '6–9' },
+  { id: '10-14', name: '10–14' },
+  { id: '15+', name: '15+' },
+  { id: 'not-sure', name: 'Not sure' },
+];
+
+export type ProductVariation = 'same' | 'different';
+
+export const PRODUCT_VARIATION_OPTIONS: { id: ProductVariation; name: string; description: string }[] = [
+  { id: 'same', name: 'Same for most windows', description: 'One style throughout' },
+  { id: 'different', name: 'Different styles in some areas', description: 'Multiple configurations' },
+];
+
+export type GroupCount = 2 | 3;
+
+export const GROUP_COUNT_OPTIONS: { id: GroupCount | 'not-sure'; name: string }[] = [
+  { id: 2, name: '2 groups' },
+  { id: 3, name: '3 groups' },
+  { id: 'not-sure', name: 'Not sure' },
+];
+
+export const GROUP_AREAS = [
+  { id: 'bedrooms', name: 'Bedrooms' },
+  { id: 'living-areas', name: 'Living Areas' },
+  { id: 'kitchen', name: 'Kitchen' },
+  { id: 'bathroom', name: 'Bathroom' },
+  { id: 'office', name: 'Office' },
+  { id: 'other', name: 'Other' },
+] as const;
