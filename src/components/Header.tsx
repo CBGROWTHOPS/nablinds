@@ -138,12 +138,6 @@ export default function Header() {
             >
               Guides
             </Link>
-            <Link
-              to="/contact"
-              className={`text-sm font-medium transition-colors ${isActive('/contact') ? 'text-navy' : 'text-warm-dark hover:text-navy'}`}
-            >
-              Contact
-            </Link>
             <a
               href="tel:954-629-1373"
               className="text-warm-dark border border-warm-dark/30 px-5 py-2 rounded font-medium hover:bg-warm-cream transition-all flex items-center gap-2 text-sm"
@@ -236,15 +230,6 @@ export default function Header() {
               }`}
             >
               Guides
-            </Link>
-            <Link
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className={`block px-4 py-3 rounded-lg transition-colors font-medium touch-manipulation ${
-                isActive('/contact') ? 'bg-navy text-white' : 'text-warm-dark hover:bg-soft-sand active:bg-soft-sand'
-              }`}
-            >
-              Contact
             </Link>
             <a
               href="tel:954-629-1373"

@@ -24,6 +24,7 @@ export default function Footer() {
     { name: 'Service Areas', path: '/service-areas' },
     { name: 'Trade Program', path: '/trade' },
     { name: 'FAQ', path: '/faq' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
