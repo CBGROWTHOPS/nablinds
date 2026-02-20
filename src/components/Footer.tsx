@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 export default function Footer() {
+  const productLinks = [
+    { name: 'Blinds', path: '/products/blinds' },
+    { name: 'Shades', path: '/products/shades' },
+    { name: 'Shutters', path: '/products/shutters' },
+    { name: 'Drapes', path: '/products/drapes' },
+  ];
+
   const serviceLinks = [
     { name: 'Solar & Light-Filtering Shades', path: '/services#solar-light-filtering' },
     { name: 'Blackout Shades', path: '/services#blackout' },
@@ -28,8 +35,8 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-4 gap-16 mb-16">
-          <div>
+        <div className="grid md:grid-cols-5 gap-12 mb-16">
+          <div className="md:col-span-1">
             <img
               src="/nablinds_logo_transparent_black.png"
               alt="NA Blinds"
@@ -60,6 +67,21 @@ export default function Footer() {
             </div>
           </div>
 
+          <div>
+            <h3 className="text-warm-dark font-semibold mb-4">Products</h3>
+            <ul className="space-y-2">
+              {productLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-warm-gray hover:text-navy transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div>
             <h3 className="text-warm-dark font-semibold mb-4">Services</h3>
             <ul className="space-y-2">

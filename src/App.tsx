@@ -25,6 +25,8 @@ import BuyersGuide from './pages/guides/BuyersGuide';
 import ShadeComparison from './pages/guides/ShadeComparison';
 import CondoWindowTreatments from './pages/CondoWindowTreatments';
 import Trade from './pages/Trade';
+import ProductHub from './pages/products/ProductHub';
+import ProductType from './pages/products/ProductType';
 import DocsHub from './pages/docs/DocsHub';
 import ClarityDoc from './pages/docs/ClarityDoc';
 import AnalyticsDoc from './pages/docs/AnalyticsDoc';
@@ -74,6 +76,8 @@ function App() {
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />
           <Route path="/motorized-blinds" element={<Layout><MotorizedBlinds /></Layout>} />
+          <Route path="/products/:category" element={<Layout><ProductHub /></Layout>} />
+          <Route path="/products/:category/:slug" element={<Layout><ProductType /></Layout>} />
           <Route path="/process" element={<Layout><Process /></Layout>} />
           <Route path="/service-areas" element={<Layout><ServiceAreas /></Layout>} />
           <Route path="/gallery" element={<Layout><Gallery /></Layout>} />

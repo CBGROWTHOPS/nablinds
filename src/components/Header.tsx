@@ -7,23 +7,24 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [productsOpenMobile, setProductsOpenMobile] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [servicesOpenMobile, setServicesOpenMobile] = useState(false);
   const location = useLocation();
 
-  const navigation = [
-    { name: 'Services', path: '/services' },
-    { name: 'Service Areas', path: '/service-areas' },
-    { name: 'Guides', path: '/guides' },
-    { name: 'Contact', path: '/contact' },
+  const productsDropdown = [
+    { name: 'Blinds', path: '/products/blinds' },
+    { name: 'Shades', path: '/products/shades' },
+    { name: 'Shutters', path: '/products/shutters' },
+    { name: 'Drapes', path: '/products/drapes' },
   ];
 
-  const productsDropdown = [
-    { name: 'Blinds', path: '/services#vertical-blinds' },
-    { name: 'Shades', path: '/services#solar-light-filtering' },
-    { name: 'Drapes', path: '/services#custom-drapes' },
-    { name: 'Shutters', path: '/services' },
+  const servicesDropdown = [
+    { name: 'Motorized Blinds', path: '/motorized-blinds' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isProductsActive = productsDropdown.some((p) => location.pathname.startsWith(p.path));
+  const isServicesActive = location.pathname === '/motorized-blinds' || location.pathname === '/services';
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
@@ -45,7 +46,7 @@ export default function Header() {
             NA BLINDS
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8" aria-label="Main navigation">
             <div
               className="relative"
               onMouseEnter={() => setProductsOpen(true)}
@@ -53,20 +54,26 @@ export default function Header() {
             >
               <button
                 className={`text-sm font-medium transition-colors flex items-center gap-1 ${
-                  productsOpen ? 'text-navy' : 'text-warm-dark hover:text-navy'
+                  productsOpen || isProductsActive ? 'text-navy' : 'text-warm-dark hover:text-navy'
                 }`}
+                aria-expanded={productsOpen}
+                aria-haspopup="true"
+                aria-controls="products-menu"
               >
                 Products
                 <ChevronDown className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
               </button>
               {productsOpen && (
-                <div className="absolute top-full left-0 pt-2">
+                <div id="products-menu" className="absolute top-full left-0 pt-2" role="menu">
                   <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[160px]">
                     {productsDropdown.map((item) => (
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-sm text-warm-dark hover:bg-soft-sand hover:text-navy transition-colors"
+                        role="menuitem"
+                        className={`block px-4 py-2 text-sm transition-colors ${
+                          location.pathname === item.path ? 'bg-soft-sand text-navy font-medium' : 'text-warm-dark hover:bg-soft-sand hover:text-navy'
+                        }`}
                       >
                         {item.name}
                       </Link>
@@ -75,19 +82,68 @@ export default function Header() {
                 </div>
               )}
             </div>
-            {navigation.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'text-navy'
-                    : 'text-warm-dark hover:text-navy'
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className={`text-sm font-medium transition-colors flex items-center gap-1 ${
+                  servicesOpen || isServicesActive ? 'text-navy' : 'text-warm-dark hover:text-navy'
                 }`}
+                aria-expanded={servicesOpen}
+                aria-haspopup="true"
+                aria-controls="services-menu"
               >
-                {item.name}
-              </Link>
-            ))}
+                Services
+                <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {servicesOpen && (
+                <div id="services-menu" className="absolute top-full left-0 pt-2" role="menu">
+                  <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[180px]">
+                    <Link
+                      to="/services"
+                      role="menuitem"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        location.pathname === '/services' ? 'bg-soft-sand text-navy font-medium' : 'text-warm-dark hover:bg-soft-sand hover:text-navy'
+                      }`}
+                    >
+                      All Services
+                    </Link>
+                    {servicesDropdown.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        role="menuitem"
+                        className={`block px-4 py-2 text-sm transition-colors ${
+                          location.pathname === item.path ? 'bg-soft-sand text-navy font-medium' : 'text-warm-dark hover:bg-soft-sand hover:text-navy'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <Link
+              to="/service-areas"
+              className={`text-sm font-medium transition-colors ${isActive('/service-areas') ? 'text-navy' : 'text-warm-dark hover:text-navy'}`}
+            >
+              Service Areas
+            </Link>
+            <Link
+              to="/guides"
+              className={`text-sm font-medium transition-colors ${isActive('/guides') ? 'text-navy' : 'text-warm-dark hover:text-navy'}`}
+            >
+              Guides
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-sm font-medium transition-colors ${isActive('/contact') ? 'text-navy' : 'text-warm-dark hover:text-navy'}`}
+            >
+              Contact
+            </Link>
             <a
               href="tel:954-629-1373"
               className="text-warm-dark border border-warm-dark/30 px-5 py-2 rounded font-medium hover:bg-warm-cream transition-all flex items-center gap-2 text-sm"
@@ -107,11 +163,12 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <nav className="lg:hidden mt-3 sm:mt-4 pb-3 sm:pb-4 space-y-2">
+          <nav className="lg:hidden mt-3 sm:mt-4 pb-3 sm:pb-4 space-y-2" aria-label="Mobile navigation">
             <div>
               <button
                 onClick={() => setProductsOpenMobile(!productsOpenMobile)}
                 className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-warm-dark hover:bg-soft-sand active:bg-soft-sand font-medium touch-manipulation"
+                aria-expanded={productsOpenMobile}
               >
                 Products
                 <ChevronDown className={`w-5 h-5 transition-transform ${productsOpenMobile ? 'rotate-180' : ''}`} />
@@ -131,20 +188,64 @@ export default function Header() {
                 </div>
               )}
             </div>
-            {navigation.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg transition-colors font-medium touch-manipulation ${
-                  isActive(item.path)
-                    ? 'bg-navy text-white'
-                    : 'text-warm-dark hover:bg-soft-sand active:bg-soft-sand'
-                }`}
+            <div>
+              <button
+                onClick={() => setServicesOpenMobile(!servicesOpenMobile)}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-warm-dark hover:bg-soft-sand active:bg-soft-sand font-medium touch-manipulation"
+                aria-expanded={servicesOpenMobile}
               >
-                {item.name}
-              </Link>
-            ))}
+                Services
+                <ChevronDown className={`w-5 h-5 transition-transform ${servicesOpenMobile ? 'rotate-180' : ''}`} />
+              </button>
+              {servicesOpenMobile && (
+                <div className="pl-4 pt-1 space-y-1">
+                  <Link
+                    to="/services"
+                    onClick={() => { setIsMenuOpen(false); setServicesOpenMobile(false); }}
+                    className="block px-4 py-2 rounded-lg text-warm-gray hover:bg-soft-sand active:bg-soft-sand text-sm"
+                  >
+                    All Services
+                  </Link>
+                  {servicesDropdown.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => { setIsMenuOpen(false); setServicesOpenMobile(false); }}
+                      className="block px-4 py-2 rounded-lg text-warm-gray hover:bg-soft-sand active:bg-soft-sand text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Link
+              to="/service-areas"
+              onClick={() => setIsMenuOpen(false)}
+              className={`block px-4 py-3 rounded-lg transition-colors font-medium touch-manipulation ${
+                isActive('/service-areas') ? 'bg-navy text-white' : 'text-warm-dark hover:bg-soft-sand active:bg-soft-sand'
+              }`}
+            >
+              Service Areas
+            </Link>
+            <Link
+              to="/guides"
+              onClick={() => setIsMenuOpen(false)}
+              className={`block px-4 py-3 rounded-lg transition-colors font-medium touch-manipulation ${
+                isActive('/guides') ? 'bg-navy text-white' : 'text-warm-dark hover:bg-soft-sand active:bg-soft-sand'
+              }`}
+            >
+              Guides
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className={`block px-4 py-3 rounded-lg transition-colors font-medium touch-manipulation ${
+                isActive('/contact') ? 'bg-navy text-white' : 'text-warm-dark hover:bg-soft-sand active:bg-soft-sand'
+              }`}
+            >
+              Contact
+            </Link>
             <a
               href="tel:954-629-1373"
               className="flex items-center justify-center gap-2 text-warm-dark border border-warm-dark/30 px-4 py-3 rounded font-medium touch-manipulation active:bg-warm-cream"
