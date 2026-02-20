@@ -135,15 +135,15 @@ export default function Home() {
   ];
 
   const customSolutions = [
-    { name: 'Solar & Light-Filtering Shades', description: 'Block heat and glare while keeping your view. Ideal for South Florida\'s intense sun.', image: '/solar-shades-room.png' },
-    { name: 'Blackout Shades', description: 'Complete darkness and privacy. Perfect for bedrooms and media rooms.', image: '/blackout-shades-room.png' },
-    { name: 'Zebra & Dual-Layer Shades', description: 'Adjust between sheer and opaque instantly. Modern style with flexible control.', image: '/zebra-shades-room.png' },
-    { name: 'Cellular (Honeycomb) Shades', description: 'Energy-efficient shades designed to insulate against heat while providing privacy and a clean, modern look.', image: '/cellular-shades-room.png' },
-    { name: 'Vertical Blinds for Sliding Doors', description: 'Smooth operation for large openings. Built for high-traffic areas.', image: '/vertical-blinds-room.png' },
-    { name: 'Custom Roman Shades', description: 'Elegant fabric folds with tailored finishes for a refined, designer look.', image: '/roman-shades-room.png' },
-    { name: 'Custom Drapes', description: 'Soft, flowing fabrics with premium hardware for sophisticated window dressing.', image: '/custom-drapes-room.png' },
-    { name: 'Shutters', description: 'Durable, low-maintenance shutters that provide privacy, light control, and a timeless finished look.', image: '/shutters-room.png' },
-    { name: 'Motorized & Smart Shades', description: 'Control shades by remote, app, or voice. Automate for comfort and efficiency.', image: '/motorized-shades-room.png' },
+    { name: 'Solar & Light-Filtering Shades', description: 'Block heat and glare while keeping your view. Ideal for South Florida\'s intense sun.', image: '/solar-shades-room.png', link: '/products/shades/solar-shades' },
+    { name: 'Blackout Shades', description: 'Complete darkness and privacy. Perfect for bedrooms and media rooms.', image: '/blackout-shades-room.png', link: '/products/shades/blackout-shades' },
+    { name: 'Zebra & Dual-Layer Shades', description: 'Adjust between sheer and opaque instantly. Modern style with flexible control.', image: '/zebra-shades-room.png', link: '/products/shades/zebra-shades' },
+    { name: 'Cellular (Honeycomb) Shades', description: 'Energy-efficient shades designed to insulate against heat while providing privacy and a clean, modern look.', image: '/cellular-shades-room.png', link: '/products/shades/cellular-shades' },
+    { name: 'Vertical Blinds for Sliding Doors', description: 'Smooth operation for large openings. Built for high-traffic areas.', image: '/vertical-blinds-room.png', link: '/products/blinds/vertical-blinds' },
+    { name: 'Custom Roman Shades', description: 'Elegant fabric folds with tailored finishes for a refined, designer look.', image: '/roman-shades-room.png', link: '/products/shades/roman-shades' },
+    { name: 'Custom Drapes', description: 'Soft, flowing fabrics with premium hardware for sophisticated window dressing.', image: '/custom-drapes-room.png', link: '/products/drapes' },
+    { name: 'Shutters', description: 'Durable, low-maintenance shutters that provide privacy, light control, and a timeless finished look.', image: '/shutters-room.png', link: '/products/shutters' },
+    { name: 'Motorized & Smart Shades', description: 'Control shades by remote, app, or voice. Automate for comfort and efficiency.', image: '/motorized-shades-room.png', link: '/motorized-blinds' },
   ];
 
   const scrollSolutions = (dir: 'left' | 'right') => {
@@ -307,9 +307,10 @@ export default function Home() {
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
             >
               {customSolutions.map((solution) => (
-                <div
+                <Link
                   key={solution.name}
-                  className="flex-none w-[280px] sm:w-[320px] snap-start bg-white rounded-lg overflow-hidden shadow-md"
+                  to={solution.link}
+                  className="flex-none w-[280px] sm:w-[320px] snap-start bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                 >
                   <div className="aspect-[4/3] min-h-[180px] w-full overflow-hidden bg-soft-sand">
                     <img
@@ -323,7 +324,7 @@ export default function Home() {
                     <h3 className="text-xl text-warm-dark mb-3">{solution.name}</h3>
                     <p className="text-warm-gray leading-relaxed text-sm">{solution.description}</p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
