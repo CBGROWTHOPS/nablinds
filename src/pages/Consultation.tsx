@@ -17,6 +17,7 @@ interface FormData {
   firstName: string;
   phone: string;
   email: string;
+  preferredCallTime: string;
   priorityFlag?: string;
 }
 
@@ -35,6 +36,7 @@ export default function Consultation() {
     firstName: '',
     phone: '',
     email: '',
+    preferredCallTime: '',
   });
 
   useEffect(() => {
@@ -72,6 +74,7 @@ export default function Consultation() {
       firstName: formData.firstName,
       phone: formData.phone,
       email: formData.email,
+      preferredCallTime: formData.preferredCallTime,
       serviceType: formData.serviceType,
       motorizedInterest: formData.motorizedInterest,
       projectLocation: formData.projectLocation,
@@ -107,7 +110,7 @@ export default function Consultation() {
       case 7:
         return formData.projectPriority !== '';
       case 8:
-        return formData.firstName.trim() !== '' && formData.phone.trim() !== '';
+        return formData.firstName.trim() !== '' && formData.phone.trim() !== '' && formData.preferredCallTime !== '';
       default:
         return false;
     }
@@ -413,6 +416,25 @@ export default function Consultation() {
                     <p className="text-xs text-gray-500 mt-2">
                       Optional. Helpful if you prefer email over text.
                     </p>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Preferred time of day for a call *
+                    </label>
+                    <select
+                      value={formData.preferredCallTime}
+                      onChange={(e) =>
+                        handleInputChange('preferredCallTime', e.target.value)
+                      }
+                      required
+                      className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-navy focus:outline-none bg-white"
+                    >
+                      <option value="">Select a time</option>
+                      <option value="ASAP">ASAP</option>
+                      <option value="Morning">Morning</option>
+                      <option value="Afternoon">Afternoon</option>
+                      <option value="Early evening">Early evening</option>
+                    </select>
                   </div>
                   <button
                     type="submit"

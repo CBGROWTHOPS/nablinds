@@ -2,6 +2,7 @@ interface ConsultationWebhookPayload {
   first_name: string;
   phone: string;
   email: string;
+  preferred_call_time: string;
   service_type: string;
   motorized_interest: string;
   project_location: string;
@@ -33,6 +34,7 @@ export async function submitConsultationToWebhook(data: {
   firstName: string;
   phone: string;
   email: string;
+  preferredCallTime: string;
   serviceType: string;
   motorizedInterest: string;
   projectLocation: string;
@@ -48,6 +50,7 @@ export async function submitConsultationToWebhook(data: {
     first_name: data.firstName,
     phone: formattedPhone,
     email: data.email || '',
+    preferred_call_time: data.preferredCallTime,
     service_type: data.serviceType,
     motorized_interest: data.motorizedInterest,
     project_location: data.projectLocation,
